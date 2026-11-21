@@ -1,0 +1,14 @@
+# Secretos y datos locales
+config.inc.php
+.env
+*.sql
+*.zip
+
+# Dependencias y caché
+node_modules/
+vendor/
+cache/
+
+# Sistema y editor
+Thumbs.db
+.vscode/

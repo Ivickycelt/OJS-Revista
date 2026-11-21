@@ -1,0 +1,162 @@
+// ============================================================
+// Horizontes - estilos propios (UICM)
+// Los colores salen del logo de la UCM.
+// Para cambiar la paleta, edita solo estas variables:
+// ============================================================
+@verde: #006633;
+@verde-oscuro: #004d26;
+@dorado: #f0ae5b;
+@texto: #222222;
+
+// Logo de la UCM en el encabezado
+@import "logo.less";
+
+body {
+  font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
+  color: @texto;
+}
+
+a {
+  transition: color 0.2s ease;
+}
+
+// ---------- Encabezado (blanco, como uicm.edu.mx) ----------
+// Se usa !important porque el tema base pinta de azul varias capas.
+.pkp_structure_head,
+.pkp_head_wrapper,
+.pkp_navigation_primary_row,
+.pkp_navigation_primary_wrapper {
+  background: #ffffff !important;
+}
+
+.pkp_structure_head {
+  border-bottom: 4px solid @verde;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.pkp_navigation_primary_row {
+  border-top: 1px solid rgba(0, 102, 51, 0.15);
+}
+
+.pkp_site_name .is_text,
+.pkp_site_name a {
+  color: @verde;
+  font-weight: 800;
+}
+
+// ---------- Menú principal: mayúsculas verdes con subrayado animado ----------
+.pkp_navigation_primary > li > a {
+  position: relative;
+  color: @verde;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  background: transparent;
+  transition: color 0.2s ease;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0.9em;
+    right: 0.9em;
+    bottom: 0.3em;
+    height: 3px;
+    background: @dorado;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+
+  &:hover,
+  &:focus {
+    color: @verde-oscuro;
+    background: transparent;
+
+    &:after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+// Menú de usuario y buscador (el tema base los pone en blanco)
+.pkp_navigation_user > li > a,
+.pkp_navigation_search_wrapper a {
+  color: @verde;
+  transition: color 0.2s ease;
+
+  &:hover,
+  &:focus {
+    color: @verde-oscuro;
+    background: transparent;
+  }
+}
+
+// ---------- Botones: se elevan al pasar el mouse y se hunden al hacer clic ----------
+.pkp_button,
+.cmp_button,
+.cmp_button_wire,
+button.submit {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.22);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+}
+
+// ---------- Buscador: brillo verde al enfocar ----------
+input[type="text"],
+input[type="search"] {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:focus {
+    border-color: @verde;
+    box-shadow: 0 0 0 3px rgba(0, 102, 51, 0.18);
+    outline: none;
+  }
+}
+
+// ---------- Títulos de artículos y números ----------
+.obj_article_summary .title a,
+.obj_issue_summary .title {
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: @verde;
+  }
+}
+
+// ---------- Pie de página ----------
+.pkp_structure_footer_wrapper {
+  border-top: 4px solid @dorado;
+}
+
+// ---------- Aparición suave al hacer scroll (la activa js/main.js) ----------
+.hz-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+
+  &.hz-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+// ---------- Accesibilidad: respetar "reducir movimiento" ----------
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .hz-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
