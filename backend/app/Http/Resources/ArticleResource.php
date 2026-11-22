@@ -18,6 +18,7 @@ class ArticleResource extends JsonResource
             'journal_slug' => $this->issue?->journal?->slug,
             'journal_name' => $this->issue?->journal?->name,
             'pdf_url' => $this->pdf_url,
+            'portada_url' => $this->pdf_url ? str_replace(['/pdf/', '.pdf'], ['/portadas/', '.png'], $this->pdf_url) : null,
             'is_published' => $this->is_published,
             'section' => new SectionResource($this->whenLoaded('section')),
             'issue' => new IssueResource($this->whenLoaded('issue')),

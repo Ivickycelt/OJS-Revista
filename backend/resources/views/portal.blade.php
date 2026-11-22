@@ -236,6 +236,8 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
 .volver { display: inline-block; margin: 18px 0 40px; text-decoration: none; }
 .pie p { margin: 4px 0; }
 .vacio { color: #666666; }
+/* ---------- Portadas de artículos ---------- */
+.portada-tarjeta { display: block; width: calc(100% + 36px); max-width: none; margin: -18px -18px 4px; height: 210px; object-fit: cover; object-position: top; border-radius: 12px 12px 0 0; background: #f4f4f4; }
 </style>
 </head>
 <body>
@@ -255,7 +257,7 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
   <div class="contenedor">
     <p><strong>Universidad Internacional Cuba-México</strong></p>
     <p>Calle Dolores 46, San Cristóbal Nexquipayac, Atenco, Estado de México, C.P. 56315</p>
-    <p><a href="https://www.uicm.edu.mx" target="_blank" rel="noopener">www.uicm.edu.mx</a></p>
+    <p><a href="https://uicm.edu.mx" target="_blank" rel="noopener">uicm.edu.mx</a></p>
   </div>
 </footer>
 
@@ -616,6 +618,7 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
     var corazon = botonFavorito(a.id, estado.favoritos.has(a.id), 'fav');
     var revista = a.journal_slug || estado.revista.slug;
     return el('article', { 'class': 'card reveal' },
+      a.portada_url ? el('img', { 'class': 'portada-tarjeta', src: a.portada_url, alt: 'Primera página de ' + a.title, loading: 'lazy' }) : '',
       el('span', { 'class': 'chip' }, a.section ? a.section.name : ''),
       el('h3', {}, el('a', { 'class': 'enlace-fuerte', href: '/revistas/' + revista + '/articulos/' + a.id }, a.title)),
       el('p', { 'class': 'autores' }, (a.authors || []).join(', ')),
