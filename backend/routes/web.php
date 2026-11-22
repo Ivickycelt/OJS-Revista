@@ -2,6 +2,5 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Portal público de la revista (usa la API REST desde el navegador)
+Route::view('/', 'portal');
