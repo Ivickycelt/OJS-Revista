@@ -4,8 +4,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Horizontes | Revista de Ciencias del Colegio de Estudios de Postgrados Cuba-México</title>
-<meta name="description" content="Horizontes, revista de ciencias del Colegio de Estudios de Postgrados Cuba-México (UICM).">
+<title>Revistas | Universidad Internacional Cuba-México</title>
+<meta name="description" content="Portal de revistas de la Universidad Internacional Cuba-México (UICM).">
 <style>
 :root {
   --verde: #006633;
@@ -163,6 +163,8 @@ a { color: var(--verde); }
 
 /* ---------- Ventanas ---------- */
 dialog {
+  max-height: 88vh;
+  overflow-y: auto;
   border: 0;
   border-radius: 14px;
   padding: 0;
@@ -171,6 +173,21 @@ dialog {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
 dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
+#detalle { max-width: 940px; }
+.visor-pdf {
+  display: block;
+  width: 100%;
+  height: 72vh;
+  min-height: 420px;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  margin: 12px 0;
+  background: #f4f4f4;
+}
+.texto-plano { margin-top: 14px; }
+.texto-plano summary { cursor: pointer; color: var(--verde); font-weight: 700; }
+.texto-plano p { font-size: 0.97rem; }
+@media (max-width: 600px) { .visor-pdf { height: 60vh; min-height: 320px; } }
 .dlg { padding: 24px; }
 .dlg h2 { margin: 8px 0; color: var(--verde-oscuro); }
 .meta { color: #666666; font-size: 0.92rem; }
@@ -197,56 +214,50 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
   * { transition: none !important; animation: none !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* ---------- Portal multirrevista ---------- */
+.card { position: relative; }
+.card h3 a { color: var(--verde-oscuro); text-decoration: none; }
+.card h3 a::after { content: ""; position: absolute; inset: 0; border-radius: 12px; }
+.card h3 a:focus { outline: none; }
+.card h3 a:focus-visible::after { box-shadow: inset 0 0 0 3px var(--verde); }
+.fav { position: relative; z-index: 2; }
+.meta-revista { color: #555555; font-size: 0.92rem; margin: 0; display: flex; gap: 14px; flex-wrap: wrap; }
+.subtitulo { color: var(--verde-oscuro); margin: 28px 0 0; font-size: 1.5rem; }
+.portada .meta-portada { margin-top: 10px; font-size: 0.95rem; opacity: 0.92; }
+.migas { padding: 16px 0 0; font-size: 0.92rem; color: #666666; }
+.migas a { color: var(--verde); }
+.titulo-articulo { color: var(--verde-oscuro); font-size: clamp(1.6rem, 4vw, 2.3rem); line-height: 1.2; margin: 12px 0 8px; }
+.acciones-articulo { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 16px 0 4px; }
+.acciones-articulo .btn { text-decoration: none; display: inline-block; }
+.fav-grande { border: 2px solid var(--borde); border-radius: 10px; background: #ffffff; font-size: 1.8rem; padding: 4px 12px; }
+.fav-grande.activo { border-color: #c0392b; }
+#selector-numero { flex: 0 1 280px; padding: 11px 12px; border: 2px solid var(--borde); border-radius: 8px; font: inherit; background: #ffffff; }
+.volver { display: inline-block; margin: 18px 0 40px; text-decoration: none; }
+.pie p { margin: 4px 0; }
+.vacio { color: #666666; }
 </style>
 </head>
 <body>
 
 <header class="cabecera">
   <div class="contenedor">
-    <img src="/images/logo-ucm.png" alt="Universidad Internacional Cuba-México">
-    <div class="acciones">
-      <button id="btn-favoritos" class="btn btn-borde" type="button" hidden>Mis favoritos</button>
-      <div id="sesion" class="acciones"></div>
-    </div>
+    <a href="/" aria-label="Inicio del portal de revistas"><img src="/images/logo-ucm.png" alt="Universidad Internacional Cuba-México"></a>
+    <div class="acciones"><div id="sesion" class="acciones"></div></div>
   </div>
 </header>
 
-<section class="portada">
-  <div class="contenedor">
-    <h1>Horizontes</h1>
-    <p>Revista de Ciencias del Colegio de Estudios de Postgrados Cuba-México. Publicación semestral de acceso abierto y sin cargos por procesamiento ni publicación.</p>
-    <span class="insignia" id="numero">Cargando número...</span>
-  </div>
-</section>
-
-<main class="contenedor">
-  <noscript><p>Esta página necesita JavaScript para mostrar los artículos.</p></noscript>
-  <div class="controles">
-    <div class="fila">
-      <input id="buscar" type="search" placeholder="Buscar por título o autor..." aria-label="Buscar artículos">
-    </div>
-    <div class="chips" id="chips" aria-label="Filtrar por sección"></div>
-    <p id="aviso" role="status"></p>
-  </div>
-
-  <div class="rejilla" id="lista" aria-live="polite"></div>
-  <button id="mas" class="btn mas" type="button" hidden>Ver más artículos</button>
-</main>
+<div id="app">
+  <noscript><p class="contenedor">Esta página necesita JavaScript para mostrar las revistas y los artículos.</p></noscript>
+</div>
 
 <footer class="pie">
   <div class="contenedor">
-    <p><strong>Horizontes</strong>, Año 2026, Núm. 1, enero-junio de 2026 · ISSN 3122-4822</p>
-    <p>Colegio de Estudios de Postgrados Cuba-México · Calle Dolores 46, San Cristóbal Nexquipayac, Atenco, Estado de México, C.P. 56315</p>
-    <p><a href="https://www.uicm.edu.mx" target="_blank" rel="noopener">www.uicm.edu.mx</a> · revistahorizontesuicm@gmail.com</p>
+    <p><strong>Universidad Internacional Cuba-México</strong></p>
+    <p>Calle Dolores 46, San Cristóbal Nexquipayac, Atenco, Estado de México, C.P. 56315</p>
+    <p><a href="https://www.uicm.edu.mx" target="_blank" rel="noopener">www.uicm.edu.mx</a></p>
   </div>
 </footer>
-
-<dialog id="detalle" aria-labelledby="detalle-titulo">
-  <div class="dlg">
-    <div id="detalle-contenido"></div>
-    <div class="botones"><button id="detalle-cerrar" class="btn btn-borde" type="button">Cerrar</button></div>
-  </div>
-</dialog>
 
 <dialog id="auth" aria-labelledby="auth-titulo">
   <form id="auth-form" class="dlg">
@@ -277,7 +288,9 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
   'use strict';
 
   var API = '/api';
+  var app = document.getElementById('app');
   var estado = {
+    revista: null, numeros: [], numero: '',
     seccion: '', texto: '', pagina: 1, ultima: 1,
     soloFavoritos: false, favoritos: new Set(),
     token: null, usuario: null, modo: 'login'
@@ -293,11 +306,31 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
       else if (k.indexOf('on') === 0) nodo.addEventListener(k.slice(2), v);
       else nodo.setAttribute(k, v);
     });
-    for (var i = 2; i < arguments.length; i++) {
-      var hijo = arguments[i];
-      if (hijo !== null && hijo !== undefined && hijo !== '') nodo.append(hijo);
-    }
+    (function agregar(lista) {
+      lista.forEach(function (hijo) {
+        if (Array.isArray(hijo)) agregar(hijo);
+        else if (hijo !== null && hijo !== undefined && hijo !== '') nodo.append(hijo);
+      });
+    })(Array.prototype.slice.call(arguments, 2));
     return nodo;
+  }
+
+  function colorValido(c, respaldo) {
+    return /^#[0-9a-fA-F]{6}$/.test(c || '') ? c : respaldo;
+  }
+  // Cada revista puede tener sus colores; si no hay revista, se usan los de la UICM.
+  function aplicarColores(revista) {
+    var raiz = document.documentElement.style;
+    if (revista) {
+      raiz.setProperty('--verde', colorValido(revista.color, '#006633'));
+      raiz.setProperty('--dorado', colorValido(revista.accent, '#f0ae5b'));
+    } else {
+      raiz.removeProperty('--verde');
+      raiz.removeProperty('--dorado');
+    }
+  }
+  function etiquetaNumero(n) {
+    return 'Vol. ' + n.volume + ', Núm. ' + n.number + ' (' + n.year + ')';
   }
 
   // ---------- Sesión (el token se guarda en el navegador) ----------
@@ -340,9 +373,11 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
 
   var temporizadorAviso = null;
   function aviso(texto) {
-    $('aviso').textContent = texto || '';
+    var caja = $('aviso');
+    if (!caja) return;
+    caja.textContent = texto || '';
     clearTimeout(temporizadorAviso);
-    if (texto) temporizadorAviso = setTimeout(function () { $('aviso').textContent = ''; }, 6000);
+    if (texto) temporizadorAviso = setTimeout(function () { caja.textContent = ''; }, 6000);
   }
 
   // ---------- Aparición al hacer scroll ----------
@@ -359,9 +394,10 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
     else nodo.classList.add('visible');
   }
 
-  // ---------- Interfaz de sesión ----------
+  // ---------- Encabezado y sesión ----------
   function pintarSesion() {
     var caja = $('sesion');
+    if (!caja) return;
     caja.replaceChildren();
     if (estado.usuario) {
       caja.append(
@@ -371,8 +407,6 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
     } else {
       caja.append(el('button', { 'class': 'btn', type: 'button', onclick: function () { abrirAuth('login'); } }, 'Entrar'));
     }
-    $('btn-favoritos').hidden = !estado.usuario;
-    $('btn-favoritos').textContent = estado.soloFavoritos ? 'Ver todos' : 'Mis favoritos';
   }
 
   function abrirAuth(modo, mensaje) {
@@ -410,7 +444,7 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
       $('auth').close();
       pintarSesion();
       await cargarFavoritosIds();
-      cargarArticulos(true);
+      renderizar();
     } catch (e) {
       var texto = e.message;
       if (e.datos && e.datos.errors) texto = Object.values(e.datos.errors).flat().join(' ');
@@ -424,37 +458,7 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
     estado.favoritos = new Set();
     estado.soloFavoritos = false;
     pintarSesion();
-    cargarArticulos(true);
-  }
-
-  // ---------- Datos de la revista ----------
-  async function cargarNumero() {
-    try {
-      var r = await api('/issues');
-      var n = r.data[0];
-      if (n) $('numero').textContent = 'Vol. ' + n.volume + ', Núm. ' + n.number + ' · ' + (n.title || n.year);
-    } catch (e) { $('numero').textContent = ''; }
-  }
-
-  function marcarChips() {
-    document.querySelectorAll('#chips .filtro').forEach(function (b) {
-      b.classList.toggle('activo', b.getAttribute('data-slug') === estado.seccion);
-    });
-  }
-  function chip(slug, nombre) {
-    return el('button', {
-      'class': 'filtro', type: 'button', 'data-slug': slug,
-      onclick: function () { estado.seccion = slug; marcarChips(); cargarArticulos(true); }
-    }, nombre);
-  }
-  async function cargarSecciones() {
-    try {
-      var r = await api('/sections');
-      var caja = $('chips');
-      caja.replaceChildren(chip('', 'Todas'));
-      r.data.forEach(function (s) { caja.append(chip(s.slug, s.name)); });
-      marcarChips();
-    } catch (e) { aviso('No se pudieron cargar las secciones.'); }
+    renderizar();
   }
 
   async function cargarFavoritosIds() {
@@ -468,7 +472,103 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
     }
   }
 
+  // ---------- Enrutador: según la dirección se dibuja una vista ----------
+  function rutaActual() {
+    var partes = location.pathname.split('/').filter(Boolean);
+    if (partes.length === 0) return { vista: 'inicio' };
+    if (partes[0] === 'revistas' && partes.length === 2) return { vista: 'revista', slug: partes[1] };
+    if (partes[0] === 'revistas' && partes.length === 4 && partes[2] === 'articulos') {
+      return { vista: 'articulo', slug: partes[1], id: partes[3] };
+    }
+    return { vista: 'no' };
+  }
+
+  function renderizar() {
+    var r = rutaActual();
+    if (r.vista === 'inicio') return vistaInicio();
+    if (r.vista === 'revista') return vistaRevista(r.slug);
+    if (r.vista === 'articulo') return vistaArticulo(r.slug, r.id);
+    return vistaNoEncontrada('La dirección que buscas no existe.');
+  }
+
+  function vistaNoEncontrada(mensaje) {
+    document.title = 'Página no encontrada | Universidad Internacional Cuba-México';
+    aplicarColores(null);
+    app.replaceChildren(
+      el('section', { 'class': 'portada' }, el('div', { 'class': 'contenedor' },
+        el('h1', {}, 'No encontrado'),
+        el('p', {}, mensaje))),
+      el('main', { 'class': 'contenedor' },
+        el('a', { 'class': 'btn volver', href: '/' }, 'Ver todas las revistas'))
+    );
+  }
+
+  // ---------- Vista 1: todas las revistas ----------
+  function tarjetaRevista(j) {
+    var color = colorValido(j.color, '#f0ae5b');
+    var numeros = j.issues_count || 0;
+    return el('article', { 'class': 'card reveal', style: 'border-top-color:' + color },
+      el('h3', {}, el('a', { href: '/revistas/' + j.slug }, j.name)),
+      el('p', { 'class': 'meta-revista' },
+        el('span', {}, j.issn ? 'ISSN ' + j.issn : ''),
+        el('span', {}, numeros + (numeros === 1 ? ' número' : ' números'))),
+      el('p', { 'class': 'autores' }, j.description || '')
+    );
+  }
+
+  async function vistaInicio() {
+    document.title = 'Revistas | Universidad Internacional Cuba-México';
+    aplicarColores(null);
+    estado.revista = null;
+    app.replaceChildren(
+      el('section', { 'class': 'portada' }, el('div', { 'class': 'contenedor' },
+        el('h1', {}, 'Revistas UICM'),
+        el('p', {}, 'Publicaciones académicas de la Universidad Internacional Cuba-México. Acceso abierto, gratuito y sin cargos por publicar.'))),
+      el('main', { 'class': 'contenedor' },
+        el('h2', { 'class': 'subtitulo' }, 'Elige una revista'),
+        el('p', { id: 'aviso', role: 'status' }),
+        el('div', { 'class': 'rejilla', id: 'lista' }))
+    );
+    try {
+      var r = await api('/revistas');
+      var caja = $('lista');
+      if (!r.data.length) caja.append(el('p', { 'class': 'vacio' }, 'Todavía no hay revistas publicadas.'));
+      r.data.forEach(function (j) { var t = tarjetaRevista(j); caja.append(t); revelar(t); });
+    } catch (e) { aviso('No se pudieron cargar las revistas.'); }
+  }
+
+  // ---------- Vista 2: una revista (números, secciones, búsqueda y artículos) ----------
+  function chip(slug, nombre) {
+    return el('button', {
+      'class': 'filtro', type: 'button', 'data-slug': slug,
+      onclick: function () { estado.seccion = slug; marcarChips(); cargarArticulos(true); }
+    }, nombre);
+  }
+  function marcarChips() {
+    document.querySelectorAll('#chips .filtro').forEach(function (b) {
+      b.classList.toggle('activo', b.getAttribute('data-slug') === estado.seccion);
+    });
+  }
+  async function cargarSecciones() {
+    try {
+      var r = await api('/revistas/' + estado.revista.slug + '/secciones');
+      var caja = $('chips');
+      if (!caja) return;
+      caja.replaceChildren(chip('', 'Todas'));
+      r.data.forEach(function (s) { caja.append(chip(s.slug, s.name)); });
+      marcarChips();
+    } catch (e) { aviso('No se pudieron cargar las secciones.'); }
+  }
+
+  function pintarBotonFavoritos() {
+    var b = $('btn-favoritos');
+    if (!b) return;
+    b.hidden = !estado.usuario;
+    b.textContent = estado.soloFavoritos ? 'Ver todos los artículos' : 'Mis favoritos';
+  }
+
   function coincide(a) {
+    if (estado.revista && a.journal_slug && a.journal_slug !== estado.revista.slug) return false;
     var t = estado.texto.toLowerCase();
     var enSeccion = !estado.seccion || (a.section && a.section.slug === estado.seccion);
     var enTexto = !t || a.title.toLowerCase().indexOf(t) !== -1 ||
@@ -478,6 +578,7 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
 
   async function cargarArticulos(reiniciar) {
     var lista = $('lista');
+    if (!lista || !estado.revista) return;
     if (reiniciar) { estado.pagina = 1; lista.replaceChildren(); }
     try {
       var articulos, ultima = 1;
@@ -485,7 +586,8 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
         var rf = await api('/favorites');
         articulos = rf.data.filter(coincide);
       } else {
-        var p = new URLSearchParams({ page: estado.pagina });
+        var p = new URLSearchParams({ page: estado.pagina, journal: estado.revista.slug });
+        if (estado.numero) p.set('issue', estado.numero);
         if (estado.seccion) p.set('section', estado.seccion);
         if (estado.texto) p.set('search', estado.texto);
         var r = await api('/articles?' + p.toString());
@@ -499,33 +601,36 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
         revelar(t);
       });
       if (!lista.children.length) {
-        lista.append(el('p', { 'class': 'vacio' }, estado.soloFavoritos ? 'Aún no tienes artículos favoritos.' : 'No se encontraron artículos.'));
+        lista.append(el('p', { 'class': 'vacio' }, estado.soloFavoritos
+          ? 'Aún no tienes artículos favoritos en esta revista.'
+          : 'No se encontraron artículos con esos filtros.'));
       }
-      $('mas').hidden = estado.soloFavoritos || estado.pagina >= estado.ultima;
+      var mas = $('mas');
+      if (mas) mas.hidden = estado.soloFavoritos || estado.pagina >= estado.ultima;
     } catch (e) {
       aviso('No se pudieron cargar los artículos: ' + e.message);
     }
   }
 
   function tarjeta(a) {
-    var esFav = estado.favoritos.has(a.id);
-    var corazon = el('button', {
-      'class': 'fav' + (esFav ? ' activo' : ''), type: 'button',
-      'aria-pressed': String(esFav),
-      'aria-label': esFav ? 'Quitar de favoritos' : 'Agregar a favoritos',
-      onclick: function (ev) { ev.stopPropagation(); alternarFavorito(a.id, corazon); }
-    }, esFav ? '\u2665' : '\u2661');
-
-    return el('article', {
-      'class': 'card reveal', tabindex: '0',
-      onclick: function () { abrirDetalle(a.id); },
-      onkeydown: function (ev) { if (ev.key === 'Enter') abrirDetalle(a.id); }
-    },
+    var corazon = botonFavorito(a.id, estado.favoritos.has(a.id), 'fav');
+    var revista = a.journal_slug || estado.revista.slug;
+    return el('article', { 'class': 'card reveal' },
       el('span', { 'class': 'chip' }, a.section ? a.section.name : ''),
-      el('h3', {}, a.title),
+      el('h3', {}, el('a', { 'class': 'enlace-fuerte', href: '/revistas/' + revista + '/articulos/' + a.id }, a.title)),
       el('p', { 'class': 'autores' }, (a.authors || []).join(', ')),
       el('div', { 'class': 'pie-card' }, el('span', {}, a.start_page ? 'Pág. ' + a.start_page : ''), corazon)
     );
+  }
+
+  function botonFavorito(id, esFav, clase) {
+    var boton = el('button', {
+      'class': clase + (esFav ? ' activo' : ''), type: 'button',
+      'aria-pressed': String(esFav),
+      'aria-label': esFav ? 'Quitar de favoritos' : 'Agregar a favoritos',
+      onclick: function (ev) { ev.preventDefault(); ev.stopPropagation(); alternarFavorito(id, boton); }
+    }, esFav ? '♥' : '♡');
+    return boton;
   }
 
   async function alternarFavorito(id, boton) {
@@ -535,8 +640,9 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
       await api('/favorites/' + id, { method: esFav ? 'DELETE' : 'POST' });
       if (esFav) estado.favoritos.delete(id); else estado.favoritos.add(id);
       boton.classList.toggle('activo', !esFav);
-      boton.textContent = !esFav ? '\u2665' : '\u2661';
+      boton.textContent = !esFav ? '♥' : '♡';
       boton.setAttribute('aria-pressed', String(!esFav));
+      boton.setAttribute('aria-label', !esFav ? 'Quitar de favoritos' : 'Agregar a favoritos');
       boton.classList.remove('pop');
       void boton.offsetWidth;
       boton.classList.add('pop');
@@ -547,45 +653,145 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
     }
   }
 
-  async function abrirDetalle(id) {
+  async function vistaRevista(slug) {
+    if (!/^[a-z0-9-]+$/.test(slug)) return vistaNoEncontrada('Esa revista no existe.');
+    estado.seccion = ''; estado.texto = ''; estado.pagina = 1;
+
     try {
-      var r = await api('/articles/' + id);
-      var a = r.data;
-      var meta = '';
-      if (a.issue) {
-        meta = 'Vol. ' + a.issue.volume + ', Núm. ' + a.issue.number + ' (' + a.issue.year + ')';
-        if (a.start_page) meta += ' · Pág. ' + a.start_page;
+      estado.revista = (await api('/revistas/' + slug)).data;
+    } catch (e) {
+      return vistaNoEncontrada('No encontramos esa revista. Revisa la dirección o vuelve a la lista.');
+    }
+    try { estado.numeros = (await api('/revistas/' + slug + '/numeros')).data; }
+    catch (e) { estado.numeros = []; }
+
+    var j = estado.revista;
+    var ultimo = estado.numeros[0];
+    estado.numero = ultimo ? String(ultimo.id) : '';
+    estado.soloFavoritos = !!estado.usuario && new URLSearchParams(location.search).get('favoritos') === '1';
+    aplicarColores(j);
+    document.title = j.name + ' | Universidad Internacional Cuba-México';
+
+    var selector = el('select', {
+      id: 'selector-numero', 'aria-label': 'Elegir número',
+      onchange: function () { estado.numero = $('selector-numero').value; cargarArticulos(true); }
+    },
+      el('option', { value: '' }, 'Todos los números'),
+      estado.numeros.map(function (n) { return el('option', { value: String(n.id) }, etiquetaNumero(n)); })
+    );
+    selector.value = estado.numero;
+
+    var btnFav = el('button', {
+      id: 'btn-favoritos', 'class': 'btn btn-borde', type: 'button',
+      onclick: function () {
+        estado.soloFavoritos = !estado.soloFavoritos;
+        history.replaceState(null, '', estado.soloFavoritos ? location.pathname + '?favoritos=1' : location.pathname);
+        pintarBotonFavoritos();
+        cargarArticulos(true);
       }
-      var enlacePdf = (a.pdf_url && /^https?:\/\//i.test(a.pdf_url))
-        ? el('p', {}, el('a', { href: a.pdf_url, target: '_blank', rel: 'noopener' }, 'Abrir PDF'))
-        : '';
-      $('detalle-contenido').replaceChildren(
-        el('span', { 'class': 'chip' }, a.section ? a.section.name : ''),
-        el('h2', { id: 'detalle-titulo' }, a.title),
-        el('p', { 'class': 'autores' }, (a.authors || []).join(', ')),
-        el('p', { 'class': 'meta' }, meta),
-        el('p', {}, a.abstract || 'Resumen no disponible en esta versión.'),
-        enlacePdf
-      );
-      $('detalle').showModal();
-    } catch (e) { aviso(e.message); }
+    });
+
+    var portada = el('section', { 'class': 'portada' }, el('div', { 'class': 'contenedor' },
+      el('h1', {}, j.name),
+      el('p', {}, j.description || ''),
+      el('p', { 'class': 'meta-portada' }, [j.issn ? 'ISSN ' + j.issn : '', j.publisher || ''].filter(Boolean).join(' · ')),
+      el('span', { 'class': 'insignia' }, ultimo ? 'Último número: ' + etiquetaNumero(ultimo) : 'Próximamente')
+    ));
+
+    var principal = el('main', { 'class': 'contenedor' },
+      el('nav', { 'class': 'migas', 'aria-label': 'Ruta' },
+        el('a', { href: '/' }, 'Revistas'), ' › ', j.name),
+      el('div', { 'class': 'controles' },
+        el('div', { 'class': 'fila' },
+          selector,
+          el('input', { id: 'buscar', type: 'search', placeholder: 'Buscar por título o autor...', 'aria-label': 'Buscar artículos' }),
+          btnFav),
+        el('div', { 'class': 'chips', id: 'chips', 'aria-label': 'Filtrar por sección' }),
+        el('p', { id: 'aviso', role: 'status' })),
+      el('div', { 'class': 'rejilla', id: 'lista', 'aria-live': 'polite' }),
+      el('button', { id: 'mas', 'class': 'btn mas', type: 'button', onclick: function () { estado.pagina += 1; cargarArticulos(false); } }, 'Ver más artículos')
+    );
+
+    app.replaceChildren(portada, principal);
+    pintarBotonFavoritos();
+    $('mas').hidden = true;
+
+    var espera = null;
+    $('buscar').addEventListener('input', function () {
+      clearTimeout(espera);
+      espera = setTimeout(function () {
+        estado.texto = $('buscar').value.trim();
+        cargarArticulos(true);
+      }, 300);
+    });
+
+    await cargarSecciones();
+    cargarArticulos(true);
   }
 
-  // ---------- Eventos ----------
-  var espera = null;
-  $('buscar').addEventListener('input', function () {
-    clearTimeout(espera);
-    espera = setTimeout(function () {
-      estado.texto = $('buscar').value.trim();
-      cargarArticulos(true);
-    }, 300);
-  });
-  $('mas').addEventListener('click', function () { estado.pagina += 1; cargarArticulos(false); });
-  $('btn-favoritos').addEventListener('click', function () {
-    estado.soloFavoritos = !estado.soloFavoritos;
+  // ---------- Vista 3: un artículo, con su PDF original ----------
+  async function vistaArticulo(slug, id) {
+    if (!/^[a-z0-9-]+$/.test(slug) || !/^\d+$/.test(id)) return vistaNoEncontrada('Ese artículo no existe.');
+
+    var a;
+    try { a = (await api('/articles/' + id)).data; }
+    catch (e) { return vistaNoEncontrada('No encontramos ese artículo. Puede que haya sido retirado.'); }
+
+    var revista = a.journal_slug || slug;
+    var nombre = a.journal_name || 'Revista';
+    estado.revista = null;
+    document.title = a.title + ' | ' + nombre;
+    try { aplicarColores((await api('/revistas/' + revista)).data); }
+    catch (e) { aplicarColores(null); }
+
+    var corazon = botonFavorito(a.id, estado.favoritos.has(a.id), 'fav fav-grande');
+    var numero = a.issue ? etiquetaNumero(a.issue) : '';
+
+    var contenido = [];
+    if (a.pdf_url) {
+      // Se muestran las páginas originales de la revista, tal cual se publicaron.
+      contenido.push(el('iframe', { 'class': 'visor-pdf', src: a.pdf_url + '#view=FitH', title: 'PDF de ' + a.title }));
+    }
+    var fuente = a.body || a.abstract;
+    if (fuente) {
+      // Versión de texto, para leer en pantalla o con lector de pantalla.
+      contenido.push(el('details', { 'class': 'texto-plano' },
+        el('summary', {}, 'Leer como texto'),
+        fuente.split(/\n\n+/).map(function (parrafo) { return el('p', {}, parrafo); })
+      ));
+    }
+    if (!contenido.length) contenido.push(el('p', {}, 'Este artículo aún no tiene contenido disponible.'));
+
+    app.replaceChildren(el('main', { 'class': 'contenedor' },
+      el('nav', { 'class': 'migas', 'aria-label': 'Ruta' },
+        el('a', { href: '/' }, 'Revistas'), ' › ',
+        el('a', { href: '/revistas/' + revista }, nombre), ' › Artículo'),
+      el('div', { 'class': 'pie-card' }, el('span', { 'class': 'chip' }, a.section ? a.section.name : '')),
+      el('h1', { 'class': 'titulo-articulo' }, a.title),
+      el('p', { 'class': 'autores' }, (a.authors || []).join(', ')),
+      el('p', { 'class': 'meta-revista' },
+        el('span', {}, numero),
+        el('span', {}, a.start_page ? 'Pág. ' + a.start_page : '')),
+      el('div', { 'class': 'acciones-articulo' },
+        corazon,
+        a.pdf_url ? el('a', { 'class': 'btn', href: a.pdf_url, download: '' }, 'Descargar PDF') : '',
+        el('a', { 'class': 'btn btn-borde', href: '/revistas/' + revista }, 'Volver a la revista')),
+      el('p', { id: 'aviso', role: 'status' }),
+      contenido
+    ));
+  }
+
+  // ---------- Inicio ----------
+  (async function iniciar() {
+    leerSesion();
     pintarSesion();
-    cargarArticulos(true);
-  });
+    await cargarFavoritosIds();
+    pintarSesion();
+    try { await renderizar(); }
+    catch (e) { vistaNoEncontrada('Ocurrió un error al cargar la página. Intenta recargarla.'); }
+  })();
+
+  // Enlaces a otra revista, artículo o al inicio: se usan enlaces normales, así recargar siempre funciona.
   $('auth-form').addEventListener('submit', enviarAuth);
   $('auth-cerrar').addEventListener('click', function () { $('auth').close(); });
   $('auth-cambiar').addEventListener('click', function () {
@@ -593,16 +799,6 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
     $('auth-msg').textContent = '';
     pintarModoAuth();
   });
-  $('detalle-cerrar').addEventListener('click', function () { $('detalle').close(); });
-
-  // ---------- Inicio ----------
-  (async function iniciar() {
-    leerSesion();
-    pintarSesion();
-    await Promise.all([cargarNumero(), cargarSecciones(), cargarFavoritosIds()]);
-    pintarSesion();
-    cargarArticulos(true);
-  })();
 })();
 </script>
 </body>

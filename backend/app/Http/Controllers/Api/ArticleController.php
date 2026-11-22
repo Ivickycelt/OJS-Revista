@@ -27,6 +27,11 @@ class ArticleController extends Controller
             $consulta->whereHas('section', fn ($q) => $q->where('slug', $slug));
         }
 
+        if ($request->filled('journal')) {
+            $revista = $request->input('journal');
+            $consulta->whereHas('issue.journal', fn ($q) => $q->where('slug', $revista));
+        }
+
         if ($request->filled('issue')) {
             $consulta->where('issue_id', (int) $request->input('issue'));
         }

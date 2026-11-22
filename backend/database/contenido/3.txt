@@ -1,0 +1,263 @@
+Caracterización de las variables económicas de las tecnologías de producción de la cebada en México Characterization of the economic variables of barley production technologies in Mexico
+
+Ernest Yasser Núñez-Betancourt1*, Ángel Martín Padrón Pérez2, Carlos Ernesto Luquez Gaitán3 1* Doctor en Ciencias en Economía Agrícola. Profesor de la Universidad Politécnica de Texcoco.
+
+Posdoctorante en el Colegio de Postgraduados (Campus Montecillo) México https://orcid.org/0000-0002-5706-1854 * Autor para correspondencia E- mail: ernest.nunezbe@uptex.edu.mx 2 Estudiante de Licenciatura en Administración y Gestión de Empresas 3 Economista doctorado en Economía Agrícola Profesor de la Universidad Autónoma de Chapingo carlosluquezgaitan@gmail.com
+
+RESUMEN Lacebada (HordeumVulgare) es un cereal que aporta materia prima para la agroindustria de la cerveza y para la alimentación ganadera. La investigación tuvo como objetivo caracterizar las variables económicas de las tecnologías de producción de la cebada en México,analizandoladistribuciónyelcomportamiento de la superficie cosechada, del rendimiento, de la producción, de temporal y de riego. La superficie cosechada de temporal es mayor a la de riego y aporta una producción superior a la de riego, aunque inferior a la proporción de la superficie ocupada, reflejando un mayor rendimiento en la superficie cosechadaderiego.Asímismo,lastasasdecrecimiento de la superficie cosechada se explican por las tasas decrecimientodela superficiecosechadadetemporal y tasas de crecimiento de la producción se explican básicamente por las tasas de crecimiento de la producción de riego. La superficie cosechada es principalmentedetemporalylasuperficiedetemporal tiene altos niveles de superficie siniestrada, no cosechada.
+
+Palabras clave: superficie cosechada, rendimientos, producción, cebada, tasa de crecimiento Abstract:
+
+Barley (Hordeum vulgare) is a cereal that provides raw material for the agribusiness of beer and for livestock feeding.The research aimed to characterize
+
+the economic variables of the technologies of production of barley in Mexico, analyzing the distribution and behavior of the harvested area, yield and production, rainfed and irrigation. The area harvested from temporarily is larger than that of irrigation and provides higher production than irrigation, although less than the proportion of the occupied area, reflecting a higher yield in the harvested irrigated area. Likewise, the growth rates of the harvested area are explained by the growth rates of the rain-fed area harvested and the production growth rates are basically explained by the growth rates of the irrigation production. The harvested area is mainly temporary, and the temporal surface has high levels of sinister, unharvested surface. 1- Introducción La cebada (Hordeum Vulgare L.) ocupa el cuarto lugar en importancia dentro de los cereales en el mundo, después del trigo, el arroz y el maíz. Por su gran adaptación a diferentes climas y suelos, es un cultivo que se encuentra distribuido por todo el mundo; alrededor de 89 países producen la cebada, desde regiones subtropicales (África y Sudamérica) hasta regiones frías (Europa occidental y Europa oriental). Su amplia distribución y producción se concentrademaneraimportanteen Europa, ocupando el primer lugar como productor de cebada, con el 41.6% de la producción mundial (Langridge y Barr, 2003).
+
+La tecnología, la investigación y el desarrollo en la agricultura tienen como objetivo aumentar la productividad, la calidad y el cuidado de los cultivos, mejorando la eficiencia de los productos en elcampo.
+
+Una de las características de la agricultura moderna es la implementación de nuevas tecnologías que permitan hacer eficiente los procesos productivos y el manejo agrícola adecuado para cada cultivo, que permitan potencializar la producción (Pagani et al., 2009). 1.1. Importancia Los principales cereales cosechados en México son el maíz con una superficie sembrada de 6 941 miles de ha (87.8 %), el trigo con 565 miles de ha (6.3%), la cebada con 305 miles de ha (3.5%), la avena con 36.52 miles de ha (0.15 %) y el arroz con 36.7 miles de ha (0.54%).
+
+Con relación a la producción de estos cereales el maíz aporta 27,549.91 miles de t (86.6%), el trigo 3 476.02 miles de t (10.5%), la cebada 832 miles de t (2.13%), la avena 61,785.28 miles de t (0.3%) y el arroz 245.2 miles de t, el 0.8% (SIACON, 2023).
+
+El estado con mayor superficie cosechada es el estado de Hidalgo con 98,098 ha (30.7%), seguido de Tlaxcala con 52,252 ha (19.1%), Guanajuato con 37,524 ha (16%), Estado de México con 37,089 ha (11.1%), Puebla con 34,414 ha (8.6%), Chihuahua con 13,232 ha, Zacatecas con 5,755 ha (5%), Durango con
+
+5,281 ha (3.3%) y Baja California con 3,628 ha (1.8%), que en conjunto representan alrededor del 95.6% de la superficie total cosechada (SIACON, 2023).
+
+Losmayoresrendimientosdecebadafueronobtenidos en los principales estados productores, los cuales son Chihuahua con 6.8 t/ha, Michoacán con 6.4 t/ha, Querétaro con 6.2 t/ha, Jalisco con 4.8 t/ha, Guanajuato con 4.43 t/ha y Durango con 4.1 t/ha, ocupando los primeros lugares en rendimiento (SIACON, 2023).
+
+El principal estado en la producción de cebada en México es Hidalgo con 174,298.25 t (36.2%), seguido de Guanajuato con 166,335 t (20.8%), Chihuahua con 80,406 t (14.5%), Estado de México con 66,886 t (7.4%), Estos estados aportaron el 93.6% de la produccióntotaldeMéxicoenelaño2019(SIACON,2023). 1.2. Tecnologías de temporal y de riego.
+
+La tecnología aplicada al cultivo de la cebada presentaunagranimportanciatantoparalamodalidad de temporal como para la de riego, en ambas modalidades se puede observar que el uso de los fertilizantes, las transformaciones genéticas sobre las semillas, la incorporación de nuevas maquinarias y la anexión de nuevas formas de cultivar han propiciado avances para la producción de cebada. La urea es el fertilizante fundamental en la aportación de nitrógeno para la producción de la mayoría de los cereales, es el fertilizante nitrogenado de mayor uso a nivel mundial (Lema et al., 2017).
+
+El cultivo de la cebada se produce en condiciones de temporal y riego en México, contando ambas con características diferentes. En el caso del cultivo bajo condiciones de temporal se han incorporado diferentes tecnologías a la producción de cebada con base en estrategias de agricultura de conservación, siembra a doble hilera, biofertilización y adaptación de nuevas variedades para condiciones de temporal (Cabañas et al., 2004).
+
+En la modalidad de temporal se destaca la variedad de cebada Esmeralda, la cual se creó para valles altos. Es una especie cultivada abundantemente en áreas que dependen de las precipitaciones y
+
+La cebada (Hordeum Vulgare L) se utiliza en gran medida como materia prima para la elaboración de malta, para lo cual debe reunir las siguientes características: alto poder germinativo, granos de buencalibre, libres deimpurezasybajonivelproteico.
+
+Por otra parte, la cebada es una fuente importante de componentes favorables para la salud, posee vitaminas del grupo B, ácido fólico, colina y vitamina K, es importante fuente de potasio, magnesio y fósforo, con riqueza en oligoelementos: hierro, azufre, cobre, zinc, manganeso, cromo, selenio, yodo, molibdeno.
+
+Así mismo, los subproductos de la cebada se utilizan además para el consumo animal, como forraje para la alimentación y en la preparación del pienso para el ganado (Barrachina et al., 2008).
+
+experimentan condiciones de sequía y bajas temperaturas. La sequía puede mostrarse en una o varias etapas de su desarrollo durante la estación de crecimiento y las bajas temperaturas o heladas frecuentemente se presentan durante el llenado de grano. En estas condiciones, la cebada ofrece mayores ventajas para la producción de grano comparada con otras especies cultivadas, debido a su mayor adaptación a los diferentes climas y suelos (López y Richards, 1998).
+
+En los valles altos de la meseta central de México, estados de Hidalgo, Tlaxcala, Estado de México y Puebla, la producción de cebada maltera representa aproximadamente el 54% del total del territorio nacional y se lleva a cabo en condiciones de temporal en el ciclo primavera-verano (Islas y Ramírez, 2003).
+
+Otra condición bajo la cual se cultiva la cebada en México es la de riego, en la que se destaca una mayor productividad y control sobre la calidad del grano mediante un registro más exacto de la tierra, la mano de obra, el capital y la tecnología. La cebada bajo la modalidad de riego ha contado con nuevas tecnologíasparalaproducción,dandolugaravariedades sobresalientes como la Alina y Armida, con un mejoramiento genético intensivo y una nueva forma de siembra, el arreglo en surcos ha demostrado mejor aprovechamiento de agua y mejoría de labores culturales como control de malezas e insectos, plagas y enfermedades, fisiológicamente promueve tallos vigorosos y disminuye riesgo de acame, es compatible con sistemas de labranza de conservación y aumenta la producción (García et al., 2003). 1.3. Marco Teórico La producción es un proceso de transformación de factores en productos, a través de los factores productivos como es la tierra, la mano de obra, el capital y la tecnología (Troncoso, 2001).
+
+Se entiende por producción la adición de valor a un bien (producto o servicio) por efecto de una transformación. Producir es extraer o modificar los bienes con el objetivo de volverlos aptos para satisfacer ciertas necesidades de la sociedad (Tawifk y Chauvet, 1993).
+
+La producción es el acto intencional de producir algo útil y denota la generación tanto de bienes como de servicios. La finalidad de la producción es crear un producto que tenga valor agregado.
+
+Continuando en este margen de ideas, la función de producción es fácilmente identificable dentro de los sectores primarios y secundarios de la economía, dentro de tales actividades es necesario conocer el insumo, el producto y las operaciones de transformación (Riggs, 2001).
+
+La producción vista como sistema, es la serie de cambios graduales que sufre la materia prima utilizada por medio de un conjunto de operaciones de transformación previamente estandarizadas.
+
+Como la transformación de los materiales se cumple de forma progresiva, es posible que los mismos obedezcan a una clasificación de acuerdo a su flujo (Uribe 1999).
+
+La producción en sí misma no se podría concebir sin la interrelación entre los factores de producción, los cuales son los insumos que se utilizan para producir otros bienes o servicios. Así, pueden dividirse en cuatro: tierra, trabajo, capital y tecnología. Los productores transforman los factores de producción en bienes o servicios utilizando la tecnología que tienen disponible (Maldonado, 2009).
+
+La producción agrícola es el resultado de una acción progresiva o simultánea de diversos factores: la semilla, las labores de cultivo, los fertilizantes, el trabajo de la mano de obra, la tecnología aplicada a la producción, entre otros. Existen muchos factores que influyen de una u otra manera en la actividad productiva de una empresa, región o país, de tal manera, que algunas veces es necesario determinar cómo estos factores se relacionan para desarrollar alguna actividad específica (Maldonado, 2009).
+
+En el sector agrícola los factores productivos que se deben tener en cuenta como fijos son la tierra y el capital. Entre los factores variables tenemos la mano de obra, energía eléctrica, diésel, refracciones, semillas, fertilizantes, apoyos gubernamentales y uno de gran relevancia como es la tecnología, que en su conjunto determinan el valor de la producción.
+
+El agricultor buscará la mejor combinación de los factores productivos para conseguir el máximo de eficacia económica representada por el menor costo posible por unidad, cuando el productor varía uno de los factores y mantiene fijos los demás (Infante, 2016).
+
+Retomando el planteamiento de varios autores como Azofeifa, (1996); Troncoso, (2001); Krugman, (2006) la función de producción se define como una representación matemática de las actividades y los recursosutilizadosenundeterminadotiempomediantela transformación de los factores en productos (bienes o servicios), a partir de los conocimientos y técnicas con las que se combinan los factores productivos, aplicando así la tecnología. Cuánto mejor sea la tecnología más bienes se podrán conseguir con los mismos recursos.
+
+Los indicadores tecnológicos facilitan las mediciones de aspectos propios de las implementaciones tecnológicas en la agricultura. En las dos últimas décadas todos los avances en la agricultura han estado asociados al desarrollo tecnológico teniendo en cuenta las transformaciones genéticas de los cultivos, las nuevas maquinarias incorporadas a la agricultura y la transformación que han experimentado los sistemas tradicionales para cosechar (Sánchez, 2015). 2. Metodología 2.1. Fuentes de información y variables Las fuentes de información utilizadas son del Servicio de Información Agroalimentaria y Pesquera (SIAP) y del Sistema de Información Agroalimentaria de Consulta (SIACON) y las variables utilizadas son superficie sembrada, superficie cosechada, rendimiento, producción y precios, desagregados en total, temporal y riego (Cuadro 1).
+
+La tecnología es un sistema creado por un conjunto variado de fenómenos, herramientas, instrumentos, máquinas, organizaciones, métodos, técnicas, sistemas y la totalidad de todos estos factores y otros simi-
+
+lares, los cuales se pueden agrupar en tierra, capital, mano de obra y conocimientos (Winner, 1979).
+
+Cuadro 1. Variables de producción de la cebada en México, 1994-2023.
+
+Dónde: TCP%=Tasa de crecimiento por periodo en porcentaje; VF= Valor final; VI=Valor inicial.
+
+2.2. Indicadores y procedimientos de cálculo
+
+Tasa de crecimiento promedio anual. La tasa de crecimiento promedio anual se refiere al incremento porcentual promedio anual que tiene un valor determinado de cualquier variable. Si la tasa de crecimiento es positiva refleja crecimiento y si es negativa señala decrecimiento. El procedimiento de cálculo es el siguiente:
+
+Los indicadores y procedimientos de cálculo utilizados son el índice de siniestro, tasa de crecimiento anual, tasa de crecimiento por periodo, tasa de crecimiento acumulada y tasas de crecimiento promedio anual, de las variables superficie, rendimiento, producción y precios, total, temporal y riego (Cuadro 2).
+
+Índice de siniestro. El índice de siniestro mide la proporción de la superficie sembrada que registra pérdida total en el ciclo agrícola, que no es cosechada.
+
+El procedimiento de cálculo es el siguiente:
+
+SC -1 SS
+
+IS =
+
+(1)
+
+Donde: IS=Índice de siniestro (unidades); SC=Superficie cosechada (ha); SS=Superficie sembrada (ha); 1=Factor de descuento.
+
+Tasa de crecimiento anual. La tasa de crecimiento anual se refiere al incremento porcentual que tiene un valor determinado de un año a otro, de cualquier variable. Si la tasa de crecimiento es positiva refleja crecimiento y si es negativa señala decrecimiento.
+
+El procedimiento de cálculo es el siguiente:
+
+TC(an-1) - an% =
+
+Van
+
+( Van-1 )x 100
+
+(2)
+
+Dónde: TC (an-1)-an%= Tasa de crecimiento del año n-1 al año n en porcentaje; Van=Valor del año n; Van-1=Valor del año n-1.
+
+VF
+
+-1 x 100
+
+[( VI ) ]
+
+TCPA% =
+
+-1)x 100 (VF VI
+
+(4)
+
+Dónde: TCPA%=Tasa de crecimiento promedio anual en porcentaje; VF= Valor final; VI=Valor inicial; n=número de años.
+
+Tasa de crecimiento acumulada. La tasa de crecimiento acumulada se refiere al incremento que tiene un valor determinado en un periodo de tiempo respecto a un año base de cualquier variable.
+
+El procedimiento de cálculo es el siguiente:
+
+(
+
+)
+
+TCuac =TCb* 1+TCau
+
+(5)
+
+Dónde: TCuac=Tasa de crecimiento en unidades acumuladas; TCpu=Tasa de crecimiento base en unidades; TCau=Tasa de crecimiento actual en unidades.
+
+Cuadro 2. Indicadores de la producción de cebada en México, 1994-2023.
+
+Tasa de crecimiento por periodo. La tasa de crecimiento por periodo se refiere al incremento porcentual que tiene un valor determinado en un periodo de tiempo de cualquier variable. Si la tasa de crecimiento es positiva refleja crecimiento y si es negativa señala decrecimiento. El procedimiento de cálculo es el siguiente:
+
+TCP%=
+
+1/n
+
+(3)
+
+Gráfica 2. Índice de siniestro de la cebada en México, por riego y temporal (unidades).
+
+3. Resultados y discusión 3.1. Superficie cosechada y producción La superficie cosechada total de cebada fue de 357,994 hectáreas (100%), la superficie cosechada de temporal fue de 284,508 hectáreas (79.5%) y la superficie cosechada de riego fue de 73,487 hectáreas (20.5%); la producción total obtenida fue de 964,083 toneladas (100%), la producción en temporal fue de 551,452 (57.2%) y la producción de riego fue de 412,631 toneladas (42.8%).
+
+Gráfica 1. Superficie cosechada y producción total de la cebada en México, total, temporal y riego (%), 2023.
+
+Fuente: Elaborado con datos del SIACON (2023).
+
+3.3. Comportamiento de la producción, superficie
+
+cosechada y rendimiento La producción de cebada en 1994 fue de 315,049 toneladas y en 2019 de 964,083 toneladas, con una tasa de crecimiento por periodo de 206.0% y media anual de 4.6%; la superficie cosechada en 1994 y 2019 fue de 123,394 y 357,994 hectáreas, con una tasa de crecimiento por periodo de 190.1% y media anual de 4.4%; el rendimiento en 1994 y 2019 fue de 2.6 y 2.7 toneladas por hectárea, con una tasa de crecimiento por periodo de 5.5% y promedio anual de 0.2% (Cuadro 1 y gráfica 3).
+
+Fuente: Elaborado con datos del SIACON (2023).
+
+La superficiecosechada de temporal aporta un mayor volumen de producción, sin embargo, aunque la superficie cosechada de riego aporta un menor volumen de producción, la proporción aportada en la producción es mayor que la proporción observada en la superficie cosechada, reflejando una mayor productividad en las áreas de riego (Cuadro 1 y gráfica 1)
+
+Gráfica 3. Tasa de crecimiento acumulada de la producción, superficie cosechada y rendimiento de la cebada de México (unidades), 1994-2023.
+
+3.2. Índice de siniestro La superficie total siniestrada de 1994 a 2023 tuvo un rango de 0.0 a -0.2, de 0 a -20%; la superficie de temporal siniestrada fue de 0.0 a -0.3, de 0 a -30%; la superficie de riego siniestrada en general fue de cero, aunque hubo algunos años que se movió de 0.0 a -0.1, de 0 a -10%. Los índices de siniestro obtenidos reflejan que la superficie total siniestrada se explica en mayor proporción por la superficie de temporal siniestrada y en menor proporción por la superficie de riego siniestrada (Cuadro 2 y Gráfica 2).
+
+Fuente: Elaborado con datos del SIACON (2023).
+
+Los resultados obtenidos reflejan que el crecimiento de la producción se explica principalmente por el crecimiento de la superficie cosechada y en menor proporción por el incremento del rendimiento.
+
+3.4. Superficie cosechada total, temporal y riego La superficie cosechada de cebada de 1994 a 2019 fue de 123,394 y 357,994 hectáreas, con una tasa de crecimiento por periodo de 190.1% y promedio anual de 4.4%; la superficie cosechada de temporal de 1994 a 2019 fue de 86,134 y 284,508 hectáreas, con una tasa de crecimiento por periodo de 230.3% y promedio anual de 4.9%; la superficie cosechada de riego de 1994 a 2019 fue de 37,260 y 73,487 hectáreas, con una tasa de crecimiento por periodo de 97.2% y promedio anual de 2.8% (Cuadro 1 y gráfica 4) Gráfica 4. Tasa de crecimiento acumulada de la superficie cosechada de cebada en México, por riego y temporal (unidades), 1994-2023
+
+Gráfica 5. Tasa de crecimiento acumulada del rendimiento de cebada en México, total, riego y temporal (unidades), 1994-2023
+
+Fuente: Elaborado con datos del SIACON (2023).
+
+Lo anterior refleja que la tasa de crecimiento del rendimiento se explica en mayor proporción por las tasas de crecimiento del rendimiento de riego y en menor proporción por la tasa de crecimiento del rendimiento de temporal, lo que refleja mayor productividad en la tecnología de riego.
+
+Fuente: Elaborado con datos del SIACON (2023).
+
+Lo anterior señala que la tasa de crecimiento de la superficie cosechada se explica en mayor proporción por las tasas de crecimiento de la superficie cosechada de temporal y en menor proporción por la tasa de crecimiento de la superficie de riego. 3.5. Rendimiento promedio total, temporal y riego El rendimiento de cebada de 1994 a 2019 fue de 2.6 y 2.7 toneladas por hectáreas, con una tasa de crecimiento por periodo de 5.5% y promedio anual de 0.2%; el rendimiento de temporal de 1994 a 2019 fue de 1.7 y 1.9 toneladas por hectáreas, con una tasa de crecimiento por periodo de 12.8% y promedio anual de 0.5%; el rendimiento de riego de 1994 a 2019 fue de 4.5 y 5.6 toneladas por hectáreas, con una tasa de crecimiento por periodo de 25.2% y promedio anual de 0.9% (Cuadro 1 y gráfica 5)
+
+La producción de cebada de 1994 a 2019 fue de 315,049 y 964,083 toneladas, con una tasa de crecimiento por periodo de 206.0% y promedio anual de 4.6%; la producción de temporal de 1994 a 2019 fue de 147,802 y 551,452 toneladas, con una tasa de crecimiento por periodo de 273.1% y promedio anual de 5.4%; la producción de riego de 1994 a 2019 fue de 167,247 y 412,631 toneladas, con una tasa de crecimiento por periodo de 146.7% y promedio anual de 3.7% (Cuadro 1 y gráfica 6) Gráfica 6. Tasa de crecimiento acumulada de la produccióndecebadaenMéxico,porriegoytemporal (unidades), 1994-2023
+
+Fuente: Elaborado con datos del SIACON (2023).
+
+3.6. Comportamiento de la producción total, temporal y riego
+
+Lo anterior señala que la tasa de crecimiento de la producción se explica en mayor proporción por las tasas de crecimiento de la producción de temporal y en menor proporción por la tasa de crecimiento del rendimiento de riego. 3.7. Comportamiento del precio medio rural real El precio medio rural real de cebada de 1994 a 2023 fue de 680.8 y 614.1 pesos por tonelada, con una tasa de crecimiento por periodo de -9.8% y promedio anual de -0.4%; el precio medio rural real de temporal de 1994 a 2023 fue de 658.5 y 577.1 pesos por tonelada, con una tasa de crecimiento por periodo de -12.4% y promedio anual de -0.5%; el precio medio rural real de riego de 1994 a 2023 fue de 700.5 y 663.6 pesos por tonelada, con una tasa de crecimiento por período de -5.3% y promedio anual de -0.2% (Cuadro 1 y gráfica 8) Gráfica 8. Tasa de crecimiento acumulada del precio medio rural real de la cebada en México, por riego y temporal (unidades), 1994-2023
+
+Conclusiones Las tecnologías de producción del cultivo de la cebada en México son de temporal y de riego, por el tipo de humedad en que se realiza la producción.
+
+La tecnología de producción de temporal sufre mayores siniestros, debido a la fuerte dependencia de las condiciones climáticas, especialmente de la temporada de lluvias.
+
+La tecnología de producción de temporal de la cebada ocupa una mayor cantidad y proporción de la superficie cosechada y aporta una mayor cantidad y proporción de la producción, sin embargo, aunque la tecnología de producción de riego ocupa una menor cantidad y proporción de la superficie cosechada, aporta una mayor proporción de la producción con relación a la proporción de superficie ocupada, debido a que los rendimientos de la tecnología de riego son mayores que la tecnología de temporal.
+
+Las tasas de crecimiento promedio anual, por periodo y acumulada de la superficie cosechada se explica principalmente por las tasas de crecimiento de la superficie cosechada de temporal, mientras que las tasas de crecimiento anual, por periodo y acumulada de la producción se explica fundamentalmente por las tasas de crecimiento del rendimiento de la superficie cosechada de riego.
+
+Literatura citada
+
+Fuente: Elaborado con datos del SIACON (2023).
+
+Loanteriorseñalaquelatasadecrecimientonegativa del precio medio rural real se explica en mayor proporción por las tasas de crecimiento negativas del precio medio rural real de temporal y en menor proporción por la tasa de crecimiento negativa del precio medio rural real de riego, el pequeño diferencial se explica por el periodo de cosecha. Las tasas de crecimiento negativas del precio medio rural real reflejan que la inflación creció en mayor proporción que el precio.
+
+Azofeifa, V. A. (1996). Estimación de una función de producción: caso de Costa Rica. Banco Central de Costa Rica. División Económica. Departamento de Investigaciones Económicas.
+
+Recuperado de:
+
+Repositorioinvestigaciones.bccr.fi.cr.pdf Bragachini, M., Méndez, A., Scaramuzza, F., Vélez, J., Villarroel, D., Massigoge, J. (2008).
+
+Análisis del rendimiento y la calidad de la cebada cervecera en función de la profundidad de tosca en el perfil del suelo. Argentina: Instituto Nacional de Tecnología Agropecuaria, Recuperado de https://inta.gob.ar/sites/d Cabañas, B., Galindo, G., Mena, J., Medina, G. (2004).
+
+La siembra en surcos y corrugaciones con pileteo en Cebada maltera de temporal en Zacatecas. Centro de
+
+FAOSTAT. (2023). Base de datos estadísticos de la FAO.
+
+Recuperado el 15 de septiembre de 2023, Recuperado de: http://faostat3.fao.org/home/.
+
+García, RJJ; Gámez, VFP; Arreola, TJM; Zamora, DM; Solano, HS (2003). Producción de semilla de cebada maltera en surcos a doble hilera: calibración de sembradoras. INIFAP-CEBAJ.
+
+Celaya, Guanajuato. Folleto Técnico No 4. pp. 7 – 10. https://www.inifap.gob.mx Infante Franco, Fernando Saúl (2016). La importancia de los factores productivos y su impacto en las organizaciones agrícolas en León. Guanajuato México. EL ÁGORA USB [en linea1 6(2), 393-406 [fecha de Consulta 15 de Noviembre de 2020].
+
+ISSN:16578031. https://revistas.usb.edu.co/index.php/Agora/article/view/2343 Islas, J., Díaz, Z., y Ramírez, M. (2003). Costos de producción y rentabilidad de cebada en los valles altos de la mesa central de México. Agricultura Técnica en México, 3-10. https://www.inifap.gob.mx/Revistas/Agricultura_Tecnica/ Krugman, P. (2006). Introducción a la Economía.
+
+Microeconomía. Barcelona, España: Edit.
+
+Reverte S.A.
+
+Langridge, P. and Barr, A. R. (2003). Preface to better barley faster: the role of maker assisted selection.
+
+Australian Journal of Agrícola Research. 54:1-4. https://www.publish.csiro.au/cp/ARv54n1_ED Lema, A., Basantes, E., y Pantoja, J. (2017). Producción de Cebada (Hordeum vulgare L.) con urea normal y polimerizada. Agronomía Mesoamericana, 97-112. https://www.revistas.ucr.ac.cr/index.php/agromeso/article/view/28393
+
+Maldonado H. O. (2009). Análisis de la función de producción Cobb-Douglas y su aplicación en el sector productivo mexicano. Tesis Profesional.
+
+Chapingo. México. Meat Science, 89 (3) (2011), pp. 251-258. https://repositorio.chapingo.edu.mx/handle/20.500.12098/640 Pagani, A., H.E. Echeverría, P.A. Barbieri, y H.R. Sainz Rozas. (2009). Dosis óptima económica de nitrógeno enmaíz bajosiembradirecta enelsudeste Bonaerense. Informaciones Agronómicas. 39:14-19.
+
+Argentina.
+
+Riggs, L. Sistemas de Producción: planeación, análisis y control. Front Cover. James. Editorial Limusa S.A.
+
+De C.V., 2001 - Business & Economics - 709 pages.
+
+Sánchez Céspedes, J. M. (2015) Principales indicadores en ciencia, tecnología e innovación y su capacidad de medir el impacto de las políticas públicas. En R, Llamosa Villalba (Ed.).
+
+Revista Gerencia Tecnológica Informática, 14(39), 31-49. ISSN 1657-8236. https://revistas.usb.edu.co/index.php/Agora Sistema de Información Agroalimentaria de Consulta (SIACON). (2023). Agrícola estatal.
+
+México: SIAP-SADER. Recuperado de https://www.gob.mx/siap/documentos/siacon-ng-161430 Tawfik L, Alain M. Chauvel. (1993). Administración de la producción. Traducción de Jaime Gómez Mont Araiza. Pie de Imprenta, México: McGraw-Hill.
+
+Troncoso, J. L. (2001). Estimación de la función de producción del viñedo chileno de riego.
+
+Universidad de Talca. Departamento de Economía Agraria. Talca, Chile. https://www.utalca.cl Uribe, L. (2001). Los sistemas de producción, planeación, análisis y control. Editorial Limusa S.A. De C.V.
+
+Winner, L. (1979). Tecnología Autónoma. Barcelona:
+
+Editorial Gustavo Gili, S.A.
+
+López, C. and Richards, R.A. (1994). Variation in temperate cereals in rained environments. I.
+
+Grain yield, biomass and agronomic characteristics.
+
+Field Crops Research, 37(1), 51-62. https://www.sciencedirecte.com/science/article/ pii/0378429094900213
+
+Investigación Regional Norte Centro. Campo Experimental Zacatecas. Folleto para Productores 29. Calera de V. R., Zac. México. 41 p. Disponible en: https://www.inifap.gob.mx

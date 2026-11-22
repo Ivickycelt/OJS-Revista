@@ -4,11 +4,19 @@ use App\Http\Controllers\Api\ArticleController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\FavoriteController;
 use App\Http\Controllers\Api\IssueController;
+use App\Http\Controllers\Api\JournalController;
 use App\Http\Controllers\Api\SectionController;
 use App\Http\Middleware\EnsureUserIsAdmin;
 use Illuminate\Support\Facades\Route;
 
-// ---------- Públicas (cualquiera puede leer la revista) ----------
+// ---------- Revistas (públicas) ----------
+Route::get('/revistas', [JournalController::class, 'index']);
+Route::get('/revistas/{journal}', [JournalController::class, 'show']);
+Route::get('/revistas/{journal}/secciones', [JournalController::class, 'sections']);
+Route::get('/revistas/{journal}/numeros', [JournalController::class, 'issues']);
+Route::get('/revistas/{journal}/numeros/{issue}', [JournalController::class, 'issue'])->scopeBindings();
+
+// ---------- Públicas (consulta general, compatibles con versiones anteriores) ----------
 Route::get('/issues', [IssueController::class, 'index']);
 Route::get('/issues/{issue}', [IssueController::class, 'show']);
 Route::get('/sections', [SectionController::class, 'index']);

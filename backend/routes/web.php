@@ -2,5 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Portal público de la revista (usa la API REST desde el navegador)
-Route::view('/', 'portal');
+// El portal dibuja la vista correcta según la dirección:
+// inicio (todas las revistas), una revista o un artículo.
+Route::get('/', fn () => view('portal'));
+Route::get('/revistas/{revista}', fn () => view('portal'));
+Route::get('/revistas/{revista}/articulos/{articulo}', fn () => view('portal'));

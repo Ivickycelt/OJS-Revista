@@ -1,0 +1,245 @@
+Un Análisis Exhaustivo del Desempeño de los Fondos de Inversión en el Mercado Financiero Mexicano (2010-2023) A Comprehensive Analysis of the Performance of Investment Funds in the Mexican Financial Market (2010-2023)
+
+Rita Ávila Romero Profesora-investigadora de la Escuela Superior de Economía IPN riavilar@ipn.mex
+
+RESUMEN Esta investigación tiene como objetivo evaluar el desempeñode losfondos deinversiónenelmercado financiero mexicano durante el periodo de 2010 a 2023, mediante el análisis de su rentabilidad y riesgo. Para ello, se recopilaron datos de los fondos de inversión disponibles en la base de datos de la Asociación Mexicana de Intermediarios Bursátiles y se utilizó la metodología del índice de Sharpe para evaluar su rentabilidad ajustada por riesgo. Los resultados indican que, los fondos de inversión en México han tenido un desempeño favorable en términos de rentabilidad, con un promedio anual de 7.5%. También se observó una alta volatilidad y riesgo asociados a estas inversiones, lo que sugiere que los inversionistas deben ser conscientes de los riesgos y tener una estrategia adecuada de diversificación de su portafolio. Finalmente, los fondos de inversión en renta variable tuvieron un mejor desempeño en términos de rentabilidad que los fondos de inversión en renta fija, lo que sugiere que los inversionistas podrían beneficiarse de una mayor exposición a la renta variable en sus portafolios.
+
+Palabras Clave Rentabilidad, Riesgo, Cartera de inversión, Diversificación, Gestión deinversiones.
+
+Abstract This research aims to evaluate the performance of mutual funds in the Mexican financial market during
+
+Arianna Yanet Porcayo Albino Mtra. en Economía. Escuela Superior de Comercio y Administración, Instituto Politécnico Nacional. ariannaporcayo@hotmail.com
+
+the period from 2010 to 2023, by analyzing their profitability and risk. For this purpose, data was collected from the investment funds available in the database of the Mexican Association of Securities Intermediaries(AMIB)andtheSharperatiomethodology was used to evaluate their risk-adjusted profitability.
+
+The results indicate that during the study period, mutual funds in Mexico have had a favorable performance in terms of profitability, with an annual average of 7.5%. However, high volatility and risk associated with these investments were also observed, suggesting that investors should be aware of the risks and have an adequate portfolio diversification strategy. Equity mutual funds were found to perform better in terms of returns than fixed income mutual funds, suggesting that investors could benefit from greater exposure to equities in their portfolios.
+
+Keywords Profitability, Risk, Investment portfolio, Diversification, Investment management.
+
+I- Introducción En el mundo financiero actual, existen diversas opciones para los inversionistas que buscan obtener ganancias a través de sus inversiones. Una de las opciones más populares son los fondos de inversión, abiertos o mutuos (Flores Garcia Zavaleta Mihaic, 2016), que permiten a los inversionistas acceder a una amplia gama de instrumentos financieros con
+
+Norma Alejandra Martínez Piñas Licenciada y Egresada y titulada de la Licenciatura en Economía
+
+el objetivo de maximizar su rentabilidad. Sin embargo, como con cualquier tipo de inversión, los fondos de inversión están sujetos a riesgos y su desempeño puede variar significativamente.
+
+De lo anterior, Zapata Martínez y Piamonte Palacio (2020) en un estudio cuyo objetivo fue evaluar mediante una aproximación econométrica, el impacto generado por el shadow banking sobre la ratio de solvencia del sistema bancario colombiano como consecuencia de las fluctuaciones en los fondos de inversión de riesgo alto, moderado y bajo. Los resultados mostraron que existe regulación parcial o inexistente en los fondos de inversión de riesgo alto, moderado y bajo. Por esta razón, es importante que los inversionistas comprendan cómo evaluar el desempeño de los fondos de inversión en el mercado financiero, específicamente en cuanto a su rentabilidad y riesgo.
+
+Lo anterior permite plantear el siguiente objetivo: analizar el desempeño de los fondos de inversión ofrecidos en el mercado financiero mexicano durante el período 2010-2023, evaluando sus rendimientos y riesgos en comparación con los mercados de Bolsa y CETES, con el fin de identificar las mejores prácticas y estrategias de inversión utilizadas por las entidades financieras para maximizar los rendimientos y minimizar el riesgo de sus inversiones. Además, se buscará determinar si existen oportunidades de mejora en la estructura de los fondos de inversión para ofrecer mejores rendimientos a los inversionistas, y se analizará la posible diferencia de desempeño entre los fondos de inversión de instituciones financieras mexicanas y extranjeras.
+
+Por lo tanto, la investigación se dividirá en varios capítulos. En el primer capítulo se presentará una revisión de la literatura existente sobre los fondos de inversión, la rentabilidad y el riesgo, con el objetivo de proporcionar un marco teórico sólido para la 4 investigación. En el segundo capítulo se describirá el diseño de la investigación, incluyendo el tipo de investigación, la población y muestra de estudio, las técnicas y herramientas de recolección de datos y el plan de análisis de datos.
+
+En el tercer capítulo se presentarán los resultados de la investigación, que incluirán un análisis de los indicadores financieros utilizados para evaluar el desempeño de los fondos de inversión y un análisis de los riesgos asociados con este tipo de inversión.
+
+En el cuarto capítulo se discutirán las conclusiones de la investigación y se proporcionarán recomendaciones para los inversionistas sobre cómo evaluar y comparar los fondos de inversión.
+
+Este estudio proporcionará una guía útil para los inversionistas que deseen evaluar el desempeño de los fondos de inversión en el mercado financiero, específicamente en cuanto a su rentabilidad y riesgo.
+
+Se espera que los resultados de esta investigación sean de gran utilidad para los inversionistas y para la comunidad académica interesada en el estudio de los fondos de inversión y el mercado financiero.
+
+II- Fundamentación Teórica y empírica En el ámbito financiero, el desempeño de los fondos de inversión es una de las principales preocupaciones de los inversores. La selección de un portafolio de inversión adecuado es fundamental para lograr los objetivos financieros y minimizar el riesgo. Para lograrlo, es necesario analizar las diferentes teorías y enfoques que se han desarrollado en el campo de la gestión de inversiones.
+
+Entre las teorías que se abordarán en este artículo se encuentran la teoría de la selección de portafolio de Harry Markowitz, la teoría de la eficiencia del mercado de Eugene Fama, la teoría de la agencia y la teoría de la cartera de inversión. Estas teorías son fundamentales para entender la dinámica del mercado financiero y para comprender cómo se toman las decisiones de inversión.
+
+En cuanto a la teoría de la selección de portafolio de Harry Markowitz, esta propone que la diversificación es clave para minimizar el riesgo de una cartera de inversión sin 5 sacrificar la rentabilidad. En cambio, la teoría de la eficiencia del mercado de Eugene Fama sostiene que los precios de los activos financieros reflejan toda la información disponible en el mercado, por lo que no es posible obtener rendimientos superiores al promedio del mercado.
+
+Por su parte, la teoría de la agencia analiza las
+
+relaciones entre los agentes económicos en el mercadoylateoríadelacarteradeinversiónseenfoca en la selección de activos y la diversificación de la cartera.
+
+Este artículose basa en un sustentoteórico sólido para analizar el desempeño de los fondos de inversión en el mercado financiero mexicano.
+
+La comprensión de estas teorías es fundamental para la selección de una estrategia de inversión adecuada y para tomar decisiones informadas y acertadas en el mercado.
+
+covarianza o la correlación para evaluar la relación entre ellos.
+
+II. 1 Harry Markowitz y la teoría de la selección de portafolio Esta teoría sugiere que los inversores pueden maximizar sus retornos y minimizar los riesgos al seleccionar una cartera diversificada de activos.
+
+Para construir una cartera de inversión óptima, Markowitz propone que los inversores deben buscar activos que tengan una baja correlación entre sí, de modo que los movimientos de un activo compensen los movimientos de otro activo, reduciendo así el riesgo total de la cartera. En otras palabras, la diversificación es clave.
+
+La teoría moderna de cartera, también conocida como teoría de la selección de portafolio, es una metodología que busca minimizar el riesgo de una cartera de inversión sin sacrificar la rentabilidad. La idea central es que no se debe invertir todo el dinero en un solo activo o en un solo sector, sino que se debe diversificar la inversión en diferentes clases de activos y en diferentes sectores, de modo que los riesgos específicos de cada activo se compensen entre sí.
+
+Markowitz fue el primero en introducir el concepto de la "varianza" como medida de riesgo en el análisis de la selección de portafolio. Según su teoría, los inversores no deberían solo buscar el rendimiento más alto posible, sino también evaluar la volatilidad y la correlación de los activos en los que invierten.
+
+La teoría de la selección de portafolio de Markowitz propone que los inversores pueden crear una cartera de inversión óptima que maximice la rentabilidad y minimice el riesgo. Para hacer esto, los inversores deben analizar la relación entre la rentabilidad esperada y el riesgo de cada activo, utilizando la
+
+En pocas palabras, la teoría de la selección de portafolio de Markowitz es una metodología para minimizar el riesgo de una cartera de inversión sin sacrificar la rentabilidad. Propone que los inversores deben diversificar su inversión en diferentes clases de activos y en diferentes sectores, utilizando la covarianza o la correlación para evaluar la relación entre ellos.
+
+Markowitz fue el primero en introducir el concepto de la "varianza" como medida de riesgo en el análisis de la selección de portafolio, lo que revolucionó la forma en que los inversores analizan y seleccionan los activos en los que invierten.
+
+II.2 William Sharpe y la teoría del modelo de valoración de activos financieros (CAPM) Esta teoría sugiere que el rendimiento esperado de un activo financiero debe estar en función de su riesgo sistemático, medido por su beta.
+
+El modelo de valoración de activos financieros, conocido como CAPM (por sus siglas en inglés), es una teoría desarrollada por William Sharpe en 1964.
+
+El CAPM es una herramienta utilizada para evaluar el riesgo y la rentabilidad de un activo financiero y determinar su precio justo de mercado.
+
+El CAPM parte de la premisa de que el rendimiento de un activo financiero está compuesto por dos
+
+Harry Markowitz es un economista estadounidense, nacido en Chicago en 1927, quien recibió el Premio Nobel de Economía en 1990 por su trabajo en la teoría moderna de cartera. Su enfoque revolucionó la forma en que los inversores analizan y seleccionan los activos en los que invierten.
+
+La covarianza mide cómo varían dos activos juntos en el tiempo. Si dos activos tienen una alta covarianza, significa que están altamente correlacionados y que se mueven juntos en la misma dirección. Si los activos tienen una baja covarianza, significa que están poco correlacionados y que sus movimientos son independientes entre sí.
+
+componentes: el rendimiento libre de riesgo y el rendimiento adicional que se obtiene al asumir riesgos. De esta forma, el modelo establece que el rendimiento esperado de un activo financiero es igual a la tasa libre de riesgo más una prima de riesgo ajustada al riesgo sistemático del activo.
+
+La tasa libre de riesgo es la tasa de rendimiento que se obtiene al invertir en un activo financiero que no presenta riesgo alguno, como, por ejemplo, un bono del Tesoro de Estados Unidos. La prima de riesgo ajustada al riesgo sistemático es la tasa de rendimiento adicional que se espera obtener por invertir en un activo financiero que presenta cierto riesgo, y se ajusta en función del riesgo sistemático del activo en cuestión.
+
+El riesgo sistemático es el riesgo que no puede ser eliminado mediante la diversificación de la cartera, es decir, el riesgo que está asociado con el mercado en general y no con un activo en particular. En cambio, el riesgo no sistemático es el riesgo específico de unactivo que puede ser eliminado mediante la diversificación de la cartera.
+
+El CAPM establece que la prima de riesgo ajustada al riesgo sistemático es proporcional al coeficiente beta del activo financiero. El coeficiente beta mide la sensibilidad del activo financiero a las fluctuaciones del mercado. De esta forma, cuanto mayor sea el coeficiente beta de un activo financiero, mayor será su riesgo sistemático y mayor será su prima de riesgo ajustada al riesgo sistemático.
+
+El modelo CAPM es ampliamente utilizado en el mercado financiero para determinar el precio justo de los activos financieros y para evaluar la rentabilidad y el riesgo de una cartera de inversión. La teoría de Sharpe ha sido objeto de numerosas críticas y controversias, principalmente relacionadas con la validez de la premisa de que el mercado es eficiente y refleja toda la información disponible.
+
+En conclusión, la teoría del modelo de valoración de activos financieros de William Sharpe, conocido como CAPM, es una herramienta importante utilizada en la gestión de inversiones. El modelo establece que el rendimiento esperado de un activo financiero
+
+está compuesto por una tasa libre de riesgo más una prima de riesgo ajustada al riesgo sistemático del activo. El modelo CAPM se basa en la premisa de que el mercado es eficiente y refleja toda la información disponible. A pesar de las críticas y controversias que ha generado, el CAPM sigue siendo ampliamente utilizado en el mercado financiero para determinar el precio justo de los activos financieros y para evaluar la rentabilidad y el riesgo de una cartera de inversión.
+
+II.3 Eugene Fama y la teoría de la eficiencia del mercado Esta teoría sugiere que los precios de los activos financieros reflejan toda la información disponible en el mercado, por lo que es difícil para los inversores obtener retornos superiores al promedio.
+
+La teoría de la eficiencia del mercado es una teoría desarrollada por Eugene Fama en la década de 1960, que se ha convertido en una de las teorías más influyentes en la economía financiera. La teoría establece que los precios de los activos financieros reflejan toda la información disponible en el mercado y que, por lo tanto, es imposible obtener beneficios por encima del promedio del mercado a largo plazo.
+
+En otras palabras, la teoría de la eficiencia del mercado sostiene que el mercado es perfectamente eficiente y que los precios de los activos financieros reflejan toda la información disponible. Esto significa que no es posible ganar de manera consistente más que el promedio del mercado mediante la identificación de acciones subvaluadas o sobrevaluadas, ya que el mercado ya ha tenido en cuenta toda la información disponible y ha fijado los precios en consecuencia.
+
+La teoría de la eficiencia del mercado se divide en tres formas: la forma débil, la forma semifuerte y la forma fuerte. La forma débil sostiene que los precios de los activos financieros reflejan toda la información histórica del mercado, como el precio y el volumen de las transacciones anteriores. La forma semifuerte sostiene que los precios de los activos financieros reflejan toda la información pública disponible, como noticias, informes financieros y datos económicos.
+
+Finalmente, la forma fuerte sostiene que los precios
+
+de los activos financieros reflejan toda la información pública y privada disponible, incluyendo la información privilegiada.
+
+potencial de crecimiento tendrán un rendimiento superior a largo plazo, ya que el valor de la empresa aumentará con el tiempo.
+
+La teoría de la eficiencia del mercado ha sido objeto de numerosas críticas y controversias, especialmente por parte de los inversores activos que buscan obtener beneficios por encima del promedio del mercado mediante la identificación de acciones subvaluadas o sobrevaluadas. Sin embargo, la teoría ha sido respaldada por numerosos estudios empíricos que han demostrado que es muy difícil para los inversores obtener beneficios consistentes en el mercado.
+
+Lynch sostiene que los inversores deben buscar empresas que tengan un historial de crecimiento constante en sus ingresos y ganancias, así como empresas que tengan un gran potencial de crecimiento en el futuro debido a tendencias del mercado o a cambios en el entorno económico.
+
+Lynch también recomienda a los inversores que busquenempresasquetenganunaventajacompetitiva sostenible, como una marca fuerte o una patente, ya que esto ayudará a la empresa a mantener su posición en el mercado y a seguir creciendo en el futuro.
+
+II.4 Peter Lynch y la teoría de la inversión en crecimiento Esta teoría sugiere que los inversores pueden obtener altos rendimientos invirtiendo en empresas que tienen un fuerte potencial de crecimiento a largo plazo.
+
+Peter Lynch es un legendario inversor y gerente de fondos de inversión que se hizo famoso por haber liderado el Magellan Fund de Fidelity Investments, uno de los fondos de inversión más exitosos de todos los tiempos. Lynch fue un defensor de la inversión en crecimiento, una estrategia que se centra en la inversión en empresas que tienen un gran potencial decrecimiento en el futuro.
+
+La teoría de la inversión en crecimiento sostiene que los inversores deben buscar empresas que tengan un gran potencial de crecimiento en el futuro, en lugar de centrarse en empresas con valoraciones atractivas o en empresas que generen altos dividendos.
+
+Según esta teoría, las empresas que tienen un gran
+
+La teoría de la inversión en crecimiento se basa en la premisa de que el crecimiento es la clave para generar retornos a largo plazo. Si una empresa es capaz de crecer constantemente en el tiempo, el valor de la empresa también aumentará, y los inversores que compraron acciones de la empresa a un precio bajo verán un retorno significativo en el futuro. Además, la teoría de la inversión en crecimiento sostiene que los inversores no deben preocuparse por la valoración de la empresa a corto plazo, ya que el valor de la empresa aumentará con el tiempo a medida que la empresa siga creciendo.
+
+La teoría de la inversión en crecimiento ha sido objeto de numerosas críticas y controversias. Una de las críticas más comunes es que la inversión en crecimiento se centra demasiado en el futuro y no tiene en cuenta los fundamentos de la empresa, como la valoración y los fundamentos financieros.
+
+También se argumenta que la inversión en crecimiento es una estrategia de alto riesgo, ya que las empresas de crecimiento pueden verse afectadas negativamente por cambios en el entorno económico o por la competencia.
+
+Sin embargo, la teoría de la inversión en crecimiento ha sido respaldada por numerosos estudios empíricos que han demostrado que las empresas de crecimiento han superado consistentemente a las empresas de valor y a las empresas que pagan dividendos a largo plazo. Además, muchos de los inversores más exitosos
+
+En conclusión, la teoría de la eficiencia del mercado desarrollada por Eugene Fama establece que los precios de los activos financieros reflejan toda la información disponible en el mercado y que es imposible obtener beneficios por encima del promedio del mercado a largo plazo. La teoría se divide en tres formas: la forma débil, la forma semifuerte y la forma fuerte, cada una de las cuales sostiene que los precios de los activos financieros reflejan diferentes tipos de información disponible. La teoría ha sido objeto de numerosas críticas y controversias, pero ha sido respaldada por numerosos estudios empíricos.
+
+de la historia, incluyendo a Warren Buffett, han sido defensores de la inversión en crecimiento.
+
+II.5 Benjamin Graham y la teoría de la inversión en valor Esta teoría sugiere que los inversores pueden obtener altos rendimientos invirtiendo en empresas que cotizan a precios por debajo de su valor intrínseco.
+
+Benjamin Graham es considerado el padre de la inversión en valor y es uno de los inversores más influyentes de todos los tiempos. Su enfoque de inversión, que se centra en encontrar empresas subvaluadas, ha sido utilizado por muchos inversores exitosos y se ha convertido en una de las teorías más importantes en el mundo de las finanzas.
+
+La teoría de la inversión en valor de Graham se basa en la idea de que las acciones pueden estar infravaloradas o sobrevaloradas en relación con su valor intrínseco. Graham argumentó que la mayoría de los inversores se enfocan en el precio de las acciones en lugar de en el valor de la empresa subyacente. En su libro "The Intelligent Investor", Graham escribió que, en el corto plazo, el mercado es una máquina de votar, pero en el largo plazo, es una máquina de pesar. En otras palabras, Graham creía que, en el corto plazo, los precios de las acciones pueden fluctuar en función de factores emocionales o eventos imprevistos, pero en el largo plazo, el valor intrínseco de una empresa se reflejará en su precio de mercado.
+
+Para encontrar empresas subvaluadas, Graham utilizó una serie de técnicas de análisis fundamental. Graham creía que el análisis fundamental era la clave para encontrar empresas subvaluadas y que el análisis técnico era una pérdida de tiempo. En su libro "Security Analysis", Graham y su coautor David Dodd describieron la idea de que las empresas deben ser analizadas en términos de su valor intrínseco.
+
+La inversión en valor de Graham implica buscar empresas que estén infravaloradas en relación con su valor intrínseco y luego comprarlas con la intención de mantenerlas durante un período prolongado de tiempo. Graham también defendió la idea de diversificar la cartera de inversión y utilizar una estrategia de "compra y retención".
+
+En su libro "The Intelligent Investor", Graham escribió que el inversor exitoso es aquel que puede resistir la tentación de vender cuando los precios son altos y comprar cuando los precios son bajos.
+
+En resumen, la teoría de la inversión en valor de Graham es una estrategia de inversión que se centra en la búsqueda de empresas subvaluadas y la inversión a largo plazo. La filosofía de Graham se basa en la idea de que los inversores deben enfocarse en el valor intrínseco de una empresa y no solo en el precio de sus acciones. Su enfoque ha sido utilizado por muchos inversores exitosos en todo el mundo y sigue siendo una de las teorías más importantes en el mundo de las finanzas.
+
+II.6 John Bogle y la teoría del índice de fondos de inversión Esta teoría sugiere que los inversores pueden obtener altos rendimientos invirtiendo en un fondo de inversión que replique un índice bursátil, en lugar de tratar de superar el rendimiento del mercado.
+
+John C. Bogle, fundador de Vanguard Group, fue uno de los principales defensores de la inversión pasiva a través de los fondos indexados. Su teoría, conocida como la teoría del índice, se basa en la idea de que la mayoría de los inversores no pueden superar consistentemente al mercado y, por lo tanto, deberían seguir un enfoque de inversión pasivo en lugar de intentar seleccionar valores individuales o intentar hacer predicciones sobre el mercado.
+
+El enfoque de inversión pasivo se basa en el seguimiento de un índice de referencia del mercado, como el S&P 500, en lugar de intentar superar al mercadoatravésdelaseleccióndevaloresindividuales o la toma de decisiones de mercado. Los fondos indexados replican el rendimiento de un índice de mercado al invertir en las mismas empresas que conforman ese índice, lo que permite a los inversores obtener una rentabilidad similar a la del mercado sin tener que preocuparse por la selección de valores individuales.
+
+La teoría del índice de Bogle se basa en tres premisas principales: 1. La mayoría de los inversores no pueden superar consistentemente al mercado.
+
+La primera premisa se basa en la idea de que los mercados son eficientes y que la información sobre los valores individuales se refleja en los precios de mercado. Esto significa que cualquier intento de superar al mercado a través de la selección de valores individuales o el timing del mercado es poco probable que tenga éxito de manera consistente.
+
+La segunda premisa se basa en la idea de que los fondos activos tienen mayores costos que los fondos indexados. Los fondos activos suelen tener mayores costos de gestión, ya que requieren análisis de investigación y toma de decisiones más activa en la selección de valores individuales. Los fondos indexados, por otro lado, simplemente replican un índice de mercado, lo que reduce los costos de investigación y toma de decisiones.
+
+La tercera premisa se basa en la evidencia empírica de que los fondos indexados tienen una rentabilidad similar o superior a los fondos activos. Los estudios muestran que la mayoría de los fondos activos no superan consistentemente al mercado y que los fondos indexados tienen una rentabilidad similar o superior a los fondos activos después de ajustar por costos.
+
+La teoría del índice de Bogle ha sido respaldada por numerosos estudios y ha llevado a un aumento en la popularidad de los fondos indexados en los últimos años. Los fondos indexados han demostrado ser una forma eficiente y rentable de invertir en el mercado de valores, y se han convertido en una opción atractiva para los inversores que buscan una forma simple y eficaz de invertir en el mercado de valores.
+
+En México, la distribución de activos en los fondos de inversión sigue estando mayormente concentrada en tres gestoras, las cuales acumulan más del 50 por ciento del total. BBVA, BlackRock y SAM son las principales operadoras, representando conjuntamente el 52.16% de los activos circulantes en los mercados financieros del país.
+
+BBVAmantienesuposicióncomolíder enelmercado de fondos, ostentando el 22.87% de los activos totales, seguido por BlackRock con el 19.43%. La gestora SAM ocupa el tercer lugar con el 9.86% de los activos, mientras que Banorte se encuentra en la cuarta posición con el 8.70%. El quinto lugar está ocupado por Actinver, que administra el 6.46% de los activos.
+
+Gráfica 1. Participación en Activos de Fondos:
+
+Principales Gestoras en el Mercado Mexicano
+
+Fuente: El economista con datos de la AMIB III- Metodología Para llevar a cabo una evaluación exhaustiva del desempeño de los fondos de inversión en el mercado financiero mexicano durante el período 2010-2023, se emplearon diversos índices que abordan distintas variables críticas. Estos índices proporcionan una visión integral de la liquidez, diversificación, costos, riesgo y tamaño de los fondos, permitiendo una comprensión profunda de su funcionamiento. A continuación, se detallan los índices utilizados y sus respectivos propósitos:
+
+III.1. Índice de Rotación: - Propósito: Evaluar la liquidez de los activos. - Método de Cálculo: Se calcula dividiendo el volumen total de operaciones del fondo entre su tamaño. - Interpretación: Un índice de rotación elevado sugiere una mayor liquidez, indicando que los activos se compran y venden con frecuencia.
+
+III. 2. Índice de Herfindahl Hirschman: - Propósito: Evaluar la diversificación de los activos. - Método de Cálculo: Se obtiene sumando los cuadrados de las participaciones de mercado de cada activo en el fondo.
+
+2. Los fondos de inversión activos tienen mayores costos que los fondos indexados. 3. Los fondos indexados tienen una rentabilidad similar o superior a los fondos activos.
+
+- Interpretación: Un índice más bajo indica mayor diversificación, mientras que un índice más alto sugiere mayor concentración en pocos activos.
+
+III. 3. Índice de Gastos Totales: - Propósito: Evaluar comisiones y costos. - Método de Cálculo: Se calcula dividiendo los gastos totales entre el valor total de activos administrados. - Interpretación: Un índice más bajo indica costos operativos relativamente bajos en comparación con el tamaño del fondo.
+
+III. 4. Índice de Volatilidad de IPC: - Propósito: Evaluar la volatilidad. - Método de Cálculo: Representa la desviación estándar de los rendimientos del IPC en un período específico. - Interpretación: Un índice de volatilidad más alto indica mayor variabilidad en los rendimientos y, por ende, un mayor riesgo.
+
+III. 5. Índice de Tamaño de Activos (ASSETSIZE): - Propósito: Evaluar el tamaño del fondo de inversión. - Método de Cálculo: Representa el valor total de activos administrados por el fondo. - Interpretación: Un índice más alto indica un fondo más grande en términos de activos bajo gestión.
+
+La aplicación conjunta de estos índices proporciona una evaluación completa y detallada de múltiples aspectos clave de los fondos de inversión, brindando una base sólida para comprender su rendimiento y estructura en el contexto del mercado financiero mexicano. De acuerdo con Chiatchoua y Neme Castillo (2022) este tipo de investigación es bibliográfico-documental, donde el nivel de investigación es descriptico, de corte transversal y de diseño no experimental.
+
+proporcionada por la Comisión Nacional del Sistema del Ahorro para el Retiro (Consar) a El Economista a través de la Plataforma Nacional de Transparencia (PNT) revela que las afores han mostrado un mayor interés en la adquisición de ETFs, que representan el 10.99% del total de los activos, con un valor de 625,070 millones de pesos al cierre de junio.
+
+Esteenfoquediversificadoabarca34países,incluyendo a México, entre los 52 países autorizados por la Consar, además de Hong Kong y algunas regiones recientemente añadidas. Se mencionan países como Alemania, Australia, Austria, Brasil, Canadá, Chile, China, Corea, España, Estados Unidos, Finlandia, Francia, India, Irlanda, Israel, Italia, Japón, Países Bajos, Reino Unido, Singapur, Sudáfrica, Suecia, Suiza, Tailandia, Taiwán, Bélgica, Colombia, Dinamarca, Eurozona, Global, Hong Kong, Malasia, México, Noruega, Nueva Zelanda, Perú, Polonia, Región Asia Pacífico y Región Europea, según el documento proporcionado por la Consar.
+
+Además de los ETFs, las afores también han invertido en 27 Fondos Mutuos por un total de 63,894 millones de pesos, representando el1.1% deltotal administrado.
+
+En el mismo período, adquirieron seis Mandatos de Inversión por un total de 63,894 millones de pesos, equivalente al 0.7% del total. Guillermo Zamarripa, presidente de la Asociación Mexicana de Afores (Amafore), destacó que estas inversiones se realizan con un análisis detallado por parte del Centro de Análisis Especializado (CAE) de la Asociación para asegurar el cumplimiento de los requisitos regulatorios.
+
+Gráfica 2. Rendimiento del fondo FT-LIQU vs Fondos en México de Deuda Corto Plazo.
+
+IV- Análisis de los resultados Las administradoras de fondos para el retiro (afores), a través de las sociedades de inversión especializadas en fondos para el retiro (siefores), tienen la posibilidad de invertir los fondos de los trabajadores en renta variable, renta fija o índices inmobiliarios en 52 países mediante ETFs (Exchange Traded Funds), Fondos Mutuos, Mandatos de Inversión y la adquisición directa de acciones. La información
+
+En este análisis se compara el desempeño del FT-LIQU BF1 contra la categoría local de fondos de deuda de corto plazo similares en el mercado mexicano. Los activos subyacentes son instrumentos de deuda de corto plazo.
+
+Vector y Franklin Templeton se han asociado para desarrollar un portafolio de renta variable global y diversificado con temáticas múltiples. La líder de soluciones de inversión para América de Franklin Templeton, Lisa Wang, fue la encargada de crear el portafolio NETGEN para Vector. Este fondo incluye ETFs y/o acciones de sectores innovadores como Robótica e Inteligencia Artificial, Ciberseguridad, Fintech, Cloud Computing, Blockchain, Generación y Almacenamiento de Energía, Innovación en Salud, entre otros, además de empresas centradas en la Sustentabilidad.
+
+El objetivo principal de este fondo multitemático de renta variable global, diseñado en colaboración con Pablo Torroella, director general adjunto de operaciones de Vector Casa de Bolsa y Franklin Templeton, es proporcionar a los inversionistas en México unasolución que abarque las megatendencias y oportunidades de interés mundial. Según Hugo Petricioli, Regional Manager Mexico & Central America en Franklin Templeton, hay un apetito del público por activos y portafolios novedosos, y los instrumentos financieros relacionados con las megatendencias tienen un gran potencial de crecimiento.
+
+El fondo utiliza el indicador de riesgo patentado de Franklin Templeton Investment Solutions para identificar cambios en los entornos del mercado y ajustar la cartera entre posiciones defensivas y agresivas según sea necesario. La estrategia de NEXTGEN permitirá a los inversionistas acceder a instrumentos de renta variable flexibles, lo que implica que el fondo está preparado para invertir en el mercado de acciones durante movimientos alcistas y protegerse durante movimientos bajistas.
+
+Cantú Delgado, presidente ejecutivo de Vector Empresas y director general de Vector Casa de Bolsa, destacó la visión de servicio al cliente y la innovación de Vector, buscando participar activamente en las grandes tendencias que transformarán las economías y sociedades en el futuro. Por otro lado, Pablo Torroella, director general adjunto de Operaciones de Vector Casa de Bolsa y diseñador del producto, expresó su entusiasmo por la alianza con Franklin Templeton, uno de los gestores de inversiones más grandes del mundo.
+
+Este fondo se enfoca en nuevas formas de inversión para las nuevas generaciones, abarcando temas como innovación, energías limpias, industria de baterías eléctricas, autos eléctricos, cuidado del agua, inteligencia artificial y robótica, entre otros.
+
+Conclusiones Invertir en renta fija se presenta como una de las opciones más destacadas para el año 2023.
+
+Las tasas se encuentran en niveles altamente atractivos, marcando una tendencia que no se ha observado en los últimos 20 años. Especialistas sugieren la participación en carteras que ofrezcan protección contra la inflación.
+
+El fondo de inversión FT-LIQU, gestionado por Franklin Templeton, ha sido distinguido por quinto año consecutivo con el premio al mejor fondo de inversión de deuda de corto plazo por Morningstar.
+
+Hugo Petricioli, director regional de México y Centroamérica de la institución financiera, destaca en una entrevista con El Economista la importancia de comprender la política monetaria en un entorno donde incluso los banqueros centrales no tienen certeza sobre el futuro.
+
+La cartera de FT-LIQU, completamente gubernamental y enfocada en instrumentos mexicanos, ha logrado posicionarse como el mejor fondo de deuda de corto plazo en México gracias a su capacidad para seleccionar los instrumentos adecuados. Luis Gonzali, CFA, y Co-director de Inversiones en Franklin Templeton Investments, comenta sobre la necesidad de luchar por cada punto base de rendimiento dada la limitada paleta de opciones.
+
+Fuente: Morningstar. Rendimientos netos anualizados, calculados del 30 de abril de 2018 al 30 de abril de 2023, expresados en Pesos (MXN), correspondientes a los últimos 5 años.
+
+En la actualidad, el fondo FT-LIQU representa el 65% de los activos de los fondos en México, reflejando la inclinación de las personas hacia productos de liquidez.Petriciolienfatizalaimportanciadecomenzar con instrumentos de liquidez de bajo riesgo, preferiblemente calificados como triple A, y aconseja buscar asesoramiento de distribuidores con el producto disponible.
+
+En cuanto a las tasas de interés, se destaca que este año se caracteriza por la rentabilidad de los bonos, estando en un punto donde las tasas son atractivas y parece que se acerca al final de un ciclo alcista.
+
+Aunque hay tres escenarios posibles en la inversión en tasas, se resalta la importancia de identificar aquellos donde el inversionista pueda obtener rendimientos atractivos.
+
+La coyuntura actual en Udibonos se presenta como única en México, ya que han pagado más que los Cetes y que el dólar. Según Petricioli, invertir en Udibonos es una excelente opción para aquellos que desean obtener rendimientos atractivos. Aunque la inversión en renta fija a menudo se percibe como destinada a personas adineradas o institucionales, Gonzali señala que existen plataformas con accesos económicos, haciendo hincapié en que la coyuntura actual es especialmente propicia para invertir en renta fija a corto, mediano y largo plazo. La renta fija ofrece tasas muy atractivas, inéditas en las últimas dos décadas.
+
+Referencias • Baks, K. P., Metrick, A., y Wachter, J. (2001). Should investors avoid all actively managed mutual funds? A study in Bayesian performance evaluation. The Journal of Finance, 56(1), 45-85. • Beaver, W. y Landsman, W. R. (1981). Note on the behavior of residual security returns for winner and loser portfolios. Journal of Accounting and Economics, 3(1), 233-241.
+
+• Buchanan, J.R. (2006). An Undergraduate Introduction to Financial Mathematics. World Scientific Publishing Company. • Chiatchoua, C y Neme Castillo, O. (2022). Análisis de las políticas públicas aplicadas en la ciudad de México ante el COVID-19. (2022). Gestionar:
+
+Revista De Empresa Y Gobierno, 2(2), 41-56. https://doi.org/10.35622/j.rg.2022.02.003 • Flores Garcia, Claudia Alejandra; Zavaleta Mihaic, Nadir Gabriel (2016).“Análisis del desempeño de los fondos mutuos en Bolivia en comparación con el desempeño de los fondos mutuos en Chile, Argentina y Perú”. Perspectivas, Año 19 – Nº 38 – noviembre 2016. pp. 45-84. • Grinblatt, M., Titman, S., y Wermers, R. (1995).
+
+Momentum investment strategies, portfolio performance, and herding: A study of mutual fund behavior. The American Economic Review, 85(5), 1088-1105. • Hull, John C. (2006). Options, Futures and Other Derivatives. Eighth Edition, Pearson Prentice Hall. • Merril L. (2006). Credit Derivatives HandBook – A Guide to Single-Name and Index CDS Products, 1. • Venegas-Martínez, F. (2008). Riesgos financieros y económicos. Cengage Learning Editores. • Wilmott, P. (2000). Paul Wilmott on quantitative finance, John Wiley Sons Ltd, England. 2. • Zapata Martínez, J. E; Piamonte Palacio, A. M. (2020).
+
+Shadow Banking en los fondos de inversión Revista Perspectiva Empresarial, 7(1), 123-139. https://www. redalyc.org/articulo.oa?id=672271536009 • Zheng, L. (1999). Is money smart? A study of mutual fund investors’ fund selection ability. The Journal of Finance, 54(3), 901-933.
+
+• Brown, R. (1828).“A Brief Account on the Particles Contained in the Pollen of Plants; and on the General Existence of Active Molecules in Organic and Inorganic Bodies". Edinburgh New Philosophical Journal, 358-371.

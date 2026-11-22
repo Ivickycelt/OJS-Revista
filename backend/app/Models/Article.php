@@ -13,6 +13,7 @@ class Article extends Model
         'section_id',
         'title',
         'abstract',
+        'body',
         'start_page',
         'pdf_url',
         'is_published',
