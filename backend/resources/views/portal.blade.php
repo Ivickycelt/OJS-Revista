@@ -238,6 +238,20 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
 .vacio { color: #666666; }
 /* ---------- Portadas de artículos ---------- */
 .portada-tarjeta { display: block; width: calc(100% + 36px); max-width: none; margin: -18px -18px 4px; height: 210px; object-fit: cover; object-position: top; border-radius: 12px 12px 0 0; background: #f4f4f4; }
+/* ---------- Página de artículo (estilo de revista) ---------- */
+.articulo { max-width: 820px; padding-bottom: 24px; }
+.articulo .migas { font-size: 0.9rem; }
+.seccion-articulo { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #8a5a00; margin: 18px 0 6px; }
+.articulo h1.titulo-articulo { font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.9rem, 4.4vw, 2.7rem); line-height: 1.18; color: #111111; margin: 0 0 14px; }
+.autores-articulo { font-size: 1.02rem; color: #333333; margin: 0 0 8px; }
+.datos-articulo { font-size: 0.9rem; color: #666666; margin: 0 0 18px; }
+.articulo .acciones-articulo { margin: 14px 0 26px; }
+.articulo section h2 { font-family: Georgia, "Times New Roman", serif; font-size: 1.35rem; color: var(--verde-oscuro); margin: 28px 0 10px; }
+.bloque-resumen p { font-family: Georgia, "Times New Roman", serif; font-size: 1.05rem; line-height: 1.7; }
+.texto-articulo p { font-family: Georgia, "Times New Roman", serif; font-size: 1.05rem; line-height: 1.75; color: #1d1d1d; }
+.pdf-articulo { margin-top: 30px; }
+.articulo .volver { margin-top: 30px; }
+@media print { .cabecera, .acciones-articulo, .migas, .pie, .volver, .visor-pdf { display: none !important; } }
 </style>
 </head>
 <body>
@@ -747,41 +761,52 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
     try { aplicarColores((await api('/revistas/' + revista)).data); }
     catch (e) { aplicarColores(null); }
 
-    var corazon = botonFavorito(a.id, estado.favoritos.has(a.id), 'fav fav-grande');
     var numero = a.issue ? etiquetaNumero(a.issue) : '';
+    var autores = (a.authors || []).join(', ');
+    var parrafos = (a.body || '').split(/\n\n+/).filter(Boolean);
 
-    var contenido = [];
-    if (a.pdf_url) {
-      // Se muestran las páginas originales de la revista, tal cual se publicaron.
-      contenido.push(el('iframe', { 'class': 'visor-pdf', src: a.pdf_url + '#view=FitH', title: 'PDF de ' + a.title }));
-    }
-    var fuente = a.body || a.abstract;
-    if (fuente) {
-      // Versión de texto, para leer en pantalla o con lector de pantalla.
-      contenido.push(el('details', { 'class': 'texto-plano' },
-        el('summary', {}, 'Leer como texto'),
-        fuente.split(/\n\n+/).map(function (parrafo) { return el('p', {}, parrafo); })
-      ));
-    }
-    if (!contenido.length) contenido.push(el('p', {}, 'Este artículo aún no tiene contenido disponible.'));
+    var corazon = botonFavorito(a.id, estado.favoritos.has(a.id), 'fav fav-grande');
 
-    app.replaceChildren(el('main', { 'class': 'contenedor' },
+    var copiar = el('button', {
+      'class': 'btn btn-borde', type: 'button',
+      onclick: function () {
+        var original = copiar.textContent;
+        navigator.clipboard.writeText(location.href).then(function () {
+          copiar.textContent = 'Enlace copiado';
+          setTimeout(function () { copiar.textContent = original; }, 2000);
+        }).catch(function () { aviso('No se pudo copiar el enlace.'); });
+      }
+    }, 'Copiar enlace');
+
+    var imprimir = el('button', { 'class': 'btn btn-borde', type: 'button', onclick: function () { window.print(); } }, 'Imprimir texto');
+
+    var cuerpo = el('main', { 'class': 'articulo contenedor' },
       el('nav', { 'class': 'migas', 'aria-label': 'Ruta' },
-        el('a', { href: '/' }, 'Revistas'), ' › ',
-        el('a', { href: '/revistas/' + revista }, nombre), ' › Artículo'),
-      el('div', { 'class': 'pie-card' }, el('span', { 'class': 'chip' }, a.section ? a.section.name : '')),
+        el('a', { href: '/revistas/' + revista }, 'Números'), ' / ', numero),
+      a.section ? el('p', { 'class': 'seccion-articulo' }, a.section.name) : '',
       el('h1', { 'class': 'titulo-articulo' }, a.title),
-      el('p', { 'class': 'autores' }, (a.authors || []).join(', ')),
-      el('p', { 'class': 'meta-revista' },
-        el('span', {}, numero),
-        el('span', {}, a.start_page ? 'Pág. ' + a.start_page : '')),
+      autores ? el('p', { 'class': 'autores-articulo' }, autores) : '',
+      el('p', { 'class': 'datos-articulo' }, [nombre, numero, a.start_page ? 'Pág. ' + a.start_page : ''].filter(Boolean).join(' · ')),
       el('div', { 'class': 'acciones-articulo' },
-        corazon,
-        a.pdf_url ? el('a', { 'class': 'btn', href: a.pdf_url, download: '' }, 'Descargar PDF') : '',
-        el('a', { 'class': 'btn btn-borde', href: '/revistas/' + revista }, 'Volver a la revista')),
+        el('a', { 'class': 'btn', href: '#texto' }, 'Ir al texto'),
+        a.pdf_url ? el('a', { 'class': 'btn btn-borde', href: a.pdf_url, download: '' }, 'Descargar PDF') : '',
+        copiar,
+        imprimir,
+        corazon),
       el('p', { id: 'aviso', role: 'status' }),
-      contenido
-    ));
+      a.abstract ? el('section', { 'class': 'bloque-resumen' }, el('h2', {}, 'Resumen'), el('p', {}, a.abstract)) : '',
+      parrafos.length
+        ? el('section', { 'class': 'texto-articulo', id: 'texto' }, el('h2', {}, 'Texto completo'),
+            parrafos.map(function (p) { return el('p', {}, p); }))
+        : el('p', { id: 'texto' }, 'Este artículo aún no tiene texto disponible.'),
+      a.pdf_url ? el('section', { 'class': 'pdf-articulo' },
+        el('h2', {}, 'Páginas originales'),
+        el('p', { 'class': 'meta-revista' }, 'Así se publicó en la revista.'),
+        el('iframe', { 'class': 'visor-pdf', src: a.pdf_url + '#view=FitH', title: 'PDF de ' + a.title })) : '',
+      el('a', { 'class': 'btn btn-borde volver', href: '/revistas/' + revista }, 'Volver a la revista')
+    );
+
+    app.replaceChildren(cuerpo);
   }
 
   // ---------- Inicio ----------

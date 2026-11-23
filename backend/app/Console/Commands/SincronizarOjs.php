@@ -71,7 +71,7 @@ class SincronizarOjs extends Command
             $articulo = Article::updateOrCreate(
                 ['issue_id' => $numero->id, 'title' => $titulo],
                 [
-                    'section_id' => $seccion->id,
+                    'section_id' => $this->seccionDeOjs($registro, $revista)->id,
                     'abstract' => $resumen,
                     'is_published' => true,
                 ]
@@ -91,6 +91,34 @@ class SincronizarOjs extends Command
         $this->info("Artículos importados desde OJS: {$importados}");
 
         return self::SUCCESS;
+    }
+
+    // Códigos de sección que OJS envía en el setSpec (p. ej. horizontes:EDIT)
+    private const CODIGOS_SECCION = [
+        'EDIT' => 'editorial',
+        'COM' => 'comunicacion-breve',
+        'ORIG' => 'articulos-originales',
+        'REV' => 'articulo-de-revision',
+        'TES' => 'tesis-de-egresados',
+    ];
+
+    // Usa la sección que OJS asignó al artículo; si no la reconoce, usa "Artículos originales".
+    private function seccionDeOjs(\SimpleXMLElement $registro, Journal $revista): Section
+    {
+        $registro->registerXPathNamespace('oai', 'http://www.openarchives.org/OAI/2.0/');
+
+        foreach ($registro->xpath('./oai:header/oai:setSpec') ?: [] as $codigo) {
+            $partes = explode(':', (string) $codigo);
+            $slug = self::CODIGOS_SECCION[$partes[1] ?? ''] ?? null;
+
+            if ($slug !== null) {
+                return Section::where('journal_id', $revista->id)->where('slug', $slug)->firstOrFail();
+            }
+        }
+
+        return Section::where('journal_id', $revista->id)
+            ->where('slug', 'articulos-originales')
+            ->firstOrFail();
     }
 
     // Devuelve todos los valores de un campo Dublin Core, sin espacios sobrantes.
