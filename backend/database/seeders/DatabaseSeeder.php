@@ -8,16 +8,24 @@ use App\Models\Issue;
 use App\Models\Section;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // ---- Usuarios de demostración (cambiar las contraseñas en producción) ----
+        // ---- Usuarios de demostración ----
+        // Las contraseñas se leen de .env (DEMO_ADMIN_PASSWORD, DEMO_LECTOR_PASSWORD).
+        // Si no existen, se genera una aleatoria y se muestra en consola (solo esta vez).
+        $passAdmin = env('DEMO_ADMIN_PASSWORD') ?: Str::random(16);
+        $passLector = env('DEMO_LECTOR_PASSWORD') ?: Str::random(16);
+        if (! env('DEMO_ADMIN_PASSWORD') || ! env('DEMO_LECTOR_PASSWORD')) {
+            $this->command?->warn("Contraseñas de demo generadas: admin@horizontes.test = {$passAdmin} | lector@horizontes.test = {$passLector}");
+        }
         User::forceCreate([
             'name' => 'Administrador',
             'email' => 'admin@horizontes.test',
-            'password' => 'Admin1234!',
+            'password' => $passAdmin,
             'role' => 'admin',
             'email_verified_at' => now(),
         ]);
@@ -25,7 +33,7 @@ class DatabaseSeeder extends Seeder
         User::forceCreate([
             'name' => 'Lector de prueba',
             'email' => 'lector@horizontes.test',
-            'password' => 'Lector1234!',
+            'password' => $passLector,
             'role' => 'lector',
             'email_verified_at' => now(),
         ]);
