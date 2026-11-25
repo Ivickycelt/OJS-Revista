@@ -2,7 +2,7 @@
 
 repositorio
 
-\# Revista Horizontes (UICM)
+\# Revista Horizontes
 
 
 

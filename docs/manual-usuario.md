@@ -1,4 +1,4 @@
-# Manual de usuario — Revista Horizontes (UICM)
+# Manual de usuario — Revista Horizontes
 
 Este manual explica, paso a paso, cómo publicar un artículo y cómo consultarlo en el portal y en la app móvil.
 

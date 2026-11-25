@@ -1,4 +1,4 @@
-# Manual técnico — Revista Horizontes (UICM)
+# Manual técnico — Revista Horizontes
 
 ## 1. Arquitectura
 

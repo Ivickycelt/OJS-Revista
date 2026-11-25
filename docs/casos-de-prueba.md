@@ -1,4 +1,4 @@
-# Casos de prueba — Revista Horizontes (UICM)
+# Casos de prueba — Revista Horizontes
 
 Fecha de la última revisión: 23 de noviembre de 2026.
 Estado: **OK** = probado y funciona · **Pendiente** = falta probarlo.
@@ -19,4 +19,4 @@ Estado: **OK** = probado y funciona · **Pendiente** = falta probarlo.
 | 12 | App: listar revistas, números y artículos | Abrir la app con Expo Go | Navegación completa sin errores | Pendiente |
 | 13 | App: abrir PDF | Entrar a un artículo y pulsar *Abrir PDF* | Se abre el PDF en el navegador del celular | Pendiente |
 | 14 | App: favoritos | Iniciar sesión, guardar y quitar un favorito | El favorito aparece y desaparece en *Mis favoritos* | Pendiente |
-| 15 | Enlace del pie de página | Revisar el enlace de uicm.edu.mx | Abre https://uicm.edu.mx | OK |
+| 15 | Pie de página | Revisar que el pie muestre SanColFr | Muestra SanColFr | Pendiente (el pie cambió) |
