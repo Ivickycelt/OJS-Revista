@@ -21,12 +21,14 @@ export default function App() {
         <StatusBar style="dark" />
         <Stack.Navigator
           screenOptions={{
-            headerTintColor: colores.primario,
-            headerStyle: { backgroundColor: colores.fondo },
+            headerTintColor: colores.primarioOscuro,
+            headerStyle: { backgroundColor: '#ffffff' },
+            headerTitleStyle: { fontWeight: '800', color: colores.primarioOscuro },
+            headerShadowVisible: false,
             contentStyle: { backgroundColor: colores.fondo },
           }}
         >
-          <Stack.Screen name="Revistas" component={RevistasScreen} options={{ title: 'Horizontes' }} />
+          <Stack.Screen name="Revistas" component={RevistasScreen} options={{ title: 'SanColFr' }} />
           <Stack.Screen name="Numeros" component={NumerosScreen} options={({ route }) => ({ title: route.params.nombre })} />
           <Stack.Screen name="Numero" component={NumeroScreen} options={({ route }) => ({ title: route.params.titulo })} />
           <Stack.Screen name="Articulo" component={ArticuloScreen} options={{ title: 'Artículo' }} />

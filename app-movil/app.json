@@ -1,13 +1,17 @@
 {
   "expo": {
-    "name": "Horizontes",
-    "slug": "horizontes-app",
+    "name": "SanColFr",
+    "slug": "sancolfr-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
-    "scheme": "horizontes",
+    "scheme": "sancolfr",
     "android": {
-      "package": "mx.uicm.horizontes"
-    }
+      "package": "mx.sancolfr.app"
+    },
+    "plugins": [
+      "expo-secure-store",
+      "expo-status-bar"
+    ]
   }
 }

@@ -5,6 +5,27 @@ import { useAuth } from '../auth';
 import Estado from '../components/Estado';
 import { colores, estilos } from '../theme';
 
+// Encabezado tipo portal: bloque verde con insignia dorada.
+function Encabezado() {
+  return (
+    <View style={estilos.hero}>
+      <View style={estilos.insignia}>
+        <Text style={estilos.insigniaTexto}>Acceso abierto</Text>
+      </View>
+      <Text style={estilos.heroTitulo}>Revistas</Text>
+      <Text style={estilos.heroTexto}>Plataforma de revistas digitales de acceso abierto</Text>
+    </View>
+  );
+}
+
+const botonEncabezado = {
+  borderWidth: 2,
+  borderColor: colores.primario,
+  borderRadius: 8,
+  paddingHorizontal: 10,
+  paddingVertical: 4,
+};
+
 export default function RevistasScreen({ navigation }) {
   const { usuario } = useAuth();
   const [revistas, setRevistas] = useState([]);
@@ -15,12 +36,15 @@ export default function RevistasScreen({ navigation }) {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <View style={{ flexDirection: 'row', gap: 16 }}>
-          <Pressable onPress={() => navigation.navigate('Buscar')}>
-            <Text style={{ color: colores.primario, fontWeight: '600' }}>Buscar</Text>
+        <View style={{ flexDirection: 'row', gap: 8 }}>
+          <Pressable style={botonEncabezado} onPress={() => navigation.navigate('Buscar')}>
+            <Text style={{ color: colores.primario, fontWeight: '700' }}>Buscar</Text>
           </Pressable>
-          <Pressable onPress={() => navigation.navigate(usuario ? 'Favoritos' : 'Login')}>
-            <Text style={{ color: colores.primario, fontWeight: '600' }}>{usuario ? 'Favoritos' : 'Entrar'}</Text>
+          <Pressable
+            style={[botonEncabezado, { backgroundColor: colores.primario }]}
+            onPress={() => navigation.navigate(usuario ? 'Favoritos' : 'Login')}
+          >
+            <Text style={{ color: '#ffffff', fontWeight: '700' }}>{usuario ? 'Favoritos' : 'Entrar'}</Text>
           </Pressable>
         </View>
       ),
@@ -59,7 +83,8 @@ export default function RevistasScreen({ navigation }) {
     <FlatList
       data={revistas}
       keyExtractor={(r) => String(r.id)}
-      contentContainerStyle={estilos.lista}
+      contentContainerStyle={{ backgroundColor: colores.fondo, paddingBottom: 24, gap: 14 }}
+      ListHeaderComponent={Encabezado}
       refreshControl={
         <RefreshControl
           refreshing={refrescando}
@@ -71,7 +96,7 @@ export default function RevistasScreen({ navigation }) {
       }
       renderItem={({ item }) => (
         <Pressable
-          style={estilos.tarjeta}
+          style={[estilos.tarjeta, { marginHorizontal: 16 }]}
           onPress={() => navigation.navigate('Numeros', { slug: item.slug, nombre: item.name })}
         >
           <Text style={estilos.titulo}>{item.name}</Text>

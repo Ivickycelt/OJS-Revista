@@ -98,7 +98,7 @@ export default function ArticuloScreen({ route, navigation }) {
         />
       ) : null}
 
-      <Text style={[estilos.titulo, { fontSize: 22, lineHeight: 28 }]}>{articulo.title}</Text>
+      <Text style={[estilos.titulo, { fontSize: 24, lineHeight: 31, fontFamily: 'serif', color: '#111111' }]}>{articulo.title}</Text>
       {autores ? <Text style={[estilos.texto, { marginTop: 6 }]}>{autores}</Text> : null}
       <Text style={estilos.subtexto}>
         {[articulo.section?.name, articulo.journal_name].filter(Boolean).join('  ·  ')}
@@ -131,7 +131,7 @@ export default function ArticuloScreen({ route, navigation }) {
         <View style={{ marginTop: 22, gap: 12 }}>
           <Text style={estilos.seccion}>Texto del artículo</Text>
           {parrafos.map((p, i) => (
-            <Text key={i} style={[estilos.texto, { fontSize: 16, lineHeight: 26 }]}>
+            <Text key={i} style={[estilos.texto, { fontSize: 17, lineHeight: 27, fontFamily: 'serif', color: '#1d1d1d' }]}>
               {p}
             </Text>
           ))}

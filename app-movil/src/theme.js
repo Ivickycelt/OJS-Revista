@@ -1,13 +1,18 @@
 import { StyleSheet } from 'react-native';
 
-// Colores tomados del estilo del portal (café dorado sobre fondo crema).
+// Colores tomados del portal (verde, dorado y fondo crema).
 export const colores = {
-  primario: '#8a5a00',
-  fondo: '#faf7f2',
+  primario: '#1A44D8',
+  primarioOscuro: '#22242A',
+  dorado: '#00A087',
+  cafe: '#1A44D8',
+  fondo: '#FDFBF7',
   tarjeta: '#ffffff',
-  texto: '#1f1a14',
-  subtexto: '#6b6259',
-  borde: '#e7e0d4',
+  texto: '#22242A',
+  subtexto: '#5A5F6B',
+  borde: '#EAECEF',
+  chipFondo: '#EAECEF',
+  chipTexto: '#22242A',
   error: '#b3261e',
 };
 
@@ -17,13 +22,23 @@ export const estilos = StyleSheet.create({
   tarjeta: {
     backgroundColor: colores.tarjeta,
     borderRadius: 12,
-    padding: 16,
+    padding: 18,
     borderWidth: 1,
+    borderTopWidth: 4,
     borderColor: colores.borde,
+    borderTopColor: colores.dorado,
   },
-  titulo: { fontSize: 17, fontWeight: '700', color: colores.texto, marginBottom: 4 },
+  titulo: { fontSize: 17, fontWeight: '700', color: colores.primarioOscuro, marginBottom: 4 },
   texto: { fontSize: 15, color: colores.texto, lineHeight: 22 },
   subtexto: { fontSize: 13, color: colores.subtexto, marginTop: 4 },
+  chip: {
+    alignSelf: 'flex-start',
+    backgroundColor: colores.chipFondo,
+    borderRadius: 999,
+    paddingHorizontal: 12,
+    paddingVertical: 3,
+  },
+  chipTexto: { color: colores.chipTexto, fontSize: 12, fontWeight: '700' },
   boton: {
     backgroundColor: colores.primario,
     borderRadius: 10,
@@ -35,7 +50,7 @@ export const estilos = StyleSheet.create({
   botonTexto: { color: '#fff', fontWeight: '700', fontSize: 15 },
   botonSecundario: {
     borderColor: colores.primario,
-    borderWidth: 1,
+    borderWidth: 2,
     borderRadius: 10,
     paddingVertical: 12,
     paddingHorizontal: 18,
@@ -58,10 +73,30 @@ export const estilos = StyleSheet.create({
   seccion: {
     fontSize: 13,
     fontWeight: '700',
-    color: colores.primario,
+    color: colores.cafe,
     textTransform: 'uppercase',
+    letterSpacing: 0.8,
     paddingTop: 16,
     paddingBottom: 6,
     backgroundColor: colores.fondo,
   },
+  hero: {
+    backgroundColor: colores.primario,
+    paddingHorizontal: 22,
+    paddingTop: 26,
+    paddingBottom: 26,
+    borderBottomWidth: 6,
+    borderBottomColor: colores.dorado,
+    gap: 8,
+  },
+  insignia: {
+    alignSelf: 'flex-start',
+    backgroundColor: colores.dorado,
+    borderRadius: 999,
+    paddingHorizontal: 12,
+    paddingVertical: 4,
+  },
+  insigniaTexto: { color: '#22242A', fontWeight: '700', fontSize: 12 },
+  heroTitulo: { color: '#ffffff', fontSize: 30, fontWeight: '800', letterSpacing: 0.3 },
+  heroTexto: { color: '#ffffff', fontSize: 15, lineHeight: 22, opacity: 0.92 },
 });

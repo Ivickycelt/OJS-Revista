@@ -1,6 +1,6 @@
 # Horizontes — app Android (Expo)
 
-App móvil para leer las revistas de la UICM desde el backend Laravel.
+App móvil para leer las revistas desde el backend Laravel.
 
 Funciones:
 - Ver revistas, números, artículos agrupados por sección.
