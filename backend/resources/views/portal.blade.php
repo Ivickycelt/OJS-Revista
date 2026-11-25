@@ -4,16 +4,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Revistas | Universidad Internacional Cuba-México</title>
-<meta name="description" content="Portal de revistas de la Universidad Internacional Cuba-México (UICM).">
+<title>Revistas | SanColFr</title>
+<meta name="description" content="SanColFr, plataforma de revistas digitales de acceso abierto.">
 <style>
 :root {
-  --verde: #006633;
-  --verde-oscuro: #004d26;
-  --dorado: #f0ae5b;
-  --texto: #222222;
-  --fondo: #fbf8f3;
-  --borde: #e6dfd3;
+  --primario: #1A44D8;
+  --primario-oscuro: #22242A;
+  --acento: #00A087;
+  --texto: #22242A;
+  --fondo: #FDFBF7;
+  --borde: #EAECEF;
 }
 * { box-sizing: border-box; }
 body {
@@ -23,13 +23,13 @@ body {
   background: var(--fondo);
   line-height: 1.55;
 }
-a { color: var(--verde); }
+a { color: var(--primario); }
 .contenedor { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
 
 /* ---------- Encabezado ---------- */
 .cabecera {
   background: #ffffff;
-  border-bottom: 4px solid var(--verde);
+  border-bottom: 4px solid var(--primario);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -45,12 +45,12 @@ a { color: var(--verde); }
 }
 .cabecera img { height: 56px; display: block; }
 .acciones { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-.saludo { color: var(--verde); font-weight: 700; }
+.saludo { color: var(--primario); font-weight: 700; }
 
 .btn {
-  background: var(--verde);
+  background: var(--primario);
   color: #ffffff;
-  border: 2px solid var(--verde);
+  border: 2px solid var(--primario);
   border-radius: 8px;
   padding: 8px 16px;
   font: inherit;
@@ -58,25 +58,25 @@ a { color: var(--verde); }
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
-.btn:hover { transform: translateY(-3px); box-shadow: 0 6px 14px rgba(0, 0, 0, 0.22); background: var(--verde-oscuro); }
+.btn:hover { transform: translateY(-3px); box-shadow: 0 6px 14px rgba(0, 0, 0, 0.22); background: var(--primario-oscuro); }
 .btn:active { transform: translateY(0); box-shadow: none; }
-.btn-borde { background: #ffffff; color: var(--verde); }
-.btn-borde:hover { background: #eef6f1; }
+.btn-borde { background: #ffffff; color: var(--primario); }
+.btn-borde:hover { background: #EAECEF; }
 .btn[hidden] { display: none; }
 
 /* ---------- Portada ---------- */
 .portada {
-  background: linear-gradient(135deg, var(--verde) 0%, var(--verde-oscuro) 65%);
+  background: linear-gradient(135deg, var(--primario) 0%, var(--primario-oscuro) 65%);
   color: #ffffff;
   padding: 56px 0 48px;
-  border-bottom: 6px solid var(--dorado);
+  border-bottom: 6px solid var(--acento);
 }
 .portada h1 { margin: 0 0 6px; font-size: clamp(2.4rem, 7vw, 4rem); letter-spacing: 0.02em; }
 .portada p { margin: 0 0 16px; max-width: 640px; font-size: 1.05rem; }
 .insignia {
   display: inline-block;
-  background: var(--dorado);
-  color: #2b1d00;
+  background: var(--acento);
+  color: #22242A;
   font-weight: 700;
   border-radius: 999px;
   padding: 6px 16px;
@@ -94,12 +94,12 @@ a { color: var(--verde); }
   background: #ffffff;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-#buscar:focus { border-color: var(--verde); box-shadow: 0 0 0 3px rgba(0, 102, 51, 0.18); outline: none; }
+#buscar:focus { border-color: var(--primario); box-shadow: 0 0 0 3px rgba(26, 68, 216, 0.18); outline: none; }
 .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
 .filtro {
-  border: 2px solid var(--verde);
+  border: 2px solid var(--primario);
   background: #ffffff;
-  color: var(--verde);
+  color: var(--primario);
   border-radius: 999px;
   padding: 5px 14px;
   font: inherit;
@@ -107,7 +107,7 @@ a { color: var(--verde); }
   transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 .filtro:hover { transform: translateY(-2px); }
-.filtro.activo { background: var(--verde); color: #ffffff; }
+.filtro.activo { background: var(--primario); color: #ffffff; }
 #aviso { min-height: 1.4em; color: #9a2b00; font-weight: 700; margin: 10px 0 0; }
 
 /* ---------- Tarjetas ---------- */
@@ -120,7 +120,7 @@ a { color: var(--verde); }
 .card {
   background: #ffffff;
   border: 1px solid var(--borde);
-  border-top: 4px solid var(--dorado);
+  border-top: 4px solid var(--acento);
   border-radius: 12px;
   padding: 18px;
   cursor: pointer;
@@ -130,13 +130,13 @@ a { color: var(--verde); }
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .card:hover, .card:focus-visible { transform: translateY(-5px); box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12); outline: none; }
-.card h3 { margin: 0; font-size: 1.05rem; color: var(--verde-oscuro); }
+.card h3 { margin: 0; font-size: 1.05rem; color: var(--primario-oscuro); }
 .autores { margin: 0; color: #555555; font-size: 0.93rem; }
 .pie-card { margin-top: auto; display: flex; justify-content: space-between; align-items: center; color: #666666; font-size: 0.9rem; }
 .chip {
   align-self: flex-start;
-  background: #fdf0dc;
-  color: #6b4200;
+  background: #EAECEF;
+  color: #22242A;
   border-radius: 999px;
   padding: 2px 12px;
   font-size: 0.82rem;
@@ -147,7 +147,7 @@ a { color: var(--verde); }
   background: transparent;
   font-size: 1.6rem;
   line-height: 1;
-  color: var(--verde);
+  color: var(--primario);
   cursor: pointer;
   padding: 4px 8px;
 }
@@ -185,11 +185,11 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
   background: #f4f4f4;
 }
 .texto-plano { margin-top: 14px; }
-.texto-plano summary { cursor: pointer; color: var(--verde); font-weight: 700; }
+.texto-plano summary { cursor: pointer; color: var(--primario); font-weight: 700; }
 .texto-plano p { font-size: 0.97rem; }
 @media (max-width: 600px) { .visor-pdf { height: 60vh; min-height: 320px; } }
 .dlg { padding: 24px; }
-.dlg h2 { margin: 8px 0; color: var(--verde-oscuro); }
+.dlg h2 { margin: 8px 0; color: var(--primario-oscuro); }
 .meta { color: #666666; font-size: 0.92rem; }
 .dlg label { display: block; margin: 12px 0 4px; font-weight: 700; }
 .dlg input {
@@ -200,14 +200,14 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
   font: inherit;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-.dlg input:focus { border-color: var(--verde); box-shadow: 0 0 0 3px rgba(0, 102, 51, 0.18); outline: none; }
+.dlg input:focus { border-color: var(--primario); box-shadow: 0 0 0 3px rgba(26, 68, 216, 0.18); outline: none; }
 .dlg .botones { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
-.enlace { background: none; border: 0; color: var(--verde); text-decoration: underline; cursor: pointer; font: inherit; padding: 0; margin-top: 14px; }
+.enlace { background: none; border: 0; color: var(--primario); text-decoration: underline; cursor: pointer; font: inherit; padding: 0; margin-top: 14px; }
 #auth-msg { color: #9a2b00; font-weight: 700; min-height: 1.3em; }
 
 /* ---------- Pie ---------- */
-.pie { background: var(--verde-oscuro); color: #ffffff; border-top: 5px solid var(--dorado); padding: 26px 0; font-size: 0.9rem; }
-.pie a { color: var(--dorado); }
+.pie { background: var(--primario-oscuro); color: #ffffff; border-top: 5px solid var(--acento); padding: 26px 0; font-size: 0.9rem; }
+.pie a { color: var(--acento); }
 
 /* Accesibilidad: respetar "reducir movimiento" */
 @media (prefers-reduced-motion: reduce) {
@@ -217,17 +217,17 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
 
 /* ---------- Portal multirrevista ---------- */
 .card { position: relative; }
-.card h3 a { color: var(--verde-oscuro); text-decoration: none; }
+.card h3 a { color: var(--primario-oscuro); text-decoration: none; }
 .card h3 a::after { content: ""; position: absolute; inset: 0; border-radius: 12px; }
 .card h3 a:focus { outline: none; }
-.card h3 a:focus-visible::after { box-shadow: inset 0 0 0 3px var(--verde); }
+.card h3 a:focus-visible::after { box-shadow: inset 0 0 0 3px var(--primario); }
 .fav { position: relative; z-index: 2; }
 .meta-revista { color: #555555; font-size: 0.92rem; margin: 0; display: flex; gap: 14px; flex-wrap: wrap; }
-.subtitulo { color: var(--verde-oscuro); margin: 28px 0 0; font-size: 1.5rem; }
+.subtitulo { color: var(--primario-oscuro); margin: 28px 0 0; font-size: 1.5rem; }
 .portada .meta-portada { margin-top: 10px; font-size: 0.95rem; opacity: 0.92; }
 .migas { padding: 16px 0 0; font-size: 0.92rem; color: #666666; }
-.migas a { color: var(--verde); }
-.titulo-articulo { color: var(--verde-oscuro); font-size: clamp(1.6rem, 4vw, 2.3rem); line-height: 1.2; margin: 12px 0 8px; }
+.migas a { color: var(--primario); }
+.titulo-articulo { color: var(--primario-oscuro); font-size: clamp(1.6rem, 4vw, 2.3rem); line-height: 1.2; margin: 12px 0 8px; }
 .acciones-articulo { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 16px 0 4px; }
 .acciones-articulo .btn { text-decoration: none; display: inline-block; }
 .fav-grande { border: 2px solid var(--borde); border-radius: 10px; background: #ffffff; font-size: 1.8rem; padding: 4px 12px; }
@@ -241,12 +241,12 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
 /* ---------- Página de artículo (estilo de revista) ---------- */
 .articulo { max-width: 820px; padding-bottom: 24px; }
 .articulo .migas { font-size: 0.9rem; }
-.seccion-articulo { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #8a5a00; margin: 18px 0 6px; }
+.seccion-articulo { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #1A44D8; margin: 18px 0 6px; }
 .articulo h1.titulo-articulo { font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.9rem, 4.4vw, 2.7rem); line-height: 1.18; color: #111111; margin: 0 0 14px; }
 .autores-articulo { font-size: 1.02rem; color: #333333; margin: 0 0 8px; }
 .datos-articulo { font-size: 0.9rem; color: #666666; margin: 0 0 18px; }
 .articulo .acciones-articulo { margin: 14px 0 26px; }
-.articulo section h2 { font-family: Georgia, "Times New Roman", serif; font-size: 1.35rem; color: var(--verde-oscuro); margin: 28px 0 10px; }
+.articulo section h2 { font-family: Georgia, "Times New Roman", serif; font-size: 1.35rem; color: var(--primario-oscuro); margin: 28px 0 10px; }
 .bloque-resumen p { font-family: Georgia, "Times New Roman", serif; font-size: 1.05rem; line-height: 1.7; }
 .texto-articulo p { font-family: Georgia, "Times New Roman", serif; font-size: 1.05rem; line-height: 1.75; color: #1d1d1d; }
 .pdf-articulo { margin-top: 30px; }
@@ -258,7 +258,7 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
 
 <header class="cabecera">
   <div class="contenedor">
-    <a href="/" aria-label="Inicio del portal de revistas"><img src="/images/logo-ucm.png" alt="Universidad Internacional Cuba-México"></a>
+    <a href="/" aria-label="Inicio del portal SanColFr"><img src="/images/logo-sancolfr.svg" alt="SanColFr" width="300" height="64"></a>
     <div class="acciones"><div id="sesion" class="acciones"></div></div>
   </div>
 </header>
@@ -269,9 +269,8 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
 
 <footer class="pie">
   <div class="contenedor">
-    <p><strong>Universidad Internacional Cuba-México</strong></p>
-    <p>Calle Dolores 46, San Cristóbal Nexquipayac, Atenco, Estado de México, C.P. 56315</p>
-    <p><a href="https://uicm.edu.mx" target="_blank" rel="noopener">uicm.edu.mx</a></p>
+    <p><strong>SanColFr</strong></p>
+    <p>Plataforma de revistas digitales de acceso abierto.</p>
   </div>
 </footer>
 
@@ -334,16 +333,12 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
   function colorValido(c, respaldo) {
     return /^#[0-9a-fA-F]{6}$/.test(c || '') ? c : respaldo;
   }
-  // Cada revista puede tener sus colores; si no hay revista, se usan los de la UICM.
-  function aplicarColores(revista) {
+  // Cada revista puede tener sus colores; si no hay revista, se usan los colores por defecto.
+  function aplicarColores() {
+    // Colores fijos de la plataforma (paleta de SanColFr): ya no cambian por revista.
     var raiz = document.documentElement.style;
-    if (revista) {
-      raiz.setProperty('--verde', colorValido(revista.color, '#006633'));
-      raiz.setProperty('--dorado', colorValido(revista.accent, '#f0ae5b'));
-    } else {
-      raiz.removeProperty('--verde');
-      raiz.removeProperty('--dorado');
-    }
+    raiz.removeProperty('--primario');
+    raiz.removeProperty('--acento');
   }
   function etiquetaNumero(n) {
     return 'Vol. ' + n.volume + ', Núm. ' + n.number + ' (' + n.year + ')';
@@ -508,7 +503,7 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
   }
 
   function vistaNoEncontrada(mensaje) {
-    document.title = 'Página no encontrada | Universidad Internacional Cuba-México';
+    document.title = 'Página no encontrada | SanColFr';
     aplicarColores(null);
     app.replaceChildren(
       el('section', { 'class': 'portada' }, el('div', { 'class': 'contenedor' },
@@ -521,7 +516,7 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
 
   // ---------- Vista 1: todas las revistas ----------
   function tarjetaRevista(j) {
-    var color = colorValido(j.color, '#f0ae5b');
+    var color = '#1A44D8';
     var numeros = j.issues_count || 0;
     return el('article', { 'class': 'card reveal', style: 'border-top-color:' + color },
       el('h3', {}, el('a', { href: '/revistas/' + j.slug }, j.name)),
@@ -533,13 +528,13 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
   }
 
   async function vistaInicio() {
-    document.title = 'Revistas | Universidad Internacional Cuba-México';
+    document.title = 'Revistas | SanColFr';
     aplicarColores(null);
     estado.revista = null;
     app.replaceChildren(
       el('section', { 'class': 'portada' }, el('div', { 'class': 'contenedor' },
-        el('h1', {}, 'Revistas UICM'),
-        el('p', {}, 'Publicaciones académicas de la Universidad Internacional Cuba-México. Acceso abierto, gratuito y sin cargos por publicar.'))),
+        el('h1', {}, 'Revistas'),
+        el('p', {}, 'Publicaciones académicas de acceso abierto.'))),
       el('main', { 'class': 'contenedor' },
         el('h2', { 'class': 'subtitulo' }, 'Elige una revista'),
         el('p', { id: 'aviso', role: 'status' }),
@@ -687,7 +682,7 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
     estado.numero = ultimo ? String(ultimo.id) : '';
     estado.soloFavoritos = !!estado.usuario && new URLSearchParams(location.search).get('favoritos') === '1';
     aplicarColores(j);
-    document.title = j.name + ' | Universidad Internacional Cuba-México';
+    document.title = j.name + ' | SanColFr';
 
     var selector = el('select', {
       id: 'selector-numero', 'aria-label': 'Elegir número',
