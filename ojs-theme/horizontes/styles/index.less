@@ -1,14 +1,14 @@
 // ============================================================
-// Horizontes - estilos propios (UICM)
-// Los colores salen del logo de la UCM.
+// Horizontes - estilos propios
+// Los colores salen de la paleta de SanColFr.
 // Para cambiar la paleta, edita solo estas variables:
 // ============================================================
-@verde: #006633;
-@verde-oscuro: #004d26;
-@dorado: #f0ae5b;
-@texto: #222222;
+@verde: #1A44D8;
+@verde-oscuro: #1433A8;
+@dorado: #00A087;
+@texto: #22242A;
 
-// Logo de la UCM en el encabezado
+// Logo de SanColFr en el encabezado
 @import "logo.less";
 
 body {
@@ -20,7 +20,7 @@ a {
   transition: color 0.2s ease;
 }
 
-// ---------- Encabezado (blanco, como uicm.edu.mx) ----------
+// ---------- Encabezado (blanco) ----------
 // Se usa !important porque el tema base pinta de azul varias capas.
 .pkp_structure_head,
 .pkp_head_wrapper,
@@ -35,7 +35,7 @@ a {
 }
 
 .pkp_navigation_primary_row {
-  border-top: 1px solid rgba(0, 102, 51, 0.15);
+  border-top: 1px solid rgba(26, 68, 216, 0.15);
 }
 
 .pkp_site_name .is_text,
@@ -116,7 +116,7 @@ input[type="search"] {
 
   &:focus {
     border-color: @verde;
-    box-shadow: 0 0 0 3px rgba(0, 102, 51, 0.18);
+    box-shadow: 0 0 0 3px rgba(26, 68, 216, 0.18);
     outline: none;
   }
 }
