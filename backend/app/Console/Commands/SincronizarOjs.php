@@ -12,25 +12,54 @@ use Illuminate\Support\Facades\Http;
 
 class SincronizarOjs extends Command
 {
-    protected $signature = 'ojs:sincronizar {--url=http://localhost/ojs/index.php/horizontes/es/oai}';
+    protected $signature = 'ojs:sincronizar
+        {revista=academica-abierta : Ruta (slug) de la revista, igual en OJS y en el portal}
+        {--url= : Dirección OAI-PMH de OJS (si no se indica, se arma con la ruta de la revista)}
+        {--anio=2026 : Año del número donde se guardan los artículos}
+        {--numero=1 : Número donde se guardan los artículos}
+        {--volumen=1 : Volumen del número}';
 
     protected $description = 'Importa los artículos publicados en OJS (OAI-PMH) al portal';
 
+    // Secciones de la revista. La clave es la abreviatura de la sección en OJS,
+    // que OJS envía en el setSpec (por ejemplo, academica-abierta:ORIG).
+    private const SECCIONES = [
+        'ORIG' => ['slug' => 'articulos-originales', 'nombre' => 'Artículos originales'],
+        'REV' => ['slug' => 'articulos-de-revision', 'nombre' => 'Artículos de revisión'],
+        'ENS' => ['slug' => 'ensayos', 'nombre' => 'Ensayos'],
+        'RES' => ['slug' => 'resenas', 'nombre' => 'Reseñas'],
+        'EDIT' => ['slug' => 'editorial', 'nombre' => 'Editorial'],
+        'COM' => ['slug' => 'comunicaciones-breves', 'nombre' => 'Comunicaciones breves'],
+    ];
+
+    // Si OJS no envía una sección reconocida, el artículo va a esta.
+    private const SECCION_PREDETERMINADA = 'ORIG';
+
     public function handle(): int
     {
-        $url = $this->option('url');
+        $slug = $this->argument('revista');
+        $url = $this->option('url') ?: "http://localhost/ojs/index.php/{$slug}/es/oai";
 
-        // Revista a la que pertenecen los números y artículos importados
-        $revista = Journal::where('slug', 'horizontes')->firstOrFail();
+        $revista = Journal::where('slug', $slug)->first();
+        if (! $revista) {
+            $this->error("No existe la revista '{$slug}' en el portal. Créala primero (ver docs/revista-nueva.md).");
+            return self::FAILURE;
+        }
 
-        $numero = Issue::updateOrCreate(
-            ['journal_id' => $revista->id, 'year' => 2026, 'number' => 1],
-            ['volume' => 1, 'published_at' => '2026-06-19']
+        // Número donde se guardan los artículos importados
+        $numero = Issue::firstOrCreate(
+            [
+                'journal_id' => $revista->id,
+                'year' => (int) $this->option('anio'),
+                'number' => (int) $this->option('numero'),
+            ],
+            [
+                'volume' => (int) $this->option('volumen'),
+                'published_at' => now()->toDateString(),
+            ]
         );
 
-        $seccion = Section::where('journal_id', $revista->id)
-            ->where('slug', 'articulos-originales')
-            ->firstOrFail();
+        $secciones = $this->asegurarSecciones($revista);
 
         $respuesta = Http::timeout(20)->get($url, [
             'verb' => 'ListRecords',
@@ -71,7 +100,7 @@ class SincronizarOjs extends Command
             $articulo = Article::updateOrCreate(
                 ['issue_id' => $numero->id, 'title' => $titulo],
                 [
-                    'section_id' => $this->seccionDeOjs($registro, $revista)->id,
+                    'section_id' => $this->seccionDeOjs($registro, $secciones)->id,
                     'abstract' => $resumen,
                     'is_published' => true,
                 ]
@@ -93,32 +122,35 @@ class SincronizarOjs extends Command
         return self::SUCCESS;
     }
 
-    // Códigos de sección que OJS envía en el setSpec (p. ej. horizontes:EDIT)
-    private const CODIGOS_SECCION = [
-        'EDIT' => 'editorial',
-        'COM' => 'comunicacion-breve',
-        'ORIG' => 'articulos-originales',
-        'REV' => 'articulo-de-revision',
-        'TES' => 'tesis-de-egresados',
-    ];
+    // Crea en el portal las secciones que falten para esta revista y las devuelve por código.
+    private function asegurarSecciones(Journal $revista): array
+    {
+        $mapa = [];
+        foreach (self::SECCIONES as $codigo => $dato) {
+            $mapa[$codigo] = Section::firstOrCreate(
+                ['journal_id' => $revista->id, 'slug' => $dato['slug']],
+                ['name' => $dato['nombre'], 'position' => count($mapa) + 1]
+            );
+        }
 
-    // Usa la sección que OJS asignó al artículo; si no la reconoce, usa "Artículos originales".
-    private function seccionDeOjs(\SimpleXMLElement $registro, Journal $revista): Section
+        return $mapa;
+    }
+
+    // Usa la sección que OJS asignó al artículo; si no la reconoce, usa la predeterminada.
+    private function seccionDeOjs(\SimpleXMLElement $registro, array $secciones): Section
     {
         $registro->registerXPathNamespace('oai', 'http://www.openarchives.org/OAI/2.0/');
 
         foreach ($registro->xpath('./oai:header/oai:setSpec') ?: [] as $codigo) {
             $partes = explode(':', (string) $codigo);
-            $slug = self::CODIGOS_SECCION[$partes[1] ?? ''] ?? null;
+            $clave = $partes[1] ?? '';
 
-            if ($slug !== null) {
-                return Section::where('journal_id', $revista->id)->where('slug', $slug)->firstOrFail();
+            if (isset($secciones[$clave])) {
+                return $secciones[$clave];
             }
         }
 
-        return Section::where('journal_id', $revista->id)
-            ->where('slug', 'articulos-originales')
-            ->firstOrFail();
+        return $secciones[self::SECCION_PREDETERMINADA];
     }
 
     // Devuelve todos los valores de un campo Dublin Core, sin espacios sobrantes.
