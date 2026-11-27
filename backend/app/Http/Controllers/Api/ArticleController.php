@@ -19,7 +19,7 @@ class ArticleController extends Controller
      */
     public function index(Request $request): AnonymousResourceCollection
     {
-        $consulta = Article::with(['authors', 'section', 'issue'])
+        $consulta = Article::with(['authors', 'section', 'issue.journal'])
             ->where('is_published', true);
 
         if ($request->filled('section')) {
@@ -56,7 +56,7 @@ class ArticleController extends Controller
     {
         abort_unless($article->is_published, 404);
 
-        $article->load(['authors', 'section', 'issue']);
+        $article->load(['authors', 'section', 'issue.journal']);
 
         return new ArticleResource($article);
     }
@@ -78,7 +78,7 @@ class ArticleController extends Controller
 
         $articulo = Article::create(Arr::except($datos, 'authors'));
         $this->guardarAutores($articulo, $datos['authors']);
-        $articulo->load(['authors', 'section', 'issue']);
+        $articulo->load(['authors', 'section', 'issue.journal']);
 
         return (new ArticleResource($articulo))->response()->setStatusCode(201);
     }
@@ -103,7 +103,7 @@ class ArticleController extends Controller
             $this->guardarAutores($article, $datos['authors']);
         }
 
-        $article->load(['authors', 'section', 'issue']);
+        $article->load(['authors', 'section', 'issue.journal']);
 
         return new ArticleResource($article);
     }

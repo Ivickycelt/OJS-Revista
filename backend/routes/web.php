@@ -7,3 +7,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', fn () => view('portal'));
 Route::get('/revistas/{revista}', fn () => view('portal'));
 Route::get('/revistas/{revista}/articulos/{articulo}', fn () => view('portal'));
+
+// Panel de administración (la página exige sesión de administrador en la API).
+Route::get('/admin', fn () => view('admin'));
