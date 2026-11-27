@@ -12,7 +12,7 @@ class Journal extends Model
         'description', 'contact_email', 'color', 'accent',
     ];
 
-    // En las direcciones se usa el slug: /api/revistas/horizontes
+    // En las direcciones se usa el slug: /api/revistas/academica-abierta
     public function getRouteKeyName(): string
     {
         return 'slug';

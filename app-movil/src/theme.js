@@ -1,11 +1,10 @@
 import { StyleSheet } from 'react-native';
 
-// Colores tomados del portal (verde, dorado y fondo crema).
+// Paleta SanColFr: azul, verde-azulado, tinta y fondo crema.
 export const colores = {
   primario: '#1A44D8',
   primarioOscuro: '#22242A',
-  dorado: '#00A087',
-  cafe: '#1A44D8',
+  acento: '#00A087',
   fondo: '#FDFBF7',
   tarjeta: '#ffffff',
   texto: '#22242A',
@@ -26,7 +25,7 @@ export const estilos = StyleSheet.create({
     borderWidth: 1,
     borderTopWidth: 4,
     borderColor: colores.borde,
-    borderTopColor: colores.dorado,
+    borderTopColor: colores.acento,
   },
   titulo: { fontSize: 17, fontWeight: '700', color: colores.primarioOscuro, marginBottom: 4 },
   texto: { fontSize: 15, color: colores.texto, lineHeight: 22 },
@@ -73,7 +72,7 @@ export const estilos = StyleSheet.create({
   seccion: {
     fontSize: 13,
     fontWeight: '700',
-    color: colores.cafe,
+    color: colores.primario,
     textTransform: 'uppercase',
     letterSpacing: 0.8,
     paddingTop: 16,
@@ -86,12 +85,12 @@ export const estilos = StyleSheet.create({
     paddingTop: 26,
     paddingBottom: 26,
     borderBottomWidth: 6,
-    borderBottomColor: colores.dorado,
+    borderBottomColor: colores.acento,
     gap: 8,
   },
   insignia: {
     alignSelf: 'flex-start',
-    backgroundColor: colores.dorado,
+    backgroundColor: colores.acento,
     borderRadius: 999,
     paddingHorizontal: 12,
     paddingVertical: 4,

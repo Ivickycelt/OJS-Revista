@@ -3,9 +3,9 @@
 // Los colores salen de la paleta de SanColFr.
 // Para cambiar la paleta, edita solo estas variables:
 // ============================================================
-@verde: #1A44D8;
-@verde-oscuro: #1433A8;
-@dorado: #00A087;
+@azul: #1A44D8;
+@azul-oscuro: #1433A8;
+@acento: #00A087;
 @texto: #22242A;
 
 // Logo de SanColFr en el encabezado
@@ -30,7 +30,7 @@ a {
 }
 
 .pkp_structure_head {
-  border-bottom: 4px solid @verde;
+  border-bottom: 4px solid @azul;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
 }
 
@@ -40,14 +40,14 @@ a {
 
 .pkp_site_name .is_text,
 .pkp_site_name a {
-  color: @verde;
+  color: @azul;
   font-weight: 800;
 }
 
 // ---------- Menú principal: mayúsculas verdes con subrayado animado ----------
 .pkp_navigation_primary > li > a {
   position: relative;
-  color: @verde;
+  color: @azul;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.03em;
@@ -61,7 +61,7 @@ a {
     right: 0.9em;
     bottom: 0.3em;
     height: 3px;
-    background: @dorado;
+    background: @acento;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.25s ease;
@@ -69,7 +69,7 @@ a {
 
   &:hover,
   &:focus {
-    color: @verde-oscuro;
+    color: @azul-oscuro;
     background: transparent;
 
     &:after {
@@ -81,12 +81,12 @@ a {
 // Menú de usuario y buscador (el tema base los pone en blanco)
 .pkp_navigation_user > li > a,
 .pkp_navigation_search_wrapper a {
-  color: @verde;
+  color: @azul;
   transition: color 0.2s ease;
 
   &:hover,
   &:focus {
-    color: @verde-oscuro;
+    color: @azul-oscuro;
     background: transparent;
   }
 }
@@ -115,7 +115,7 @@ input[type="search"] {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
   &:focus {
-    border-color: @verde;
+    border-color: @azul;
     box-shadow: 0 0 0 3px rgba(26, 68, 216, 0.18);
     outline: none;
   }
@@ -127,13 +127,13 @@ input[type="search"] {
   transition: color 0.2s ease;
 
   &:hover {
-    color: @verde;
+    color: @azul;
   }
 }
 
 // ---------- Pie de página ----------
 .pkp_structure_footer_wrapper {
-  border-top: 4px solid @dorado;
+  border-top: 4px solid @acento;
 }
 
 // ---------- Aparición suave al hacer scroll (la activa js/main.js) ----------

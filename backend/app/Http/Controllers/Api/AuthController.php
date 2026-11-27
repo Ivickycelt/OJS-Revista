@@ -25,7 +25,7 @@ class AuthController extends Controller
 
         return response()->json([
             'user' => $this->datosUsuario($usuario),
-            'token' => $usuario->createToken('horizontes')->plainTextToken,
+            'token' => $usuario->createToken('sancolfr')->plainTextToken,
         ], 201);
     }
 
@@ -45,7 +45,7 @@ class AuthController extends Controller
 
         return response()->json([
             'user' => $this->datosUsuario($usuario),
-            'token' => $usuario->createToken('horizontes')->plainTextToken,
+            'token' => $usuario->createToken('sancolfr')->plainTextToken,
         ]);
     }
 

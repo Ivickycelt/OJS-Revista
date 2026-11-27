@@ -23,11 +23,11 @@ class HorizontesThemePlugin extends ThemePlugin
 
     public function getDisplayName()
     {
-        return 'Horizontes (tema de la revista)';
+        return 'SanColFr (tema de la revista)';
     }
 
     public function getDescription()
     {
-        return 'Tema hijo del tema por defecto con la identidad visual de la revista Horizontes.';
+        return 'Tema hijo del tema por defecto con la identidad visual de la plataforma SanColFr.';
     }
 }

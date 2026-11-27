@@ -2,34 +2,44 @@
 
 namespace Database\Seeders;
 
-use App\Models\Issue;
 use App\Models\Journal;
-use App\Models\Section;
 use Illuminate\Database\Seeder;
 
 class JournalSeeder extends Seeder
 {
+    // Revista de demostración de la plataforma SanColFr.
+    // Las secciones tienen los mismos slugs que usa `ojs:sincronizar`.
+    private const SECCIONES = [
+        ['slug' => 'articulos-originales', 'nombre' => 'Artículos originales'],
+        ['slug' => 'articulos-de-revision', 'nombre' => 'Artículos de revisión'],
+        ['slug' => 'ensayos', 'nombre' => 'Ensayos'],
+        ['slug' => 'resenas', 'nombre' => 'Reseñas'],
+        ['slug' => 'editorial', 'nombre' => 'Editorial'],
+        ['slug' => 'comunicaciones-breves', 'nombre' => 'Comunicaciones breves'],
+    ];
+
     public function run(): void
     {
-        $horizontes = Journal::updateOrCreate(
-            ['slug' => 'horizontes'],
+        $revista = Journal::updateOrCreate(
+            ['slug' => 'academica-abierta'],
             [
-                'name' => 'Horizontes',
-                'abbreviation' => 'Horizontes',
-                'issn' => '3122-4822',
-                'publisher' => 'Colegio de Estudios de Postgrados Cuba–México',
+                'name' => 'Revista Académica Abierta',
+                'abbreviation' => 'RAA',
                 'country' => 'México',
-                'description' => 'Revista de Ciencias del Colegio de Estudios de Postgrados Cuba-México. Publicación semestral de acceso abierto y sin cargos por procesamiento ni publicación.',
-                'contact_email' => 'revistahorizontesuicm@gmail.com',
-                'color' => '#006633',
-                'accent' => '#f0ae5b',
+                'description' => 'Revista académica de acceso abierto para artículos originales, ensayos, reseñas y comunicaciones.',
+                'contact_email' => 'Postdanger61@gmail.com',
+                'color' => '#1A44D8',
+                'accent' => '#00A087',
             ]
         );
 
-        // Números y secciones que ya existían pasan a ser de Horizontes.
-        Issue::whereNull('journal_id')->update(['journal_id' => $horizontes->id]);
-        Section::whereNull('journal_id')->update(['journal_id' => $horizontes->id]);
+        foreach (self::SECCIONES as $posicion => $seccion) {
+            $revista->sections()->updateOrCreate(
+                ['slug' => $seccion['slug']],
+                ['name' => $seccion['nombre'], 'position' => $posicion + 1]
+            );
+        }
 
-        $this->command?->info('Revista lista: Horizontes');
+        $this->command?->info('Revista lista: Revista Académica Abierta');
     }
 }

@@ -1,4 +1,4 @@
-// Horizontes - aparición suave de tarjetas al hacer scroll
+// SanColFr - aparición suave de tarjetas al hacer scroll
 (function () {
   'use strict';
 

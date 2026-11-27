@@ -1,2 +1,5 @@
 node_modules/
 .expo/
+
+# Código generado por expo prebuild (se regenera)
+/android
