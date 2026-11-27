@@ -9,14 +9,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root { --primario: #1A44D8; --primario-oscuro: #22242A; --acento: #00A087; --fondo: #FDFBF7; --superficie: #ffffff; --texto: #22242A; --borde: #EAECEF; --muted: #5A5F6B; --enlace: #1A44D8; }
-:root[data-tema="oscuro"] { --primario-oscuro: #FDFBF7; --fondo: #22242A; --superficie: #2b2e37; --texto: #FDFBF7; --borde: #3d414d; --muted: #B9BEC9; --enlace: #00A087; }
+:root { --primario: #1A44D8; --primario-oscuro: #22242A; --acento: #00A087; --fondo: #FDFBF7; --superficie: #EEF2FC; --texto: #22242A; --borde: #CFD8F2; --muted: #5A5F6B; --enlace: #1A44D8; --cabecera: #FFFFFF; --encabezado-tabla: #DCE4F8; }
+:root[data-tema="oscuro"] { --primario-oscuro: #FDFBF7; --fondo: #22242A; --superficie: #2b2e37; --texto: #FDFBF7; --borde: #3d414d; --muted: #B9BEC9; --enlace: #00A087; --cabecera: #2b2e37; --encabezado-tabla: #3d414d; }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-tema="claro"]) { --primario-oscuro: #FDFBF7; --fondo: #22242A; --superficie: #2b2e37; --texto: #FDFBF7; --borde: #3d414d; --muted: #B9BEC9; --enlace: #00A087; }
+  :root:not([data-tema="claro"]) { --primario-oscuro: #FDFBF7; --fondo: #22242A; --superficie: #2b2e37; --texto: #FDFBF7; --borde: #3d414d; --muted: #B9BEC9; --enlace: #00A087; --cabecera: #2b2e37; --encabezado-tabla: #3d414d; }
 }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--fondo); color: var(--primario-oscuro); font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-header { background: var(--superficie); border-bottom: 1px solid var(--borde); padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+header { background: var(--cabecera); border-bottom: 1px solid var(--borde); padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
 header h1 { font-size: 20px; margin: 0; color: var(--primario); }
 header a { color: var(--enlace); }
 main { padding: 20px; max-width: 1100px; margin: 0 auto; }
@@ -27,7 +27,7 @@ h2 { font-size: 18px; margin: 26px 0 10px; color: var(--primario-oscuro); }
 .tarjeta .l { color: var(--muted); font-size: 14px; }
 table { width: 100%; border-collapse: collapse; background: var(--superficie); border: 1px solid var(--borde); font-size: 14px; }
 th, td { padding: 10px; border-bottom: 1px solid var(--borde); text-align: left; vertical-align: top; }
-th { background: var(--borde); }
+th { background: var(--encabezado-tabla); }
 .controles { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
 select, button { color: var(--texto); font-size: 15px; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--borde); background: var(--superficie); }
 button { background: var(--primario); color: #fff; border: none; font-weight: 700; cursor: pointer; }
@@ -40,7 +40,7 @@ button.tema { background: var(--superficie); color: var(--enlace); border: 1px s
 .mensaje { white-space: pre-wrap; word-break: break-word; margin-top: 6px; font-family: monospace; font-size: 12px; color: var(--texto); }
 .aviso { background: var(--superficie); border: 1px solid var(--borde); border-left: 4px solid var(--acento); padding: 16px; border-radius: 8px; margin-top: 20px; }
 .aviso.error { border-left-color: #b3261e; color: #b3261e; }
-.tarjeta, .log, .aviso, table { background: color-mix(in srgb, var(--superficie) 80%, transparent); }
+.tarjeta, .log, .aviso, table { background: var(--superficie); }
 h2 { font-family: "Source Serif 4", Georgia, "Times New Roman", serif; font-size: 1.3rem; }
 </style>
 </head>

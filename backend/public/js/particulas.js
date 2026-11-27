@@ -94,27 +94,10 @@
 
     function dibujar() {
       ctx.clearRect(0, 0, ancho, alto);
-      var distancia = 140;
-      ctx.lineWidth = 1;
-      ctx.strokeStyle = '#1A44D8';
-      for (var a = 0; a < puntos.length; a++) {
-        for (var b = a + 1; b < puntos.length; b++) {
-          var dx = puntos[a].x - puntos[b].x, dy = puntos[a].y - puntos[b].y;
-          var d2 = dx * dx + dy * dy;
-          if (d2 < distancia * distancia) {
-            var d = Math.sqrt(d2);
-            ctx.globalAlpha = (1 - d / distancia) * 0.22;
-            ctx.beginPath();
-            ctx.moveTo(puntos[a].x, puntos[a].y);
-            ctx.lineTo(puntos[b].x, puntos[b].y);
-            ctx.stroke();
-          }
-        }
-      }
       for (var k = 0; k < puntos.length; k++) {
         var s = puntos[k];
         var r = s.r * (1 + 0.25 * Math.sin(t * 2 + s.fase));
-        ctx.globalAlpha = 0.6;
+        ctx.globalAlpha = 0.5;
         ctx.fillStyle = s.color;
         ctx.beginPath();
         ctx.arc(s.x, s.y, r, 0, Math.PI * 2);

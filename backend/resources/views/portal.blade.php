@@ -14,11 +14,11 @@
 :root {
   --papel: #FDFBF7;
   --papel-hondo: #F4F0E7;
-  --superficie: #FFFFFF;
+  --superficie: #EEF2FC;
   --tinta: #22242A;
   --texto: #22242A;
   --muted: #5B606C;
-  --linea: #E2DDD1;
+  --linea: #D2DAF0;
   --azul: #1A44D8;
   --azul-boton: #1A44D8;
   --azul-hondo: #12329E;
@@ -252,7 +252,6 @@ section[id], #texto { scroll-margin-top: 90px; }
   height: 7px;
   border-radius: 50%;
   background: #2BE0BF;
-  animation: pulso 2.2s infinite;
 }
 .portada .meta-portada { margin-top: 10px; font-size: 0.95rem; opacity: 0.9; display: flex; gap: 6px 18px; flex-wrap: wrap; }
 .buscador-portada {
@@ -358,6 +357,15 @@ section[id], #texto { scroll-margin-top: 90px; }
   font-variant-numeric: tabular-nums;
 }
 .dash-l { color: var(--muted); font-size: 0.9rem; margin-top: 8px; }
+.dash-resumen {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--tinta);
+  margin: 40px 0 0;
+  max-width: 30ch;
+}
 .dash-titulo {
   font-family: "Newsreader", Georgia, serif;
   font-size: 1.7rem;
@@ -775,6 +783,9 @@ dialog::backdrop { background: rgba(20, 22, 28, 0.55); animation: entrar 0.3s ea
   function colorValido(c, respaldo) {
     return /^#[0-9a-fA-F]{6}$/.test(c || '') ? c : respaldo;
   }
+  function plural(n, uno, varios) {
+    return n + ' ' + (n === 1 ? uno : varios);
+  }
   function etiquetaNumero(n) {
     return 'Vol. ' + n.volume + ', Núm. ' + n.number + ' (' + n.year + ')';
   }
@@ -1098,14 +1109,11 @@ dialog::backdrop { background: rgba(20, 22, 28, 0.55); animation: entrar 0.3s ea
         if (detalle) item.append(el('span', { 'class': 'meta-revista' }, detalle));
         lista.append(item);
       });
-      var cajaTarjetas = el('div', { 'class': 'dash-tarjetas' });
-      tarjetas.forEach(function (p) {
-        cajaTarjetas.append(el('div', { 'class': 'dash-tarjeta' },
-          el('div', { 'class': 'dash-n', 'data-valor': String(p[1]) }, String(p[1])),
-          el('div', { 'class': 'dash-l' }, p[0])));
-      });
-      contenedor.replaceChildren(cajaTarjetas, el('h3', { 'class': 'dash-titulo' }, 'Publicaciones recientes'), lista);
-      animarContadores(contenedor);
+      var frase = 'Hay ' + plural(tarjetas[0][1], 'revista', 'revistas') + ', ' +
+        plural(tarjetas[1][1], 'número', 'números') + ' y ' +
+        plural(tarjetas[2][1], 'artículo publicado', 'artículos publicados') + '.';
+      if (tarjetas[3]) frase += ' Tienes ' + plural(tarjetas[3][1], 'favorito guardado', 'favoritos guardados') + '.';
+      contenedor.replaceChildren(el('p', { 'class': 'dash-resumen' }, frase), el('h3', { 'class': 'dash-titulo' }, 'Lo más reciente'), lista);
     } catch (e) {
       contenedor.replaceChildren();
     }
@@ -1130,10 +1138,10 @@ dialog::backdrop { background: rgba(20, 22, 28, 0.55); animation: entrar 0.3s ea
     app.replaceChildren(
       el('section', { 'class': 'portada portada-inicio' }, el('div', { 'class': 'contenedor' },
         titulo('Revistas'),
-        el('p', {}, 'Publicaciones académicas de acceso abierto.'), buscadorPortada())),
+        el('p', {}, 'Lee, busca y cita artículos de revistas de acceso abierto.'), buscadorPortada())),
       el('main', { 'class': 'contenedor' },
         el('section', { 'class': 'dashboard', id: 'dashboard' }),
-        el('h2', { 'class': 'subtitulo' }, 'Elige una revista'),
+        el('h2', { 'class': 'subtitulo' }, 'Revistas publicadas'),
         el('p', { id: 'aviso', role: 'status' }),
         el('div', { 'class': 'rejilla', id: 'lista' }))
     );
