@@ -6,33 +6,125 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Revistas | SanColFr</title>
 <meta name="description" content="SanColFr, plataforma de revistas digitales de acceso abierto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&display=swap" rel="stylesheet">
 <style>
+/* ================= Tokens: paleta SanColFr y sus tonos ================= */
 :root {
-  --primario: #1A44D8;
-  --primario-oscuro: #22242A;
-  --acento: #00A087;
+  --papel: #FDFBF7;
+  --papel-hondo: #F4F0E7;
+  --superficie: #FFFFFF;
+  --tinta: #22242A;
   --texto: #22242A;
-  --fondo: #FDFBF7;
-  --borde: #EAECEF;
+  --muted: #5B606C;
+  --linea: #E2DDD1;
+  --azul: #1A44D8;
+  --azul-boton: #1A44D8;
+  --azul-hondo: #12329E;
+  --azul-tinta: #E9EEFD;
+  --verde: #00A087;
+  --verde-hondo: #00705F;
+  --menta: #DCF2EC;
+  --logo-san: #22242A;
+  --logo-col: #1A44D8;
+  --sombra: 0 1px 0 rgba(34, 36, 42, 0.04), 0 16px 30px -22px rgba(34, 36, 42, 0.45);
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-tema="claro"]) {
+    --papel: #17191E;
+    --papel-hondo: #1E2128;
+    --superficie: #22252D;
+    --tinta: #F4F1EA;
+    --texto: #EDEAE2;
+    --muted: #A9AFBB;
+    --linea: #353945;
+    --azul: #7C98FF;
+    --azul-boton: #1A44D8;
+    --azul-hondo: #0E2A8A;
+    --azul-tinta: #1D2745;
+    --verde: #2BC4A7;
+    --verde-hondo: #7FE3CF;
+    --menta: #14332D;
+    --logo-san: #FDFBF7;
+    --logo-col: #00A087;
+    --sombra: 0 1px 0 rgba(0, 0, 0, 0.3), 0 18px 34px -20px rgba(0, 0, 0, 0.7);
+  }
+}
+:root[data-tema="oscuro"] {
+  --papel: #17191E;
+  --papel-hondo: #1E2128;
+  --superficie: #22252D;
+  --tinta: #F4F1EA;
+  --texto: #EDEAE2;
+  --muted: #A9AFBB;
+  --linea: #353945;
+  --azul: #7C98FF;
+  --azul-boton: #1A44D8;
+  --azul-hondo: #0E2A8A;
+  --azul-tinta: #1D2745;
+  --verde: #2BC4A7;
+  --verde-hondo: #7FE3CF;
+  --menta: #14332D;
+  --logo-san: #FDFBF7;
+  --logo-col: #00A087;
+  --sombra: 0 1px 0 rgba(0, 0, 0, 0.3), 0 18px 34px -20px rgba(0, 0, 0, 0.7);
+}
+
+/* ================= Base ================= */
 * { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
+  font-family: "Geist", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
   color: var(--texto);
-  background: var(--fondo);
-  line-height: 1.55;
+  background-color: var(--papel);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  -webkit-font-smoothing: antialiased;
 }
-a { color: var(--primario); }
-.contenedor { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+a { color: var(--azul); text-underline-offset: 4px; }
+button, a { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 2px solid var(--verde); outline-offset: 3px; border-radius: 4px; }
+.contenedor { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+section[id], #texto { scroll-margin-top: 90px; }
 
-/* ---------- Encabezado ---------- */
+/* Ondas al presionar */
+.onda {
+  position: absolute;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.22;
+  transform: scale(0);
+  animation: onda 0.65s var(--ease) forwards;
+  pointer-events: none;
+}
+@keyframes onda { to { transform: scale(1); opacity: 0; } }
+@keyframes subir { to { opacity: 1; transform: none; } }
+@keyframes entrar { from { opacity: 0; transform: translateY(16px); } }
+@keyframes pulso {
+  0% { box-shadow: 0 0 0 0 rgba(0, 160, 135, 0.55); }
+  100% { box-shadow: 0 0 0 9px rgba(0, 160, 135, 0); }
+}
+@keyframes brillo { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+@keyframes latido { 0% { transform: scale(1); } 40% { transform: scale(1.35); } 100% { transform: scale(1); } }
+@keyframes anillo { from { transform: scale(0.5); opacity: 0.9; } to { transform: scale(2); opacity: 0; } }
+@keyframes aparecerDialogo { from { opacity: 0; transform: translateY(12px) scale(0.98); } }
+
+/* Transición del cambio de tema: un círculo que se expande desde el botón */
+::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+
+/* ================= Encabezado ================= */
 .cabecera {
-  background: #ffffff;
-  border-bottom: 4px solid var(--primario);
   position: sticky;
   top: 0;
   z-index: 10;
+  background: color-mix(in srgb, var(--papel) 88%, transparent);
+  backdrop-filter: blur(10px) saturate(1.2);
+  -webkit-backdrop-filter: blur(10px) saturate(1.2);
+  border-bottom: 1px solid var(--linea);
 }
 .cabecera .contenedor {
   display: flex;
@@ -43,223 +135,556 @@ a { color: var(--primario); }
   padding-bottom: 10px;
   flex-wrap: wrap;
 }
-.cabecera img { height: 56px; display: block; }
+.logo { display: inline-block; line-height: 0; transition: transform 0.4s var(--ease); }
+.logo:hover { transform: rotate(-3deg); }
+.logo svg { display: block; width: 260px; max-width: 100%; height: auto; }
+.logo-san { fill: var(--logo-san); }
+.logo-col { fill: var(--logo-col); }
 .acciones { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-.saludo { color: var(--primario); font-weight: 700; }
+.saludo { color: var(--tinta); font-weight: 600; font-size: 0.92rem; }
 
+/* ================= Botones ================= */
 .btn {
-  background: var(--primario);
-  color: #ffffff;
-  border: 2px solid var(--primario);
-  border-radius: 8px;
-  padding: 8px 16px;
-  font: inherit;
-  font-weight: 700;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-}
-.btn:hover { transform: translateY(-3px); box-shadow: 0 6px 14px rgba(0, 0, 0, 0.22); background: var(--primario-oscuro); }
-.btn:active { transform: translateY(0); box-shadow: none; }
-.btn-borde { background: #ffffff; color: var(--primario); }
-.btn-borde:hover { background: #EAECEF; }
-.btn[hidden] { display: none; }
-
-/* ---------- Portada ---------- */
-.portada {
-  background: linear-gradient(135deg, var(--primario) 0%, var(--primario-oscuro) 65%);
-  color: #ffffff;
-  padding: 56px 0 48px;
-  border-bottom: 6px solid var(--acento);
-}
-.portada h1 { margin: 0 0 6px; font-size: clamp(2.4rem, 7vw, 4rem); letter-spacing: 0.02em; }
-.portada p { margin: 0 0 16px; max-width: 640px; font-size: 1.05rem; }
-.insignia {
-  display: inline-block;
-  background: var(--acento);
-  color: #22242A;
-  font-weight: 700;
-  border-radius: 999px;
-  padding: 6px 16px;
-}
-
-/* ---------- Controles ---------- */
-.controles { padding: 28px 0 8px; }
-.fila { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-#buscar {
-  flex: 1 1 260px;
-  padding: 11px 14px;
-  border: 2px solid var(--borde);
-  border-radius: 8px;
-  font: inherit;
-  background: #ffffff;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-#buscar:focus { border-color: var(--primario); box-shadow: 0 0 0 3px rgba(26, 68, 216, 0.18); outline: none; }
-.chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
-.filtro {
-  border: 2px solid var(--primario);
-  background: #ffffff;
-  color: var(--primario);
-  border-radius: 999px;
-  padding: 5px 14px;
-  font: inherit;
-  cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-}
-.filtro:hover { transform: translateY(-2px); }
-.filtro.activo { background: var(--primario); color: #ffffff; }
-#aviso { min-height: 1.4em; color: #9a2b00; font-weight: 700; margin: 10px 0 0; }
-
-/* ---------- Tarjetas ---------- */
-.rejilla {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 18px;
-  padding: 18px 0 8px;
-}
-.card {
-  background: #ffffff;
-  border: 1px solid var(--borde);
-  border-top: 4px solid var(--acento);
-  border-radius: 12px;
-  padding: 18px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   gap: 8px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: var(--azul-boton);
+  color: #ffffff;
+  border: 1px solid var(--azul-boton);
+  border-radius: 8px;
+  padding: 10px 18px;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.94rem;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 8px 18px -12px rgba(26, 68, 216, 0.9);
+  transition: transform 0.15s var(--ease), background-color 0.25s, border-color 0.25s, box-shadow 0.25s, color 0.25s;
 }
-.card:hover, .card:focus-visible { transform: translateY(-5px); box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12); outline: none; }
-.card h3 { margin: 0; font-size: 1.05rem; color: var(--primario-oscuro); }
-.autores { margin: 0; color: #555555; font-size: 0.93rem; }
-.pie-card { margin-top: auto; display: flex; justify-content: space-between; align-items: center; color: #666666; font-size: 0.9rem; }
-.chip {
-  align-self: flex-start;
-  background: #EAECEF;
-  color: #22242A;
+.btn:hover { background: var(--azul-hondo); border-color: var(--azul-hondo); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 12px 22px -12px rgba(18, 50, 158, 0.9); }
+.btn:active { transform: scale(0.96); box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25); }
+.btn-borde {
+  background: transparent;
+  color: var(--tinta);
+  border-color: var(--linea);
+  box-shadow: none;
+}
+.btn-borde:hover { background: var(--azul-tinta); color: var(--azul); border-color: color-mix(in srgb, var(--azul) 45%, var(--linea)); box-shadow: none; }
+.btn-acento { background: var(--verde); border-color: var(--verde); color: #0B1F1A; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 8px 18px -12px rgba(0, 160, 135, 0.9); }
+.btn-acento:hover { background: var(--verde); border-color: var(--verde); color: #0B1F1A; filter: brightness(0.94); }
+.btn[hidden] { display: none; }
+#tema { min-width: 118px; }
+
+/* ================= Portada ================= */
+.portada {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--azul-hondo) 0%, var(--azul-boton) 72%);
+  color: #FDFBF7;
+  padding: 76px 0 70px;
+}
+.portada::before {
+  content: "";
+  position: absolute;
+  right: -150px;
+  top: -190px;
+  width: 560px;
+  height: 560px;
+  border-radius: 50%;
+  border: 1px solid rgba(253, 251, 247, 0.16);
+  box-shadow: 0 0 0 70px rgba(253, 251, 247, 0.03), 0 0 0 140px rgba(253, 251, 247, 0.025);
+  pointer-events: none;
+}
+.portada::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background: var(--verde);
+}
+.portada .contenedor { position: relative; }
+.portada-inicio {
+  background: none;
+  color: var(--tinta);
+  padding: 72px 0 40px;
+}
+.portada-inicio::before, .portada-inicio::after { display: none; }
+.portada h1 {
+  margin: 0 0 14px;
+  padding-bottom: 0.08em;
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  font-size: clamp(3.2rem, 11vw, 7.2rem);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+.portada-inicio h1 { color: var(--tinta); }
+.palabra {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.45em);
+  animation: subir 0.95s var(--ease) forwards;
+  animation-delay: calc(var(--i, 0) * 110ms + 80ms);
+}
+.portada p { margin: 0 0 16px; max-width: 620px; font-size: 1.12rem; opacity: 0.94; }
+.portada-inicio p { color: var(--muted); opacity: 1; font-size: 1.14rem; }
+.insignia {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(253, 251, 247, 0.1);
+  color: #FDFBF7;
+  border: 1px solid rgba(253, 251, 247, 0.3);
   border-radius: 999px;
-  padding: 2px 12px;
-  font-size: 0.82rem;
-  font-weight: 700;
+  padding: 5px 13px;
+  margin-bottom: 18px;
+  font-size: 0.86rem;
+  font-weight: 500;
 }
-.fav {
+.insignia::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2BE0BF;
+  animation: pulso 2.2s infinite;
+}
+.portada .meta-portada { margin-top: 10px; font-size: 0.95rem; opacity: 0.9; display: flex; gap: 6px 18px; flex-wrap: wrap; }
+.buscador-portada {
+  display: flex;
+  gap: 8px;
+  margin-top: 30px;
+  max-width: 640px;
+  padding: 6px;
+  flex-wrap: wrap;
+  background: var(--superficie);
+  border: 1px solid var(--linea);
+  border-radius: 999px;
+  box-shadow: var(--sombra);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.buscador-portada:focus-within {
+  border-color: var(--verde);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--verde) 22%, transparent), var(--sombra);
+}
+.buscador-portada input {
+  flex: 1 1 240px;
+  min-width: 0;
+  padding: 12px 18px;
   border: 0;
   background: transparent;
-  font-size: 1.6rem;
-  line-height: 1;
-  color: var(--primario);
-  cursor: pointer;
-  padding: 4px 8px;
+  color: var(--tinta);
+  font: inherit;
+  font-size: 1rem;
+  outline: none;
 }
-.fav.activo { color: #c0392b; }
-.fav.pop { animation: pop 0.35s ease; }
-@keyframes pop { 0% { transform: scale(1); } 50% { transform: scale(1.5); } 100% { transform: scale(1); } }
-.vacio { grid-column: 1 / -1; text-align: center; color: #666666; padding: 30px 0; }
-.mas { display: block; margin: 18px auto 40px; }
+.buscador-portada input::placeholder { color: var(--muted); }
 
-/* Aparición suave al hacer scroll */
-.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
-.reveal.visible { opacity: 1; transform: none; }
+/* ================= Controles de la revista ================= */
+.controles { padding: 30px 0 6px; }
+.fila { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+#buscar {
+  flex: 1 1 260px;
+  padding: 10px 2px;
+  border: 0;
+  border-bottom: 1px solid var(--linea);
+  border-radius: 0;
+  background: linear-gradient(var(--verde), var(--verde)) left bottom / 0 2px no-repeat;
+  color: var(--tinta);
+  font: inherit;
+  font-size: 1rem;
+  transition: background-size 0.45s var(--ease);
+}
+#buscar::placeholder { color: var(--muted); }
+#buscar:focus { outline: none; background-size: 100% 2px; }
+#selector-numero {
+  flex: 0 1 280px;
+  padding: 10px 12px;
+  border: 1px solid var(--linea);
+  border-radius: 8px;
+  font: inherit;
+  color: var(--tinta);
+  background: var(--superficie);
+}
+.chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+.filtro {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--linea);
+  background: var(--superficie);
+  color: var(--tinta);
+  border-radius: 999px;
+  padding: 6px 15px;
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.15s var(--ease), background-color 0.25s, color 0.25s, border-color 0.25s;
+}
+.filtro:hover { border-color: var(--azul); color: var(--azul); }
+.filtro:active { transform: scale(0.94); }
+.filtro.activo { background: var(--tinta); border-color: var(--tinta); color: var(--papel); }
+#aviso { min-height: 1.4em; color: #A33A00; font-weight: 600; margin: 10px 0 0; }
+.subtitulo {
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 500;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+  color: var(--tinta);
+  margin: 46px 0 4px;
+}
 
-/* ---------- Ventanas ---------- */
+/* ================= Dashboard (cifras con filetes, sin cajas) ================= */
+.dashboard { margin: 0; }
+.dash-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  border-top: 1px solid var(--linea);
+  border-bottom: 1px solid var(--linea);
+}
+.dash-tarjeta { padding: 22px 22px 20px; border-left: 1px solid var(--linea); }
+.dash-tarjeta:first-child { border-left: 0; padding-left: 0; }
+.dash-n {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--azul);
+  font-variant-numeric: tabular-nums;
+}
+.dash-l { color: var(--muted); font-size: 0.9rem; margin-top: 8px; }
+.dash-titulo {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 46px 0 6px;
+  color: var(--tinta);
+}
+.dash-lista { list-style: none; padding: 0; margin: 0; }
+.dash-lista li {
+  border-bottom: 1px solid var(--linea);
+  padding: 14px 0;
+  transition: padding-left 0.35s var(--ease);
+}
+.dash-lista li:hover { padding-left: 12px; }
+.dash-lista a {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 1.22rem;
+  font-weight: 500;
+  color: var(--tinta);
+  text-decoration: none;
+  background-image: linear-gradient(var(--azul), var(--azul));
+  background-size: 0 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.4s var(--ease), color 0.2s;
+}
+.dash-lista li:hover a { background-size: 100% 1px; color: var(--azul); }
+.dash-lista .meta-revista { margin-left: 12px; }
+
+/* ================= Tapas de revistas y artículos ================= */
+.rejilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 22px;
+  padding: 22px 0 8px;
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 22px 22px 20px 28px;
+  background: var(--superficie);
+  border: 1px solid var(--linea);
+  border-radius: 4px;
+  box-shadow: var(--sombra);
+  cursor: pointer;
+  overflow: hidden;
+  animation: entrar 0.75s var(--ease) backwards;
+  animation-delay: calc(var(--i, 0) * 75ms + 160ms);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.3s;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: var(--banda, var(--azul));
+  transition: width 0.4s var(--ease);
+}
+.card:hover, .card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 40px -26px rgba(34, 36, 42, 0.55);
+  border-color: color-mix(in srgb, var(--banda, var(--azul)) 38%, var(--linea));
+}
+.card:hover::before, .card:focus-within::before { width: 12px; }
+.card:active { transform: translateY(-1px) scale(0.99); }
+.card h3 { margin: 0; font-family: "Newsreader", Georgia, serif; font-size: 1.36rem; font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; color: var(--tinta); }
+.card h3 a { color: inherit; text-decoration: none; }
+.card h3 a::after { content: ""; position: absolute; inset: 0; }
+.card h3 a:focus { outline: none; }
+.card:focus-within { outline: none; }
+.autores { margin: 0; color: var(--muted); font-size: 0.93rem; }
+.meta-revista { color: var(--muted); font-size: 0.9rem; margin: 0; display: flex; gap: 6px 14px; flex-wrap: wrap; }
+.pie-card { margin-top: auto; display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 0.88rem; }
+.chip {
+  align-self: flex-start;
+  background: var(--menta);
+  color: var(--verde-hondo);
+  border-radius: 999px;
+  padding: 3px 11px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.portada-tarjeta {
+  display: block;
+  width: calc(100% + 50px);
+  max-width: none;
+  margin: -22px -22px 10px -28px;
+  height: 200px;
+  object-fit: cover;
+  object-position: top;
+  background: var(--papel-hondo);
+  border-bottom: 1px solid var(--linea);
+}
+.fav {
+  position: relative;
+  z-index: 2;
+  border: 0;
+  background: transparent;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 999px;
+  transition: transform 0.15s var(--ease), color 0.25s, background-color 0.25s;
+}
+.fav:hover { color: var(--verde); background: var(--menta); }
+.fav:active { transform: scale(0.8); }
+.fav.activo { color: var(--verde); }
+.fav.pop { animation: latido 0.45s var(--ease); }
+.fav.pop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  border: 2px solid var(--verde);
+  animation: anillo 0.6s var(--ease) forwards;
+  pointer-events: none;
+}
+.vacio { grid-column: 1 / -1; text-align: center; color: var(--muted); padding: 34px 0; font-family: "Newsreader", Georgia, serif; font-size: 1.2rem; }
+.mas { display: block; margin: 22px auto 40px; }
+
+/* Esqueletos de carga */
+.esqueleto {
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--papel-hondo) 25%, var(--linea) 50%, var(--papel-hondo) 75%);
+  background-size: 200% 100%;
+  animation: brillo 1.5s linear infinite;
+  margin-bottom: 10px;
+}
+.esqueleto-tarjeta { pointer-events: none; min-height: 170px; animation: none; }
+
+/* ================= Ventanas ================= */
 dialog {
   max-height: 88vh;
   overflow-y: auto;
-  border: 0;
-  border-radius: 14px;
+  border: 1px solid var(--linea);
+  border-radius: 8px;
   padding: 0;
   width: calc(100% - 32px);
-  max-width: 640px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  max-width: 440px;
+  background: var(--superficie);
+  color: var(--texto);
+  box-shadow: 0 34px 80px -24px rgba(0, 0, 0, 0.55);
 }
-dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
+dialog[open] { animation: aparecerDialogo 0.4s var(--ease) backwards; }
+dialog::backdrop { background: rgba(20, 22, 28, 0.55); animation: entrar 0.3s ease backwards; }
 #detalle { max-width: 940px; }
+.dlg { padding: 30px 28px 24px; }
+.dlg h2 { margin: 4px 0 12px; font-family: "Newsreader", Georgia, serif; font-weight: 500; font-size: 1.7rem; color: var(--tinta); }
+.dlg label { display: block; margin: 14px 0 4px; font-weight: 600; font-size: 0.88rem; color: var(--muted); }
+.dlg input {
+  width: 100%;
+  padding: 10px 2px;
+  border: 0;
+  border-bottom: 1px solid var(--linea);
+  border-radius: 0;
+  background: linear-gradient(var(--verde), var(--verde)) left bottom / 0 2px no-repeat;
+  color: var(--tinta);
+  font: inherit;
+  transition: background-size 0.45s var(--ease);
+}
+.dlg input:focus { outline: none; background-size: 100% 2px; }
+.dlg .botones { display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; }
+.enlace { background: none; border: 0; color: var(--azul); text-decoration: underline; cursor: pointer; font: inherit; padding: 0; margin-top: 16px; }
+#auth-msg { color: #A33A00; font-weight: 600; min-height: 1.3em; }
 .visor-pdf {
   display: block;
   width: 100%;
-  height: 72vh;
+  height: 74vh;
   min-height: 420px;
-  border: 1px solid var(--borde);
-  border-radius: 8px;
-  margin: 12px 0;
-  background: #f4f4f4;
+  border: 1px solid var(--linea);
+  border-radius: 4px;
+  margin: 14px 0;
+  background: var(--papel-hondo);
 }
 .texto-plano { margin-top: 14px; }
-.texto-plano summary { cursor: pointer; color: var(--primario); font-weight: 700; }
-.texto-plano p { font-size: 0.97rem; }
-@media (max-width: 600px) { .visor-pdf { height: 60vh; min-height: 320px; } }
-.dlg { padding: 24px; }
-.dlg h2 { margin: 8px 0; color: var(--primario-oscuro); }
-.meta { color: #666666; font-size: 0.92rem; }
-.dlg label { display: block; margin: 12px 0 4px; font-weight: 700; }
-.dlg input {
-  width: 100%;
-  padding: 10px 12px;
-  border: 2px solid var(--borde);
-  border-radius: 8px;
-  font: inherit;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+.texto-plano summary { cursor: pointer; color: var(--azul); font-weight: 600; }
+.meta { color: var(--muted); font-size: 0.92rem; }
+
+/* ================= Pie ================= */
+.pie {
+  background: #22242A;
+  color: #D9DCE3;
+  margin-top: 80px;
+  padding: 52px 0 28px;
+  font-size: 0.92rem;
 }
-.dlg input:focus { border-color: var(--primario); box-shadow: 0 0 0 3px rgba(26, 68, 216, 0.18); outline: none; }
-.dlg .botones { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
-.enlace { background: none; border: 0; color: var(--primario); text-decoration: underline; cursor: pointer; font: inherit; padding: 0; margin-top: 14px; }
-#auth-msg { color: #9a2b00; font-weight: 700; min-height: 1.3em; }
+.pie .rejilla-pie { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px; }
+.pie strong { font-family: "Newsreader", Georgia, serif; color: #FDFBF7; font-size: 1.3rem; font-weight: 500; }
+.pie a { color: #2BE0BF; }
+.pie p { margin: 6px 0; }
+.pie .legal { margin-top: 30px; padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, 0.12); font-size: 0.82rem; opacity: 0.75; }
 
-/* ---------- Pie ---------- */
-.pie { background: var(--primario-oscuro); color: #ffffff; border-top: 5px solid var(--acento); padding: 26px 0; font-size: 0.9rem; }
-.pie a { color: var(--acento); }
+/* ================= Migas ================= */
+.migas { padding: 22px 0 0; font-size: 0.88rem; color: var(--muted); }
+.migas a { color: var(--azul); }
 
-/* Accesibilidad: respetar "reducir movimiento" */
+/* ================= Barra de progreso de lectura ================= */
+#progreso {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 3px;
+  z-index: 30;
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  background: linear-gradient(90deg, var(--azul), var(--verde));
+}
+
+/* ================= Artículo ================= */
+.articulo { max-width: 720px; padding-bottom: 24px; }
+.titulo-articulo {
+  font-family: "Newsreader", Georgia, serif;
+  color: var(--tinta);
+  font-size: clamp(2.2rem, 5.4vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+  margin: 10px 0 14px;
+}
+.seccion-articulo { font-size: 0.9rem; font-weight: 600; color: var(--verde-hondo); margin: 30px 0 4px; }
+.autores-articulo { font-size: 1.05rem; color: var(--texto); margin: 0 0 6px; font-weight: 600; }
+.datos-articulo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0 0 14px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--linea);
+}
+.acciones-articulo { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 18px 0 30px; }
+.acciones-articulo .btn { text-decoration: none; }
+.fav-grande { border: 1px solid var(--linea); border-radius: 999px; background: var(--superficie); font-size: 1.4rem; padding: 6px 14px; }
+.fav-grande.activo { border-color: var(--verde); }
+.articulo section h2 {
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  letter-spacing: -0.01em;
+  color: var(--tinta);
+  margin: 40px 0 12px;
+}
+.bloque-resumen {
+  background: var(--azul-tinta);
+  border-radius: 4px;
+  padding: 22px 26px 24px;
+  position: relative;
+}
+.bloque-resumen::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 22px;
+  bottom: 22px;
+  width: 3px;
+  background: var(--verde);
+}
+.bloque-resumen h2 { margin: 0 0 8px !important; font-size: 1.05rem !important; font-family: "Geist", system-ui, sans-serif !important; font-weight: 600 !important; color: var(--azul) !important; }
+.bloque-resumen p { font-family: "Newsreader", Georgia, serif; font-size: 1.2rem; line-height: 1.65; margin: 0; color: var(--texto); }
+.texto-articulo p {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 1.22rem;
+  line-height: 1.8;
+  color: var(--texto);
+  margin: 0 0 1.1em;
+  max-width: 66ch;
+}
+.texto-articulo p:first-of-type::first-letter {
+  float: left;
+  font-size: 4.3rem;
+  line-height: 0.82;
+  padding: 8px 12px 0 0;
+  font-weight: 600;
+  color: var(--azul);
+}
+.pdf-articulo { margin-top: 36px; }
+.articulo .volver { margin: 34px 0 0; }
+@media print { .cabecera, .acciones-articulo, .migas, .pie, .volver, .visor-pdf, #progreso { display: none !important; } }
+
+/* ================= Movimiento reducido: se respeta, sin quitar el contenido ================= */
 @media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; animation: none !important; }
-  .reveal { opacity: 1; transform: none; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
-/* ---------- Portal multirrevista ---------- */
-.card { position: relative; }
-.card h3 a { color: var(--primario-oscuro); text-decoration: none; }
-.card h3 a::after { content: ""; position: absolute; inset: 0; border-radius: 12px; }
-.card h3 a:focus { outline: none; }
-.card h3 a:focus-visible::after { box-shadow: inset 0 0 0 3px var(--primario); }
-.fav { position: relative; z-index: 2; }
-.meta-revista { color: #555555; font-size: 0.92rem; margin: 0; display: flex; gap: 14px; flex-wrap: wrap; }
-.subtitulo { color: var(--primario-oscuro); margin: 28px 0 0; font-size: 1.5rem; }
-.portada .meta-portada { margin-top: 10px; font-size: 0.95rem; opacity: 0.92; }
-.migas { padding: 16px 0 0; font-size: 0.92rem; color: #666666; }
-.migas a { color: var(--primario); }
-.titulo-articulo { color: var(--primario-oscuro); font-size: clamp(1.6rem, 4vw, 2.3rem); line-height: 1.2; margin: 12px 0 8px; }
-.acciones-articulo { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 16px 0 4px; }
-.acciones-articulo .btn { text-decoration: none; display: inline-block; }
-.fav-grande { border: 2px solid var(--borde); border-radius: 10px; background: #ffffff; font-size: 1.8rem; padding: 4px 12px; }
-.fav-grande.activo { border-color: #c0392b; }
-#selector-numero { flex: 0 1 280px; padding: 11px 12px; border: 2px solid var(--borde); border-radius: 8px; font: inherit; background: #ffffff; }
-.volver { display: inline-block; margin: 18px 0 40px; text-decoration: none; }
-.pie p { margin: 4px 0; }
-.vacio { color: #666666; }
-/* ---------- Portadas de artículos ---------- */
-.portada-tarjeta { display: block; width: calc(100% + 36px); max-width: none; margin: -18px -18px 4px; height: 210px; object-fit: cover; object-position: top; border-radius: 12px 12px 0 0; background: #f4f4f4; }
-/* ---------- Página de artículo (estilo de revista) ---------- */
-.articulo { max-width: 820px; padding-bottom: 24px; }
-.articulo .migas { font-size: 0.9rem; }
-.seccion-articulo { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #1A44D8; margin: 18px 0 6px; }
-.articulo h1.titulo-articulo { font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.9rem, 4.4vw, 2.7rem); line-height: 1.18; color: #111111; margin: 0 0 14px; }
-.autores-articulo { font-size: 1.02rem; color: #333333; margin: 0 0 8px; }
-.datos-articulo { font-size: 0.9rem; color: #666666; margin: 0 0 18px; }
-.articulo .acciones-articulo { margin: 14px 0 26px; }
-.articulo section h2 { font-family: Georgia, "Times New Roman", serif; font-size: 1.35rem; color: var(--primario-oscuro); margin: 28px 0 10px; }
-.bloque-resumen p { font-family: Georgia, "Times New Roman", serif; font-size: 1.05rem; line-height: 1.7; }
-.texto-articulo p { font-family: Georgia, "Times New Roman", serif; font-size: 1.05rem; line-height: 1.75; color: #1d1d1d; }
-.pdf-articulo { margin-top: 30px; }
-.articulo .volver { margin-top: 30px; }
-@media print { .cabecera, .acciones-articulo, .migas, .pie, .volver, .visor-pdf { display: none !important; } }
+/* ================= Móvil ================= */
+@media (max-width: 680px) {
+  .portada { padding: 52px 0 48px; }
+  .portada-inicio { padding: 48px 0 28px; }
+  .rejilla { grid-template-columns: 1fr; }
+  .dash-tarjetas { grid-template-columns: repeat(auto-fit, minmax(96px, 1fr)); }
+  .dash-tarjeta { padding: 16px 12px 14px; }
+  .dash-tarjeta:first-child { padding-left: 0; }
+  .visor-pdf { height: 60vh; min-height: 320px; }
+  .buscador-portada { border-radius: 18px; }
+  .buscador-portada .btn { width: 100%; }
+  .acciones-articulo .btn { flex: 1 1 auto; }
+}
 </style>
 </head>
 <body>
 
 <header class="cabecera">
   <div class="contenedor">
-    <a href="/" aria-label="Inicio del portal SanColFr"><img src="/images/logo-sancolfr.svg" alt="SanColFr" width="300" height="64"></a>
-    <div class="acciones"><div id="sesion" class="acciones"></div></div>
+    <a href="/" aria-label="Inicio del portal SanColFr" class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="300" height="64" viewBox="0 0 300 64" role="img" aria-label="SanColFr">
+        <rect x="0" y="0" width="64" height="64" rx="14" fill="#1A44D8"/>
+        <path d="M16 38 A16 16 0 0 1 48 38 Z" fill="#FFFFFF"/>
+        <rect x="10" y="40" width="44" height="4" rx="2" fill="#00A087"/>
+        <text class="logo-san" x="80" y="46" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700">San</text>
+        <text class="logo-col" x="153" y="46" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700">ColFr</text>
+      </svg>
+    </a>
+    <div class="acciones"><div id="sesion" class="acciones"></div><button id="tema" class="btn btn-borde" type="button">Modo oscuro</button></div>
   </div>
 </header>
 
@@ -268,9 +693,22 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
 </div>
 
 <footer class="pie">
-  <div class="contenedor">
-    <p><strong>SanColFr</strong></p>
-    <p>Plataforma de revistas digitales de acceso abierto.</p>
+  <div class="contenedor rejilla-pie">
+    <div>
+      <p><strong>SanColFr</strong></p>
+      <p>Plataforma de revistas digitales de acceso abierto.</p>
+    </div>
+    <div>
+      <p><strong>Explora</strong></p>
+      <p><a href="/">Todas las revistas</a></p>
+    </div>
+    <div>
+      <p><strong>Acceso abierto</strong></p>
+      <p>Los artículos se publican para que cualquier persona pueda leerlos sin costo.</p>
+    </div>
+  </div>
+  <div class="contenedor legal">
+    <p>© 2026 SanColFr. Los artículos pertenecen a sus autores y a las revistas que los publican.</p>
   </div>
 </footer>
 
@@ -298,6 +736,7 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
   </form>
 </dialog>
 
+<script src="/js/particulas.js"></script>
 <script>
 (function () {
   'use strict';
@@ -311,6 +750,9 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
     token: null, usuario: null, modo: 'login'
   };
   var $ = function (id) { return document.getElementById(id); };
+  var reducirMovimiento = function () {
+    return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  };
 
   // Crea elementos sin usar innerHTML (así los datos de la API nunca se interpretan como código).
   function el(etiqueta, props) {
@@ -333,22 +775,25 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
   function colorValido(c, respaldo) {
     return /^#[0-9a-fA-F]{6}$/.test(c || '') ? c : respaldo;
   }
-  // Cada revista puede tener sus colores; si no hay revista, se usan los colores por defecto.
-  function aplicarColores() {
-    // Colores fijos de la plataforma (paleta de SanColFr): ya no cambian por revista.
-    var raiz = document.documentElement.style;
-    raiz.removeProperty('--primario');
-    raiz.removeProperty('--acento');
-  }
   function etiquetaNumero(n) {
     return 'Vol. ' + n.volume + ', Núm. ' + n.number + ' (' + n.year + ')';
+  }
+
+  // Título que entra palabra por palabra (la animación de entrada de la portada).
+  function titulo(texto, etiqueta) {
+    var h = el(etiqueta || 'h1', { 'aria-label': texto });
+    texto.split(' ').forEach(function (palabra, i) {
+      if (i) h.append(' ');
+      h.append(el('span', { 'class': 'palabra', style: '--i:' + i, 'aria-hidden': 'true' }, palabra));
+    });
+    return h;
   }
 
   // ---------- Sesión (el token se guarda en el navegador) ----------
   function leerSesion() {
     try {
-      estado.token = localStorage.getItem('hz_token');
-      var u = localStorage.getItem('hz_usuario');
+      estado.token = localStorage.getItem('sc_token');
+      var u = localStorage.getItem('sc_usuario');
       estado.usuario = u ? JSON.parse(u) : null;
     } catch (e) { estado.token = null; estado.usuario = null; }
   }
@@ -356,11 +801,11 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
     estado.token = token; estado.usuario = usuario;
     try {
       if (token) {
-        localStorage.setItem('hz_token', token);
-        localStorage.setItem('hz_usuario', JSON.stringify(usuario));
+        localStorage.setItem('sc_token', token);
+        localStorage.setItem('sc_usuario', JSON.stringify(usuario));
       } else {
-        localStorage.removeItem('hz_token');
-        localStorage.removeItem('hz_usuario');
+        localStorage.removeItem('sc_token');
+        localStorage.removeItem('sc_usuario');
       }
     } catch (e) { /* si el navegador no deja guardar, la sesión dura hasta recargar */ }
   }
@@ -391,18 +836,40 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
     if (texto) temporizadorAviso = setTimeout(function () { caja.textContent = ''; }, 6000);
   }
 
-  // ---------- Aparición al hacer scroll ----------
-  var observador = null;
-  if ('IntersectionObserver' in window && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
-    observador = new IntersectionObserver(function (entradas) {
-      entradas.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add('visible'); observador.unobserve(e.target); }
-      });
-    }, { threshold: 0.08 });
+  // ---------- Efecto de onda al presionar botones ----------
+  function ondaAlPresionar(e) {
+    var b = e.target.closest && e.target.closest('.btn, .filtro');
+    if (!b || b.disabled || reducirMovimiento()) return;
+    var r = b.getBoundingClientRect();
+    var d = Math.max(r.width, r.height) * 2.2;
+    var onda = el('span', {
+      'class': 'onda', 'aria-hidden': 'true',
+      style: 'width:' + d + 'px;height:' + d + 'px;left:' + (e.clientX - r.left - d / 2) + 'px;top:' + (e.clientY - r.top - d / 2) + 'px'
+    });
+    b.append(onda);
+    onda.addEventListener('animationend', function () { onda.remove(); });
   }
-  function revelar(nodo) {
-    if (observador) observador.observe(nodo);
-    else nodo.classList.add('visible');
+
+  // ---------- Barra de progreso de lectura (solo en artículos) ----------
+  var progreso = null;
+  function actualizarProgreso() {
+    if (!progreso) return;
+    var alto = document.documentElement.scrollHeight - window.innerHeight;
+    var p = alto > 0 ? Math.min(window.scrollY / alto, 1) : 0;
+    progreso.style.transform = 'scaleX(' + p + ')';
+  }
+  function activarProgreso() {
+    if (progreso) return;
+    progreso = el('div', { id: 'progreso', 'aria-hidden': 'true' });
+    document.body.append(progreso);
+    window.addEventListener('scroll', actualizarProgreso, { passive: true });
+    actualizarProgreso();
+  }
+  function quitarProgreso() {
+    if (!progreso) return;
+    window.removeEventListener('scroll', actualizarProgreso);
+    progreso.remove();
+    progreso = null;
   }
 
   // ---------- Encabezado y sesión ----------
@@ -411,10 +878,9 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
     if (!caja) return;
     caja.replaceChildren();
     if (estado.usuario) {
-      caja.append(
-        el('span', { 'class': 'saludo' }, 'Hola, ' + estado.usuario.name),
-        el('button', { 'class': 'btn btn-borde', type: 'button', onclick: cerrarSesion }, 'Salir')
-      );
+      caja.append(el('span', { 'class': 'saludo' }, 'Hola, ' + estado.usuario.name));
+      if (estado.usuario.role === 'admin') caja.append(el('a', { 'class': 'btn btn-borde', href: '/admin' }, 'Administración'));
+      caja.append(el('button', { 'class': 'btn btn-borde', type: 'button', onclick: cerrarSesion }, 'Salir'));
     } else {
       caja.append(el('button', { 'class': 'btn', type: 'button', onclick: function () { abrirAuth('login'); } }, 'Entrar'));
     }
@@ -495,6 +961,7 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
   }
 
   function renderizar() {
+    quitarProgreso();
     var r = rutaActual();
     if (r.vista === 'inicio') return vistaInicio();
     if (r.vista === 'revista') return vistaRevista(r.slug);
@@ -504,24 +971,154 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
 
   function vistaNoEncontrada(mensaje) {
     document.title = 'Página no encontrada | SanColFr';
-    aplicarColores(null);
     app.replaceChildren(
       el('section', { 'class': 'portada' }, el('div', { 'class': 'contenedor' },
         el('h1', {}, 'No encontrado'),
         el('p', {}, mensaje))),
       el('main', { 'class': 'contenedor' },
-        el('a', { 'class': 'btn volver', href: '/' }, 'Ver todas las revistas'))
+        el('a', { 'class': 'btn', href: '/', style: 'margin:28px 0 40px', }, 'Ver todas las revistas'))
     );
   }
 
-  // ---------- Vista 1: todas las revistas ----------
-  function tarjetaRevista(j) {
-    var color = '#1A44D8';
+  // ---------- Buscador de la portada ----------
+  function buscadorPortada() {
+    return el('form', {
+      'class': 'buscador-portada', role: 'search',
+      onsubmit: function (e) { e.preventDefault(); buscarEnPortada($('texto-portada').value.trim()); }
+    },
+      el('input', { id: 'texto-portada', type: 'search', placeholder: 'Busca un título o un autor', 'aria-label': 'Buscar artículos', maxlength: '120' }),
+      el('button', { 'class': 'btn btn-acento', type: 'submit' }, 'Buscar'));
+  }
+  async function buscarEnPortada(texto) {
+    var caja = $('dashboard');
+    if (!caja) return;
+    if (!texto) { cargarDashboard(caja); return; }
+    var lista = el('ul', { 'class': 'dash-lista' });
+    caja.replaceChildren(el('h3', { 'class': 'dash-titulo' }, 'Resultados para "' + texto + '"'), lista);
+    try {
+      var r = await api('/articles?search=' + encodeURIComponent(texto));
+      if (!r.data.length) lista.append(el('li', {}, 'No encontramos artículos con esa búsqueda.'));
+      r.data.forEach(function (a) {
+        var detalle = [a.journal_name, a.section && a.section.name].filter(Boolean).join(' · ');
+        var item = el('li', {}, el('a', { href: '/revistas/' + a.journal_slug + '/articulos/' + a.id }, a.title));
+        if (detalle) item.append(el('span', { 'class': 'meta-revista' }, detalle));
+        lista.append(item);
+      });
+    } catch (e) {
+      lista.append(el('li', {}, 'No se pudo completar la búsqueda. Intenta de nuevo.'));
+    }
+  }
+
+  // ---------- Esqueletos de carga ----------
+  function pintarEsqueletos(contenedor, cantidad) {
+    if (!contenedor) return;
+    contenedor.replaceChildren();
+    for (var i = 0; i < cantidad; i++) {
+      contenedor.append(el('div', { 'class': 'card esqueleto-tarjeta', 'aria-hidden': 'true' },
+        el('div', { 'class': 'esqueleto', style: 'height:22px;width:70%' }),
+        el('div', { 'class': 'esqueleto', style: 'height:14px;width:45%' }),
+        el('div', { 'class': 'esqueleto', style: 'height:14px;width:90%' })));
+    }
+  }
+
+  // ---------- Cifras que suben hasta su valor ----------
+  function animarContadores(contenedor) {
+    if (reducirMovimiento()) return;
+    contenedor.querySelectorAll('.dash-n[data-valor]').forEach(function (n) {
+      var valorFinal = parseInt(n.getAttribute('data-valor'), 10) || 0;
+      if (valorFinal === 0) return;
+      var inicio = null;
+      n.textContent = '0';
+      function paso(t) {
+        if (inicio === null) inicio = t;
+        var p = Math.min((t - inicio) / 1000, 1);
+        var suave = 1 - Math.pow(1 - p, 3);
+        n.textContent = String(Math.round(valorFinal * suave));
+        if (p < 1) requestAnimationFrame(paso);
+      }
+      requestAnimationFrame(paso);
+    });
+  }
+
+  // ---------- Tema claro / oscuro (con el círculo que sale del botón) ----------
+  function temaActual() {
+    var t = document.documentElement.getAttribute('data-tema');
+    if (t) return t;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oscuro' : 'claro';
+  }
+  function aplicarTema(t) {
+    document.documentElement.setAttribute('data-tema', t);
+    try { localStorage.setItem('sc_tema', t); } catch (e) { /* sin almacenamiento: el tema dura solo esta visita */ }
+    var b = $('tema');
+    if (b) b.textContent = t === 'oscuro' ? 'Modo claro' : 'Modo oscuro';
+  }
+  function cambiarTema() {
+    var nuevo = temaActual() === 'oscuro' ? 'claro' : 'oscuro';
+    var boton = $('tema');
+    if (!document.startViewTransition || reducirMovimiento() || !boton) return aplicarTema(nuevo);
+    var r = boton.getBoundingClientRect();
+    var x = r.left + r.width / 2, y = r.top + r.height / 2;
+    var radio = Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y));
+    var transicion = document.startViewTransition(function () { aplicarTema(nuevo); });
+    transicion.ready.then(function () {
+      document.documentElement.animate(
+        { clipPath: ['circle(0px at ' + x + 'px ' + y + 'px)', 'circle(' + radio + 'px at ' + x + 'px ' + y + 'px)'] },
+        { duration: 650, easing: 'cubic-bezier(0.2, 0.8, 0.2, 1)', pseudoElement: '::view-transition-new(root)' });
+    });
+  }
+  function iniciarTema() {
+    var guardado = null;
+    try { guardado = localStorage.getItem('sc_tema'); } catch (e) { guardado = null; }
+    if (guardado === 'claro' || guardado === 'oscuro') document.documentElement.setAttribute('data-tema', guardado);
+    var b = $('tema');
+    if (b) {
+      b.textContent = temaActual() === 'oscuro' ? 'Modo claro' : 'Modo oscuro';
+      b.addEventListener('click', cambiarTema);
+    }
+  }
+
+  // ---------- Dashboard de inicio (lo ven todos; "Mis favoritos" solo con sesión) ----------
+  async function cargarDashboard(contenedor) {
+    if (!contenedor) return;
+    try {
+      var r = await api('/resumen');
+      var tarjetas = [
+        ['Revistas', r.totales.revistas],
+        ['Números', r.totales.numeros],
+        ['Artículos publicados', r.totales.articulos_publicados]
+      ];
+      if (estado.usuario) {
+        tarjetas.push(['Mis favoritos', estado.favoritos ? estado.favoritos.size : 0]);
+      }
+      var lista = el('ul', { 'class': 'dash-lista' });
+      if (!r.recientes.length) lista.append(el('li', {}, 'Todavía no hay artículos publicados.'));
+      r.recientes.forEach(function (a) {
+        var detalle = [a.journal_name, a.section].filter(Boolean).join(' · ');
+        var item = el('li', {}, el('a', { href: '/revistas/' + a.journal_slug + '/articulos/' + a.id }, a.title));
+        if (detalle) item.append(el('span', { 'class': 'meta-revista' }, detalle));
+        lista.append(item);
+      });
+      var cajaTarjetas = el('div', { 'class': 'dash-tarjetas' });
+      tarjetas.forEach(function (p) {
+        cajaTarjetas.append(el('div', { 'class': 'dash-tarjeta' },
+          el('div', { 'class': 'dash-n', 'data-valor': String(p[1]) }, String(p[1])),
+          el('div', { 'class': 'dash-l' }, p[0])));
+      });
+      contenedor.replaceChildren(cajaTarjetas, el('h3', { 'class': 'dash-titulo' }, 'Publicaciones recientes'), lista);
+      animarContadores(contenedor);
+    } catch (e) {
+      contenedor.replaceChildren();
+    }
+  }
+
+  // ---------- Vista 1: todas las revistas (cada una es una tapa con su color) ----------
+  function tarjetaRevista(j, i) {
+    var color = colorValido(j.color, '#1A44D8');
     var numeros = j.issues_count || 0;
-    return el('article', { 'class': 'card reveal', style: 'border-top-color:' + color },
+    return el('article', { 'class': 'card', style: '--i:' + i + ';--banda:' + color },
       el('h3', {}, el('a', { href: '/revistas/' + j.slug }, j.name)),
       el('p', { 'class': 'meta-revista' },
-        el('span', {}, j.issn ? 'ISSN ' + j.issn : ''),
+        j.issn ? el('span', {}, 'ISSN ' + j.issn) : '',
         el('span', {}, numeros + (numeros === 1 ? ' número' : ' números'))),
       el('p', { 'class': 'autores' }, j.description || '')
     );
@@ -529,22 +1126,25 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
 
   async function vistaInicio() {
     document.title = 'Revistas | SanColFr';
-    aplicarColores(null);
     estado.revista = null;
     app.replaceChildren(
-      el('section', { 'class': 'portada' }, el('div', { 'class': 'contenedor' },
-        el('h1', {}, 'Revistas'),
-        el('p', {}, 'Publicaciones académicas de acceso abierto.'))),
+      el('section', { 'class': 'portada portada-inicio' }, el('div', { 'class': 'contenedor' },
+        titulo('Revistas'),
+        el('p', {}, 'Publicaciones académicas de acceso abierto.'), buscadorPortada())),
       el('main', { 'class': 'contenedor' },
+        el('section', { 'class': 'dashboard', id: 'dashboard' }),
         el('h2', { 'class': 'subtitulo' }, 'Elige una revista'),
         el('p', { id: 'aviso', role: 'status' }),
         el('div', { 'class': 'rejilla', id: 'lista' }))
     );
+    cargarDashboard($('dashboard'));
+    pintarEsqueletos($('lista'), 3);
     try {
       var r = await api('/revistas');
       var caja = $('lista');
+      caja.replaceChildren();
       if (!r.data.length) caja.append(el('p', { 'class': 'vacio' }, 'Todavía no hay revistas publicadas.'));
-      r.data.forEach(function (j) { var t = tarjetaRevista(j); caja.append(t); revelar(t); });
+      r.data.forEach(function (j, i) { caja.append(tarjetaRevista(j, i)); });
     } catch (e) { aviso('No se pudieron cargar las revistas.'); }
   }
 
@@ -606,11 +1206,8 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
         ultima = r.meta ? r.meta.last_page : 1;
       }
       estado.ultima = ultima;
-      articulos.forEach(function (a) {
-        var t = tarjeta(a);
-        lista.append(t);
-        revelar(t);
-      });
+      var inicioLote = lista.children.length;
+      articulos.forEach(function (a, i) { lista.append(tarjeta(a, inicioLote + i)); });
       if (!lista.children.length) {
         lista.append(el('p', { 'class': 'vacio' }, estado.soloFavoritos
           ? 'Aún no tienes artículos favoritos en esta revista.'
@@ -623,13 +1220,14 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
     }
   }
 
-  function tarjeta(a) {
+  function tarjeta(a, i) {
     var corazon = botonFavorito(a.id, estado.favoritos.has(a.id), 'fav');
     var revista = a.journal_slug || estado.revista.slug;
-    return el('article', { 'class': 'card reveal' },
+    var color = colorValido(estado.revista && estado.revista.color, '#1A44D8');
+    return el('article', { 'class': 'card', style: '--i:' + (i || 0) + ';--banda:' + color },
       a.portada_url ? el('img', { 'class': 'portada-tarjeta', src: a.portada_url, alt: 'Primera página de ' + a.title, loading: 'lazy' }) : '',
-      el('span', { 'class': 'chip' }, a.section ? a.section.name : ''),
-      el('h3', {}, el('a', { 'class': 'enlace-fuerte', href: '/revistas/' + revista + '/articulos/' + a.id }, a.title)),
+      a.section ? el('span', { 'class': 'chip' }, a.section.name) : '',
+      el('h3', {}, el('a', { href: '/revistas/' + revista + '/articulos/' + a.id }, a.title)),
       el('p', { 'class': 'autores' }, (a.authors || []).join(', ')),
       el('div', { 'class': 'pie-card' }, el('span', {}, a.start_page ? 'Pág. ' + a.start_page : ''), corazon)
     );
@@ -669,19 +1267,22 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
     if (!/^[a-z0-9-]+$/.test(slug)) return vistaNoEncontrada('Esa revista no existe.');
     estado.seccion = ''; estado.texto = ''; estado.pagina = 1;
 
+    var pedidosRevista;
     try {
-      estado.revista = (await api('/revistas/' + slug)).data;
+      pedidosRevista = await Promise.all([
+        api('/revistas/' + slug),
+        api('/revistas/' + slug + '/numeros').catch(function () { return { data: [] }; })
+      ]);
     } catch (e) {
       return vistaNoEncontrada('No encontramos esa revista. Revisa la dirección o vuelve a la lista.');
     }
-    try { estado.numeros = (await api('/revistas/' + slug + '/numeros')).data; }
-    catch (e) { estado.numeros = []; }
+    estado.revista = pedidosRevista[0].data;
+    estado.numeros = pedidosRevista[1].data || [];
 
     var j = estado.revista;
     var ultimo = estado.numeros[0];
     estado.numero = ultimo ? String(ultimo.id) : '';
     estado.soloFavoritos = !!estado.usuario && new URLSearchParams(location.search).get('favoritos') === '1';
-    aplicarColores(j);
     document.title = j.name + ' | SanColFr';
 
     var selector = el('select', {
@@ -703,16 +1304,17 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
       }
     });
 
+    var datosPortada = [j.issn ? 'ISSN ' + j.issn : '', j.publisher || ''].filter(Boolean);
     var portada = el('section', { 'class': 'portada' }, el('div', { 'class': 'contenedor' },
-      el('h1', {}, j.name),
+      titulo(j.name),
       el('p', {}, j.description || ''),
-      el('p', { 'class': 'meta-portada' }, [j.issn ? 'ISSN ' + j.issn : '', j.publisher || ''].filter(Boolean).join(' · ')),
+      el('div', { 'class': 'meta-portada' }, datosPortada.map(function (d) { return el('span', {}, d); })),
       el('span', { 'class': 'insignia' }, ultimo ? 'Último número: ' + etiquetaNumero(ultimo) : 'Próximamente')
     ));
 
     var principal = el('main', { 'class': 'contenedor' },
       el('nav', { 'class': 'migas', 'aria-label': 'Ruta' },
-        el('a', { href: '/' }, 'Revistas'), ' › ', j.name),
+        el('a', { href: '/' }, 'Revistas'), ' / ', j.name),
       el('div', { 'class': 'controles' },
         el('div', { 'class': 'fila' },
           selector,
@@ -721,7 +1323,7 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
         el('div', { 'class': 'chips', id: 'chips', 'aria-label': 'Filtrar por sección' }),
         el('p', { id: 'aviso', role: 'status' })),
       el('div', { 'class': 'rejilla', id: 'lista', 'aria-live': 'polite' }),
-      el('button', { id: 'mas', 'class': 'btn mas', type: 'button', onclick: function () { estado.pagina += 1; cargarArticulos(false); } }, 'Ver más artículos')
+      el('button', { id: 'mas', 'class': 'btn btn-borde mas', type: 'button', onclick: function () { estado.pagina += 1; cargarArticulos(false); } }, 'Ver más artículos')
     );
 
     app.replaceChildren(portada, principal);
@@ -745,20 +1347,27 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
   async function vistaArticulo(slug, id) {
     if (!/^[a-z0-9-]+$/.test(slug) || !/^\d+$/.test(id)) return vistaNoEncontrada('Ese artículo no existe.');
 
-    var a;
-    try { a = (await api('/articles/' + id)).data; }
+    var a, datosRevista = null;
+    try {
+      var pedidosArticulo = await Promise.all([
+        api('/articles/' + id),
+        api('/revistas/' + slug).catch(function () { return null; })
+      ]);
+      a = pedidosArticulo[0].data;
+      datosRevista = pedidosArticulo[1] ? pedidosArticulo[1].data : null;
+    }
     catch (e) { return vistaNoEncontrada('No encontramos ese artículo. Puede que haya sido retirado.'); }
 
     var revista = a.journal_slug || slug;
     var nombre = a.journal_name || 'Revista';
     estado.revista = null;
     document.title = a.title + ' | ' + nombre;
-    try { aplicarColores((await api('/revistas/' + revista)).data); }
-    catch (e) { aplicarColores(null); }
+    activarProgreso();
 
     var numero = a.issue ? etiquetaNumero(a.issue) : '';
     var autores = (a.authors || []).join(', ');
     var parrafos = (a.body || '').split(/\n\n+/).filter(Boolean);
+    var color = colorValido(datosRevista && datosRevista.color, '#1A44D8');
 
     var corazon = botonFavorito(a.id, estado.favoritos.has(a.id), 'fav fav-grande');
 
@@ -773,19 +1382,37 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
       }
     }, 'Copiar enlace');
 
+    var citar = el('button', {
+      'class': 'btn btn-borde', type: 'button',
+      onclick: function () {
+        var anio = a.issue && a.issue.year ? a.issue.year : 's. f.';
+        var vol = a.issue && a.issue.volume ? ', vol. ' + a.issue.volume : '';
+        var num = a.issue && a.issue.number ? ', núm. ' + a.issue.number : '';
+        var cita = (autores || 'Autor no indicado') + ' (' + anio + '). ' + a.title + '. ' + nombre + vol + num + '. ' + location.href;
+        var original = citar.textContent;
+        navigator.clipboard.writeText(cita).then(function () {
+          citar.textContent = 'Cita copiada';
+          setTimeout(function () { citar.textContent = original; }, 2000);
+        }).catch(function () { aviso('No se pudo copiar la cita.'); });
+      }
+    }, 'Copiar cita');
+
     var imprimir = el('button', { 'class': 'btn btn-borde', type: 'button', onclick: function () { window.print(); } }, 'Imprimir texto');
 
-    var cuerpo = el('main', { 'class': 'articulo contenedor' },
+    var datos = [nombre, numero, a.start_page ? 'Pág. ' + a.start_page : ''].filter(Boolean);
+
+    var cuerpo = el('main', { 'class': 'articulo contenedor', style: '--banda:' + color },
       el('nav', { 'class': 'migas', 'aria-label': 'Ruta' },
         el('a', { href: '/revistas/' + revista }, 'Números'), ' / ', numero),
       a.section ? el('p', { 'class': 'seccion-articulo' }, a.section.name) : '',
       el('h1', { 'class': 'titulo-articulo' }, a.title),
       autores ? el('p', { 'class': 'autores-articulo' }, autores) : '',
-      el('p', { 'class': 'datos-articulo' }, [nombre, numero, a.start_page ? 'Pág. ' + a.start_page : ''].filter(Boolean).join(' · ')),
+      el('p', { 'class': 'datos-articulo' }, datos.map(function (d) { return el('span', {}, d); })),
       el('div', { 'class': 'acciones-articulo' },
         el('a', { 'class': 'btn', href: '#texto' }, 'Ir al texto'),
         a.pdf_url ? el('a', { 'class': 'btn btn-borde', href: a.pdf_url, download: '' }, 'Descargar PDF') : '',
         copiar,
+        citar,
         imprimir,
         corazon),
       el('p', { id: 'aviso', role: 'status' }),
@@ -806,6 +1433,9 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
 
   // ---------- Inicio ----------
   (async function iniciar() {
+    iniciarTema();
+    if (window.iniciarParticulas) window.iniciarParticulas();
+    document.addEventListener('pointerdown', ondaAlPresionar);
     leerSesion();
     pintarSesion();
     await cargarFavoritosIds();
@@ -814,7 +1444,6 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
     catch (e) { vistaNoEncontrada('Ocurrió un error al cargar la página. Intenta recargarla.'); }
   })();
 
-  // Enlaces a otra revista, artículo o al inicio: se usan enlaces normales, así recargar siempre funciona.
   $('auth-form').addEventListener('submit', enviarAuth);
   $('auth-cerrar').addEventListener('click', function () { $('auth').close(); });
   $('auth-cambiar').addEventListener('click', function () {
