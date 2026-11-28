@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-// Paleta SanColFr: azul, verde-azulado, tinta y fondo crema.
+// Paleta SanColFree: azul, verde-azulado, tinta y fondo crema.
 export const colores = {
   primario: '#1A44D8',
   primarioOscuro: '#22242A',

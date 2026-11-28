@@ -4,7 +4,7 @@ import { WebView } from 'react-native-webview';
 import { BASE_URL } from './src/config';
 import { colores } from './src/theme';
 
-// SanColFr: la app abre el portal dentro de la app.
+// SanColFree: la app abre el portal dentro de la app.
 export default function App() {
   const webRef = useRef(null);
   const [puedeRegresar, setPuedeRegresar] = useState(false);

@@ -4,13 +4,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Revistas | SanColFr</title>
-<meta name="description" content="SanColFr, plataforma de revistas digitales de acceso abierto.">
+<title>Revistas | SanColFree</title>
+<meta name="description" content="SanColFree, plataforma de revistas digitales de acceso abierto.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&display=swap" rel="stylesheet">
 <style>
-/* ================= Tokens: paleta SanColFr y sus tonos ================= */
+/* ================= Tokens: paleta SanColFree y sus tonos ================= */
 :root {
   --papel: #FDFBF7;
   --papel-hondo: #F4F0E7;
@@ -137,7 +137,7 @@ section[id], #texto { scroll-margin-top: 90px; }
 }
 .logo { display: inline-block; line-height: 0; transition: transform 0.4s var(--ease); }
 .logo:hover { transform: rotate(-3deg); }
-.logo svg { display: block; width: 260px; max-width: 100%; height: auto; }
+.logo svg { display: block; width: 280px; max-width: 100%; height: auto; }
 .logo-san { fill: var(--logo-san); }
 .logo-col { fill: var(--logo-col); }
 .acciones { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
@@ -683,13 +683,13 @@ dialog::backdrop { background: rgba(20, 22, 28, 0.55); animation: entrar 0.3s ea
 
 <header class="cabecera">
   <div class="contenedor">
-    <a href="/" aria-label="Inicio del portal SanColFr" class="logo">
-      <svg xmlns="http://www.w3.org/2000/svg" width="300" height="64" viewBox="0 0 300 64" role="img" aria-label="SanColFr">
+    <a href="/" aria-label="Inicio del portal SanColFree" class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="320" height="64" viewBox="0 0 320 64" role="img" aria-label="SanColFree">
         <rect x="0" y="0" width="64" height="64" rx="14" fill="#1A44D8"/>
         <path d="M16 38 A16 16 0 0 1 48 38 Z" fill="#FFFFFF"/>
         <rect x="10" y="40" width="44" height="4" rx="2" fill="#00A087"/>
         <text class="logo-san" x="80" y="46" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700">San</text>
-        <text class="logo-col" x="153" y="46" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700">ColFr</text>
+        <text class="logo-col" x="156" y="46" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700">ColFree</text>
       </svg>
     </a>
     <div class="acciones"><div id="sesion" class="acciones"></div><button id="tema" class="btn btn-borde" type="button">Modo oscuro</button></div>
@@ -703,7 +703,7 @@ dialog::backdrop { background: rgba(20, 22, 28, 0.55); animation: entrar 0.3s ea
 <footer class="pie">
   <div class="contenedor rejilla-pie">
     <div>
-      <p><strong>SanColFr</strong></p>
+      <p><strong>SanColFree</strong></p>
       <p>Plataforma de revistas digitales de acceso abierto.</p>
     </div>
     <div>
@@ -716,7 +716,7 @@ dialog::backdrop { background: rgba(20, 22, 28, 0.55); animation: entrar 0.3s ea
     </div>
   </div>
   <div class="contenedor legal">
-    <p>© 2026 SanColFr. Los artículos pertenecen a sus autores y a las revistas que los publican.</p>
+    <p>© 2026 SanColFree. Los artículos pertenecen a sus autores y a las revistas que los publican.</p>
   </div>
 </footer>
 
@@ -981,7 +981,7 @@ dialog::backdrop { background: rgba(20, 22, 28, 0.55); animation: entrar 0.3s ea
   }
 
   function vistaNoEncontrada(mensaje) {
-    document.title = 'Página no encontrada | SanColFr';
+    document.title = 'Página no encontrada | SanColFree';
     app.replaceChildren(
       el('section', { 'class': 'portada' }, el('div', { 'class': 'contenedor' },
         el('h1', {}, 'No encontrado'),
@@ -1133,7 +1133,7 @@ dialog::backdrop { background: rgba(20, 22, 28, 0.55); animation: entrar 0.3s ea
   }
 
   async function vistaInicio() {
-    document.title = 'Revistas | SanColFr';
+    document.title = 'Revistas | SanColFree';
     estado.revista = null;
     app.replaceChildren(
       el('section', { 'class': 'portada portada-inicio' }, el('div', { 'class': 'contenedor' },
@@ -1291,7 +1291,7 @@ dialog::backdrop { background: rgba(20, 22, 28, 0.55); animation: entrar 0.3s ea
     var ultimo = estado.numeros[0];
     estado.numero = ultimo ? String(ultimo.id) : '';
     estado.soloFavoritos = !!estado.usuario && new URLSearchParams(location.search).get('favoritos') === '1';
-    document.title = j.name + ' | SanColFr';
+    document.title = j.name + ' | SanColFree';
 
     var selector = el('select', {
       id: 'selector-numero', 'aria-label': 'Elegir número',

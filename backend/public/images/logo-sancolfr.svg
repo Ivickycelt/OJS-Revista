@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="300" height="64" viewBox="0 0 300 64" role="img" aria-label="SanColFr">
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="64" viewBox="0 0 320 64" role="img" aria-label="SanColFree">
   <rect x="0" y="0" width="64" height="64" rx="14" fill="#1A44D8"/>
   <path d="M16 38 A16 16 0 0 1 48 38 Z" fill="#FFFFFF"/>
   <rect x="10" y="40" width="44" height="4" rx="2" fill="#00A087"/>
   <text x="80" y="46" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700" fill="#22242A">San</text>
-  <text x="153" y="46" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700" fill="#1A44D8">ColFr</text>
+  <text x="156" y="46" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700" fill="#1A44D8">ColFree</text>
 </svg>

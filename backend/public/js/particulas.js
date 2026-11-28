@@ -1,4 +1,4 @@
-// Partículas de fondo de SanColFr (código propio, sin licencias).
+// Partículas de fondo de SanColFree (código propio, sin licencias).
 // window.iniciarParticulas() crea un lienzo fijo detrás de la página
 // y un botón para pausar o reanudar la animación (se recuerda en el navegador).
 (function () {

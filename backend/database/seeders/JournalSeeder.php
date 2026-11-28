@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 
 class JournalSeeder extends Seeder
 {
-    // Revista de demostración de la plataforma SanColFr.
+    // Revista de demostración de la plataforma SanColFree.
     // Las secciones tienen los mismos slugs que usa `ojs:sincronizar`.
     private const SECCIONES = [
         ['slug' => 'articulos-originales', 'nombre' => 'Artículos originales'],
